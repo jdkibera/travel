@@ -12,7 +12,7 @@ A static HTML travel guide site deployed to GitHub Pages at `jdkibera.github.io/
 
 **You also have blanket permission to:**
 - `git add`, `git commit`, and `git push` to `origin main` at any time
-- Create directories as needed under `south-pacific-2026/images/`
+- Create directories as needed under any trip's `images/` folder
 - Overwrite placeholder (0-byte) files with real images
 
 **The only things that DO need my approval:**
@@ -20,92 +20,75 @@ A static HTML travel guide site deployed to GitHub Pages at `jdkibera.github.io/
 - Changing the git remote or branch structure
 - Anything outside the `travel-site/` folder
 
+## PROGRESS REPORTING — REQUIRED
+
+Every time you run a task, print clear phase headers and progress counts. Follow this format exactly:
+
+```
+══════════════════════════════════════
+PHASE 1/3 — DOWNLOADING IMAGES
+══════════════════════════════════════
+I need to download 12 resort images. Starting now.
+
+✅ [1/12] fakarava-havaiki.jpg — 312KB from havaiki.com
+✅ [2/12] fakarava-tetamanu.jpg — 189KB from tetamanu.com
+❌ [3/12] fiji-six-senses.jpg — FAILED (403), retrying from unsplash...
+✅ [3/12] fiji-six-senses.jpg — 445KB from unsplash.com
+...
+✅ [12/12] rangiroa-maitai.jpg — 267KB from maitai.com
+
+Done: 12/12 images downloaded.
+
+══════════════════════════════════════
+PHASE 2/3 — VERIFYING FILES
+══════════════════════════════════════
+Checking all files exist and are valid JPEGs...
+All 12 files verified. ✅
+
+══════════════════════════════════════
+PHASE 3/3 — PUSHING TO GITHUB
+══════════════════════════════════════
+Staging files...
+Committing: "Add 12 resort thumbnails"
+Pushing to origin/main...
+Done. Live at https://jdkibera.github.io/travel/ ✅
+```
+
+**Rules:**
+- Always announce the total count before starting (e.g., "I need to download 12 images")
+- Always show `[N/total]` on every item
+- Always show phase headers with `PHASE X/Y` format
+- If something fails, show ❌ with reason, then retry and show the retry result
+- End each phase with a one-line summary
+
+## HOW TO READ THIS FILE
+
+Each trip folder (e.g., `south-pacific-2026/`) contains its own `TASKS.md` file. That file tells you exactly what needs to be done for that trip — which images to download, what filenames to use, and where to save them.
+
+**Your workflow every time Cowork sends you here:**
+1. Read this file for permissions and progress rules
+2. Read the `TASKS.md` inside the relevant trip folder for specific work items
+3. Execute all tasks with progress reporting
+4. Push to GitHub when done
+
 ## Folder Structure
 
 ```
 travel-site/
 ├── index.html                          ← Landing page (list of trips)
-├── CLAUDE-CODE-WORKFLOW.md             ← This file
+├── CLAUDE-CODE-WORKFLOW.md             ← This file (permissions + rules)
 └── south-pacific-2026/
     ├── index.html                      ← Main guide (all 5 destinations)
+    ├── TASKS.md                        ← Current tasks for Claude Code
     └── images/
-        ├── fakarava.jpg                ← Hero images (already downloaded)
-        ├── fiji.jpg
-        ├── aitutaki.jpg
-        ├── samoa.jpg
-        ├── rangiroa.jpg
-        └── resorts/                    ← Resort thumbnail images (need downloading)
-            ├── fakarava-havaiki.jpg
-            ├── fakarava-tetamanu.jpg
-            ├── fiji-six-senses.jpg
-            ├── fiji-kokomo.jpg
-            ├── fiji-plantation.jpg
-            ├── aitutaki-tamanu.jpg
-            ├── aitutaki-etu-moana.jpg
-            ├── samoa-taumeasina.jpg
-            ├── samoa-coconuts.jpg
-            ├── samoa-sinalei.jpg
-            ├── rangiroa-kia-ora.jpg
-            └── rangiroa-maitai.jpg
+        ├── fakarava.jpg                ← Hero images (done)
+        ├── fiji.jpg                    ← (done)
+        ├── aitutaki.jpg                ← (done)
+        ├── samoa.jpg                   ← (done)
+        ├── rangiroa.jpg                ← (done)
+        └── resorts/                    ← Resort thumbnails
+            └── (see TASKS.md)
 ```
-
-## Your Responsibilities (Claude Code)
-
-### 1. Download Resort Thumbnail Images
-
-The HTML references resort images in `images/resorts/`. These need to be downloaded.
-Search for high-quality photos of each resort and save them with the exact filenames listed above.
-
-**Specs:**
-- Landscape orientation (roughly 16:9 or 3:2)
-- At least 800px wide
-- JPEG format
-- Save to `south-pacific-2026/images/resorts/`
-
-**Resorts to find images for:**
-
-| Filename | Resort | Location |
-|---|---|---|
-| `fakarava-havaiki.jpg` | Havaiki Lodge | Fakarava, French Polynesia |
-| `fakarava-tetamanu.jpg` | Tetamanu Village | Fakarava South Pass |
-| `fiji-six-senses.jpg` | Six Senses Fiji | Malolo Island, Mamanuca |
-| `fiji-kokomo.jpg` | Kokomo Private Island | Great Astrolabe Reef |
-| `fiji-plantation.jpg` | Plantation Island Resort | Mamanuca Islands |
-| `aitutaki-tamanu.jpg` | Tamanu Beach Resort | Aitutaki, Cook Islands |
-| `aitutaki-etu-moana.jpg` | Etu Moana Beach Villas | Aitutaki, Cook Islands |
-| `samoa-taumeasina.jpg` | Taumeasina Island Resort | Apia, Samoa |
-| `samoa-coconuts.jpg` | Coconuts Beach Club | South Coast, Upolu |
-| `samoa-sinalei.jpg` | Sinalei Reef Resort & Spa | South Coast, Upolu |
-| `rangiroa-kia-ora.jpg` | Kia Ora Resort & Spa | Rangiroa, French Polynesia |
-| `rangiroa-maitai.jpg` | Maitai Rangiroa | Rangiroa, French Polynesia |
-
-**Approach:** Use `curl` or `wget` to download images directly from resort websites or image sources. Don't ask me about each one — just grab them all and tell me the results when done.
-
-**Progress reporting:** After each image download, print a one-line status update like:
-```
-✅ [3/12] fiji-six-senses.jpg — 245KB from sixsenses.com
-```
-This way I can see progress without you needing to stop and ask anything.
-
-### 2. Git Push
-
-After downloading images (or after Cowork updates HTML):
-
-```bash
-git add -A
-git commit -m "Add resort thumbnails"
-git push origin main
-```
-
-The site auto-deploys via GitHub Pages on push to `main`. No need to ask before pushing.
-
-### 3. Future Workflow
-
-- **Cowork** creates/edits HTML, CSS, and content
-- **Cowork** references images by filename (e.g., `images/resorts/fiji-six-senses.jpg`)
-- **Claude Code** downloads the actual image files and pushes to GitHub
-- If Cowork adds new images, it will note the expected filenames so Claude Code knows what to download
-- **Claude Code should batch all downloads and push once at the end** — no need to ask between each file
 
 ## Git Remote
 
