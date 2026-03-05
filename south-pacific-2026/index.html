@@ -154,7 +154,7 @@ img { max-width: 100%; height: auto; display: block; }
 .card-body { padding: 16px 20px; }
 .info-card h5 {
   font-family: var(--font-heading); font-weight: 500;
-  font-size: 1.18rem; color: var(--charcoal); margin-bottom: 6px;
+  font-size: 1.28rem; color: var(--charcoal); margin-bottom: 6px;
 }
 .info-card p {
   font-size: 0.85rem; color: var(--text-med); line-height: 1.6; font-weight: 300;
@@ -189,7 +189,7 @@ img { max-width: 100%; height: auto; display: block; }
 .resort-card-body { padding: 18px 20px; }
 .resort-card-body h5 {
   font-family: var(--font-heading); font-weight: 500;
-  font-size: 1.18rem; color: var(--charcoal); margin-bottom: 4px;
+  font-size: 1.28rem; color: var(--charcoal); margin-bottom: 4px;
 }
 .resort-stars { font-size: 0.82rem; margin-bottom: 6px; }
 .resort-stars .star { color: #E8A838; }
@@ -252,19 +252,20 @@ footer {
 /* ══════════════════════════════════════════════════
    RESPONSIVE
    ══════════════════════════════════════════════════ */
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
 @media (max-width: 700px) {
   .card-grid, .resort-grid { grid-template-columns: 1fr; }
   .resort-grid .resort-card:last-child:nth-child(odd) { max-width: 100%; }
   .dest-hero { height: 280px; }
   .dest-hero-overlay { padding: 24px; }
   .dest-hero-overlay h2 { font-size: 2rem; }
-  .data-table { font-size: 0.72rem; }
-  .data-table th, .data-table td { padding: 6px 8px; }
+  .data-table { font-size: 0.72rem; min-width: 600px; }
+  .data-table th, .data-table td { padding: 6px 8px; white-space: nowrap; }
   .tab-nav { justify-content: flex-start; }
   .weather-bar { gap: 10px; }
   .weather-stat { min-width: 80px; padding: 10px 12px; }
   .comparison-section { padding: 40px 12px 60px; }
-  .comparison-section .data-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .route-map { padding: 16px; }
   .dest-overview { font-size: 0.95rem; }
 }
@@ -303,39 +304,70 @@ footer {
     <div class="section-block">
       <p class="dest-overview">A slender ribbon of coral adrift in the Tuamotus, Fakarava is French Polynesia at its most unspoiled. The lagoon glows in impossible shades of turquoise, the reef passes teem with sharks and manta rays, and the tiny village of Rotoava still runs on coconut time. For a family that wants to trade crowds for constellations, this is the place — raw, remote, and utterly unforgettable.</p>
       <div class="route-map">
-        <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
-          <rect width="600" height="300" fill="#E8E4DC"/>
-          <path d="M40,80 Q150,60 280,100 Q400,140 520,200 Q560,220 580,260" fill="none" stroke="#D4D0C8" stroke-width="0.5"/>
-          <path d="M20,120 Q100,100 200,110 Q350,130 500,220" fill="none" stroke="#D4D0C8" stroke-width="0.5"/>
-          <path d="M0,160 L600,160" stroke="#D4D0C8" stroke-width="0.3" stroke-dasharray="2,4"/>
-          <text x="300" y="168" font-family="Source Serif 4, Georgia, serif" font-size="8" fill="#C4BFB6" text-anchor="middle" font-style="italic">Equator</text>
-          <circle cx="115" cy="95" r="4" fill="#C27B5C"/>
-          <text x="115" y="85" font-family="Source Serif 4, Georgia, serif" font-size="11" fill="#2D2D2D" text-anchor="middle" font-weight="600">SFO</text>
-          <circle cx="420" cy="195" r="5" fill="#1E3A5F"/>
-          <text x="420" y="218" font-family="Cormorant Garamond, Georgia, serif" font-size="13" fill="#1E3A5F" text-anchor="middle" font-weight="500">Fakarava</text>
-          <text x="400" y="232" font-family="Source Serif 4, Georgia, serif" font-size="9" fill="#6B6B6B" text-anchor="middle" font-style="italic">French Polynesia</text>
-          <line x1="119" y1="97" x2="416" y2="193" stroke="#C27B5C" stroke-width="1.5" stroke-dasharray="6,4"/>
-          <polygon points="416,193 408,186 410,194" fill="#C27B5C"/>
-          <text x="290" y="135" font-family="Source Serif 4, Georgia, serif" font-size="9" fill="#6B6B6B" text-anchor="middle" font-style="italic">~4,200 mi</text>
-          <text x="300" y="285" font-family="Source Serif 4, Georgia, serif" font-size="8" fill="#999" text-anchor="middle" letter-spacing="0.15em">PACIFIC OCEAN</text>
-        </svg>
+        <svg viewBox="0 0 700 350" xmlns="http://www.w3.org/2000/svg">
+  <rect width="700" height="350" fill="#E4EAF0" rx="6"/>
+  
+  <!-- Continents -->
+  <path d="M549.2,0 L565.4,0 L568.1,4.1 L568.1,12.4 L570.8,20.6 L578.8,30.9 L589.6,41.2 L605.8,47.4 L608.5,51.5 L616.5,61.8 L630.0,74.1 L646.2,86.5 L667.7,94.7 L678.5,107.1 L700,119.4 L700,127.6 L700,144.1 L700,144.1 L700,123.5 L700,111.2 L700,102.9 L700,82.4 L700,74.1 L700,61.8 L700,49.4 L700,41.2 L700,28.8 L700,16.5 L700,4.1 L700,0 L700,0 L700,0 L549.2,0 Z" fill="#E2DAD0" stroke="#D0C8BE" stroke-width="0.5"/>
+  <path d="M0.0,234.7 L10.8,228.5 L32.3,226.5 L37.7,234.7 L32.3,242.9 L59.2,236.8 L67.3,228.5 L83.5,228.5 L75.4,242.9 L83.5,251.2 L88.8,263.5 L102.3,271.8 L118.5,284.1 L126.5,298.5 L123.8,308.8 L118.5,321.2 L113.1,329.4 L107.7,339.7 L94.2,341.8 L86.2,343.8 L75.4,341.8 L53.8,337.6 L37.7,331.5 L32.3,325.3 L21.5,321.2 L16.2,317.1 L5.4,317.1 L0.0,315.0 L0.0,292.4 L0.0,275.9 L0.0,255.3 L0.0,242.9 L0.0,234.7 Z" fill="#E2DAD0" stroke="#D0C8BE" stroke-width="0.5"/>
+  <path d="M231.5,327.4 L239.6,333.5 L247.7,337.6 L258.5,343.8 L245.0,354.1 L236.9,354.1 L236.9,345.9 L245.0,341.8 L239.6,335.6 L236.9,329.4 L231.5,327.4 Z" fill="#E2DAD0" stroke="#D0C8BE" stroke-width="0.5"/>
+  <path d="M236.9,354.1 L223.5,358.2 L207.3,366.5 L199.2,374.7 L204.6,376.8 L218.1,370.6 L226.2,364.4 L234.2,358.2 L236.9,354.1 Z" fill="#E2DAD0" stroke="#D0C8BE" stroke-width="0.5"/>
+  <path d="M59.2,195.6 L70.0,197.6 L80.8,201.8 L86.2,205.9 L96.9,210.0 L107.7,212.1 L118.5,210.0 L134.6,207.9 L137.3,212.1 L134.6,216.2 L118.5,218.2 L96.9,222.4 L88.8,218.2 L83.5,216.2 L59.2,210.0 L59.2,205.9 L59.2,199.7 L59.2,195.6 Z" fill="#E2DAD0" stroke="#D0C8BE" stroke-width="0.5"/>
+  <path d="M2.7,57.6 L5.4,49.4 L13.5,47.4 L16.2,45.3 L26.9,43.2 L37.7,41.2 L53.8,35.0 L53.8,28.8 L53.8,20.6 L59.2,14.4 L80.8,8.2 L83.5,4.1 L75.4,8.2 L70.0,12.4 L56.5,20.6 L48.5,28.8 L53.8,37.1 L35.0,41.2 L26.9,45.3 L10.8,49.4 L2.7,57.6 Z" fill="#E2DAD0" stroke="#D0C8BE" stroke-width="0.5"/>
+  <path d="M2.7,189.4 L5.4,193.5 L5.4,197.6 L10.8,203.8 L5.4,205.9 L2.7,201.8 L0.0,193.5 L2.7,189.4 Z" fill="#E2DAD0" stroke="#D0C8BE" stroke-width="0.5"/>
+  
+  <!-- Equator -->
+  <line x1="0" y1="185.3" x2="700" y2="185.3" stroke="#B8C6D4" stroke-width="0.4" stroke-dasharray="3,5"/>
+  <text x="15" y="181.3" font-family="Source Serif 4, Georgia, serif" font-size="7" fill="#9AACBE" font-style="italic">Equator</text>
+  
+  <!-- Ocean labels -->
+  <text x="350.0" y="338" font-family="Source Serif 4, Georgia, serif" font-size="8" fill="#9AACBE" text-anchor="middle" letter-spacing="0.2em">PACIFIC OCEAN</text>
+  
+  <!-- Continent labels -->
+  <text x="646.2" y="61.8" font-family="Source Serif 4, Georgia, serif" font-size="8" fill="#B0A898" text-anchor="middle" letter-spacing="0.08em">AMERICAS</text>
+  <text x="53.8" y="288.2" font-family="Source Serif 4, Georgia, serif" font-size="8" fill="#B0A898" text-anchor="middle" letter-spacing="0.08em">AUSTRALIA</text>
+  <circle cx="401.2" cy="97.6" r="2" fill="#B8C6D4"/>
+  <text x="401.2" y="91.6" font-family="Source Serif 4, Georgia, serif" font-size="7" fill="#9AACBE" text-anchor="middle" font-style="italic">Hawai'i</text>
+  <circle cx="295.1" cy="272.6" r="2" fill="#B8C6D4"/>
+  <text x="295.1" y="266.6" font-family="Source Serif 4, Georgia, serif" font-size="7" fill="#9AACBE" text-anchor="middle" font-style="italic">Tonga</text>
+  <circle cx="206.2" cy="258.2" r="2" fill="#B8C6D4"/>
+  <text x="206.2" y="252.2" font-family="Source Serif 4, Georgia, serif" font-size="7" fill="#9AACBE" text-anchor="middle" font-style="italic">Vanuatu</text>
+  <circle cx="196.5" cy="277.1" r="2" fill="#B8C6D4"/>
+  <text x="196.5" y="271.1" font-family="Source Serif 4, Georgia, serif" font-size="7" fill="#9AACBE" text-anchor="middle" font-style="italic">New Caledonia</text>
+  <circle cx="401.2" cy="97.6" r="2.5" fill="#B8C6D4"/>
+  <text x="401.2" y="90.6" font-family="Source Serif 4, Georgia, serif" font-size="7.5" fill="#8A9CAE" text-anchor="middle" font-style="italic">Hawai&#x27;i</text>
+  
+  <!-- Route -->
+  <line x1="579.5" y1="30.4" x2="454.1" y2="251.4" stroke="#C27B5C" stroke-width="1.5" stroke-dasharray="6,4" stroke-linecap="round"/>
+  <polygon points="454.1,251.4 454.8,241.4 462.3,245.7" fill="#C27B5C"/>
+  
+  <!-- SFO -->
+  <circle cx="579.5" cy="30.4" r="4" fill="#C27B5C"/>
+  <text x="579.5" y="21.4" font-family="Source Serif 4, Georgia, serif" font-size="10" fill="#2D2D2D" text-anchor="middle" font-weight="600">SFO</text>
+  
+  <!-- Destination -->
+  <circle cx="454.1" cy="251.4" r="5.5" fill="#1E3A5F"/>
+  <circle cx="454.1" cy="251.4" r="8" fill="none" stroke="#1E3A5F" stroke-width="0.5" stroke-opacity="0.3"/>
+  <text x="454.1" y="271.4" font-family="Cormorant Garamond, Georgia, serif" font-size="13" fill="#1E3A5F" text-anchor="middle" font-weight="500">Fakarava</text>
+  <text x="454.1" y="284.4" font-family="Source Serif 4, Georgia, serif" font-size="9" fill="#6B6B6B" text-anchor="middle" font-style="italic">French Polynesia</text>
+  
+  <!-- Distance -->
+  <text x="516.8" y="128.9" font-family="Source Serif 4, Georgia, serif" font-size="9" fill="#6B6B6B" text-anchor="middle" font-style="italic">~4,200 mi · via Papeete</text>
+</svg>
       </div>
     </div>
 
     <div class="section-block">
       <h3>Getting There &amp; Return</h3>
-      <table class="data-table">
+      <div class="table-scroll"><table class="data-table">
         <thead><tr><th>Option</th><th>Route</th><th>Class</th><th>Time</th><th>Layover</th><th>Per Person</th><th>Family ×6</th></tr></thead>
         <tbody>
           <tr><td colspan="7" style="background:var(--warm-gray);font-weight:600;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-med);">Outbound — Dec 18</td></tr>
-          <tr><td>Air Tahiti Nui + Air Tahiti</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhooEgoyMDI2LTEyLTE4agwIAhIIL20vMGRjbGtyDAgCEggvbS8wcGtwdBooEgoyMDI2LTEyLTE4agwIAhIIL20vMHBrcHRyDAgCEggvbS8wZjljNA" target="_blank">SFO → PPT → FAV</a></td><td>Economy</td><td>12h 30m</td><td>2h in Papeete</td><td class="price">~$1,850</td><td class="family-price">~$11,100</td></tr>
           <tr><td>Air Tahiti Nui + Air Tahiti</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhooEgoyMDI2LTEyLTE4agwIAhIIL20vMGRjbGtyDAgCEggvbS8wcGtwdBooEgoyMDI2LTEyLTE4agwIAhIIL20vMHBrcHRyDAgCEggvbS8wZjljNA" target="_blank">SFO → PPT → FAV</a></td><td>Business</td><td>12h 30m</td><td>2h in Papeete</td><td class="price">~$5,200</td><td class="family-price">~$31,200</td></tr>
-          <tr><td>French Bee + Air Tahiti</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhooEgoyMDI2LTEyLTE4agwIAhIIL20vMGRjbGtyDAgCEggvbS8wcGtwdBooEgoyMDI2LTEyLTE4agwIAhIIL20vMHBrcHRyDAgCEggvbS8wZjljNA" target="_blank">SFO → PPT → FAV</a></td><td>Economy</td><td>12h 45m</td><td>3h in Papeete</td><td class="price">~$1,450</td><td class="family-price">~$8,700</td></tr>
           <tr><td colspan="7" style="background:var(--warm-gray);font-weight:600;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-med);">Return — Jan 2</td></tr>
-          <tr><td>Air Tahiti + Air Tahiti Nui</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhooEgoyMDI3LTAxLTAyagwIAhIIL20vMGY5YzRyDAgCEggvbS8wcGtwdBooEgoyMDI3LTAxLTAyagwIAhIIL20vMHBrcHRyDAgCEggvbS8wZGNsaw" target="_blank">FAV → PPT → SFO</a></td><td>Economy</td><td>12h 30m</td><td>2h in Papeete</td><td class="price">~$1,850</td><td class="family-price">~$11,100</td></tr>
           <tr><td>Air Tahiti + Air Tahiti Nui</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhooEgoyMDI3LTAxLTAyagwIAhIIL20vMGY5YzRyDAgCEggvbS8wcGtwdBooEgoyMDI3LTAxLTAyagwIAhIIL20vMHBrcHRyDAgCEggvbS8wZGNsaw" target="_blank">FAV → PPT → SFO</a></td><td>Business</td><td>12h 30m</td><td>2h in Papeete</td><td class="price">~$5,200</td><td class="family-price">~$31,200</td></tr>
         </tbody>
-      </table>
+      </table></div>
     </div>
 
     <div class="section-block">
@@ -471,37 +503,70 @@ footer {
     <div class="section-block">
       <p class="dest-overview">Fiji is the South Pacific's most family-proven destination — and for good reason. The Mamanuca and Yasawa island chains deliver that barefoot-luxury sweet spot where world-class kids' clubs, genuine village culture, and reef-studded lagoons coexist without trying. A ten-hour nonstop from SFO puts you in warm water and warmer smiles. "Bula!" is the first word you'll hear, and the last thing you'll forget.</p>
       <div class="route-map">
-        <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
-          <rect width="600" height="300" fill="#E8E4DC"/>
-          <path d="M0,160 L600,160" stroke="#D4D0C8" stroke-width="0.3" stroke-dasharray="2,4"/>
-          <text x="300" y="168" font-family="Source Serif 4, Georgia, serif" font-size="8" fill="#C4BFB6" text-anchor="middle" font-style="italic">Equator</text>
-          <circle cx="100" cy="95" r="4" fill="#C27B5C"/>
-          <text x="100" y="85" font-family="Source Serif 4, Georgia, serif" font-size="11" fill="#2D2D2D" text-anchor="middle" font-weight="600">SFO</text>
-          <circle cx="490" cy="210" r="5" fill="#1E3A5F"/>
-          <text x="490" y="233" font-family="Cormorant Garamond, Georgia, serif" font-size="13" fill="#1E3A5F" text-anchor="middle" font-weight="500">Fiji</text>
-          <text x="490" y="247" font-family="Source Serif 4, Georgia, serif" font-size="9" fill="#6B6B6B" text-anchor="middle" font-style="italic">Nadi, Mamanucas</text>
-          <line x1="104" y1="97" x2="486" y2="208" stroke="#C27B5C" stroke-width="1.5" stroke-dasharray="6,4"/>
-          <polygon points="486,208 478,201 480,209" fill="#C27B5C"/>
-          <text x="310" y="140" font-family="Source Serif 4, Georgia, serif" font-size="9" fill="#6B6B6B" text-anchor="middle" font-style="italic">~5,500 mi · 10h 30m nonstop</text>
-          <text x="300" y="285" font-family="Source Serif 4, Georgia, serif" font-size="8" fill="#999" text-anchor="middle" letter-spacing="0.15em">PACIFIC OCEAN</text>
-        </svg>
+        <svg viewBox="0 0 700 350" xmlns="http://www.w3.org/2000/svg">
+  <rect width="700" height="350" fill="#E4EAF0" rx="6"/>
+  
+  <!-- Continents -->
+  <path d="M549.2,0 L565.4,0 L568.1,4.1 L568.1,12.4 L570.8,20.6 L578.8,30.9 L589.6,41.2 L605.8,47.4 L608.5,51.5 L616.5,61.8 L630.0,74.1 L646.2,86.5 L667.7,94.7 L678.5,107.1 L700,119.4 L700,127.6 L700,144.1 L700,144.1 L700,123.5 L700,111.2 L700,102.9 L700,82.4 L700,74.1 L700,61.8 L700,49.4 L700,41.2 L700,28.8 L700,16.5 L700,4.1 L700,0 L700,0 L700,0 L549.2,0 Z" fill="#E2DAD0" stroke="#D0C8BE" stroke-width="0.5"/>
+  <path d="M0.0,234.7 L10.8,228.5 L32.3,226.5 L37.7,234.7 L32.3,242.9 L59.2,236.8 L67.3,228.5 L83.5,228.5 L75.4,242.9 L83.5,251.2 L88.8,263.5 L102.3,271.8 L118.5,284.1 L126.5,298.5 L123.8,308.8 L118.5,321.2 L113.1,329.4 L107.7,339.7 L94.2,341.8 L86.2,343.8 L75.4,341.8 L53.8,337.6 L37.7,331.5 L32.3,325.3 L21.5,321.2 L16.2,317.1 L5.4,317.1 L0.0,315.0 L0.0,292.4 L0.0,275.9 L0.0,255.3 L0.0,242.9 L0.0,234.7 Z" fill="#E2DAD0" stroke="#D0C8BE" stroke-width="0.5"/>
+  <path d="M231.5,327.4 L239.6,333.5 L247.7,337.6 L258.5,343.8 L245.0,354.1 L236.9,354.1 L236.9,345.9 L245.0,341.8 L239.6,335.6 L236.9,329.4 L231.5,327.4 Z" fill="#E2DAD0" stroke="#D0C8BE" stroke-width="0.5"/>
+  <path d="M236.9,354.1 L223.5,358.2 L207.3,366.5 L199.2,374.7 L204.6,376.8 L218.1,370.6 L226.2,364.4 L234.2,358.2 L236.9,354.1 Z" fill="#E2DAD0" stroke="#D0C8BE" stroke-width="0.5"/>
+  <path d="M59.2,195.6 L70.0,197.6 L80.8,201.8 L86.2,205.9 L96.9,210.0 L107.7,212.1 L118.5,210.0 L134.6,207.9 L137.3,212.1 L134.6,216.2 L118.5,218.2 L96.9,222.4 L88.8,218.2 L83.5,216.2 L59.2,210.0 L59.2,205.9 L59.2,199.7 L59.2,195.6 Z" fill="#E2DAD0" stroke="#D0C8BE" stroke-width="0.5"/>
+  <path d="M2.7,57.6 L5.4,49.4 L13.5,47.4 L16.2,45.3 L26.9,43.2 L37.7,41.2 L53.8,35.0 L53.8,28.8 L53.8,20.6 L59.2,14.4 L80.8,8.2 L83.5,4.1 L75.4,8.2 L70.0,12.4 L56.5,20.6 L48.5,28.8 L53.8,37.1 L35.0,41.2 L26.9,45.3 L10.8,49.4 L2.7,57.6 Z" fill="#E2DAD0" stroke="#D0C8BE" stroke-width="0.5"/>
+  <path d="M2.7,189.4 L5.4,193.5 L5.4,197.6 L10.8,203.8 L5.4,205.9 L2.7,201.8 L0.0,193.5 L2.7,189.4 Z" fill="#E2DAD0" stroke="#D0C8BE" stroke-width="0.5"/>
+  
+  <!-- Equator -->
+  <line x1="0" y1="185.3" x2="700" y2="185.3" stroke="#B8C6D4" stroke-width="0.4" stroke-dasharray="3,5"/>
+  <text x="15" y="181.3" font-family="Source Serif 4, Georgia, serif" font-size="7" fill="#9AACBE" font-style="italic">Equator</text>
+  
+  <!-- Ocean labels -->
+  <text x="350.0" y="338" font-family="Source Serif 4, Georgia, serif" font-size="8" fill="#9AACBE" text-anchor="middle" letter-spacing="0.2em">PACIFIC OCEAN</text>
+  
+  <!-- Continent labels -->
+  <text x="646.2" y="61.8" font-family="Source Serif 4, Georgia, serif" font-size="8" fill="#B0A898" text-anchor="middle" letter-spacing="0.08em">AMERICAS</text>
+  <text x="53.8" y="288.2" font-family="Source Serif 4, Georgia, serif" font-size="8" fill="#B0A898" text-anchor="middle" letter-spacing="0.08em">AUSTRALIA</text>
+  <circle cx="401.2" cy="97.6" r="2" fill="#B8C6D4"/>
+  <text x="401.2" y="91.6" font-family="Source Serif 4, Georgia, serif" font-size="7" fill="#9AACBE" text-anchor="middle" font-style="italic">Hawai'i</text>
+  <circle cx="433.5" cy="257.4" r="2" fill="#B8C6D4"/>
+  <text x="433.5" y="251.39999999999998" font-family="Source Serif 4, Georgia, serif" font-size="7" fill="#9AACBE" text-anchor="middle" font-style="italic">Tahiti</text>
+  <circle cx="206.2" cy="258.2" r="2" fill="#B8C6D4"/>
+  <text x="206.2" y="252.2" font-family="Source Serif 4, Georgia, serif" font-size="7" fill="#9AACBE" text-anchor="middle" font-style="italic">Vanuatu</text>
+  <circle cx="196.5" cy="277.1" r="2" fill="#B8C6D4"/>
+  <text x="196.5" y="271.1" font-family="Source Serif 4, Georgia, serif" font-size="7" fill="#9AACBE" text-anchor="middle" font-style="italic">New Caledonia</text>
+  <circle cx="401.2" cy="97.6" r="2.5" fill="#B8C6D4"/>
+  <text x="401.2" y="90.6" font-family="Source Serif 4, Georgia, serif" font-size="7.5" fill="#8A9CAE" text-anchor="middle" font-style="italic">Hawai&#x27;i</text>
+  
+  <!-- Route -->
+  <line x1="579.5" y1="30.4" x2="258.2" y2="258.5" stroke="#C27B5C" stroke-width="1.5" stroke-dasharray="6,4" stroke-linecap="round"/>
+  <polygon points="258.2,258.5 263.0,249.7 268.1,256.8" fill="#C27B5C"/>
+  
+  <!-- SFO -->
+  <circle cx="579.5" cy="30.4" r="4" fill="#C27B5C"/>
+  <text x="579.5" y="21.4" font-family="Source Serif 4, Georgia, serif" font-size="10" fill="#2D2D2D" text-anchor="middle" font-weight="600">SFO</text>
+  
+  <!-- Destination -->
+  <circle cx="258.2" cy="258.5" r="5.5" fill="#1E3A5F"/>
+  <circle cx="258.2" cy="258.5" r="8" fill="none" stroke="#1E3A5F" stroke-width="0.5" stroke-opacity="0.3"/>
+  <text x="258.2" y="278.5" font-family="Cormorant Garamond, Georgia, serif" font-size="13" fill="#1E3A5F" text-anchor="middle" font-weight="500">Fiji</text>
+  <text x="258.2" y="291.5" font-family="Source Serif 4, Georgia, serif" font-size="9" fill="#6B6B6B" text-anchor="middle" font-style="italic">Nadi · Mamanucas</text>
+  
+  <!-- Distance -->
+  <text x="418.85" y="132.45" font-family="Source Serif 4, Georgia, serif" font-size="9" fill="#6B6B6B" text-anchor="middle" font-style="italic">~5,500 mi · 10h 30m nonstop</text>
+</svg>
       </div>
     </div>
 
     <div class="section-block">
       <h3>Getting There &amp; Return</h3>
-      <table class="data-table">
+      <div class="table-scroll"><table class="data-table">
         <thead><tr><th>Option</th><th>Route</th><th>Class</th><th>Time</th><th>Layover</th><th>Per Person</th><th>Family ×6</th></tr></thead>
         <tbody>
           <tr><td colspan="7" style="background:var(--warm-gray);font-weight:600;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-med);">Outbound — Dec 18</td></tr>
-          <tr><td>Fiji Airways (Direct)</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhoaEgoyMDI2LTEyLTE4agcIARIDU0ZPcgcIARIDTkFO" target="_blank">SFO → NAN</a></td><td>Economy</td><td>10h 30m</td><td>Non-stop</td><td class="price">~$1,600</td><td class="family-price">~$9,600</td></tr>
           <tr><td>Fiji Airways (Direct)</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhoaEgoyMDI2LTEyLTE4agcIARIDU0ZPcgcIARIDTkFO" target="_blank">SFO → NAN</a></td><td>Business</td><td>10h 30m</td><td>Non-stop</td><td class="price">~$5,800</td><td class="family-price">~$34,800</td></tr>
-          <tr><td>Fiji Airways (via LAX)</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhoaEgoyMDI2LTEyLTE4agcIARIDU0ZPcgcIARIDTEFYGhoSCjIwMjYtMTItMTgqB0ZKLTgwOToHCAESA05BTg" target="_blank">SFO → LAX → NAN</a></td><td>Economy</td><td>14h 15m</td><td>2h 30m in LAX</td><td class="price">~$1,350</td><td class="family-price">~$8,100</td></tr>
           <tr><td colspan="7" style="background:var(--warm-gray);font-weight:600;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-med);">Return — Jan 2</td></tr>
-          <tr><td>Fiji Airways (Direct)</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhoaEgoyMDI3LTAxLTAyagcIARIDTkFOcgcIARIDU0ZP" target="_blank">NAN → SFO</a></td><td>Economy</td><td>10h 30m</td><td>Non-stop</td><td class="price">~$1,600</td><td class="family-price">~$9,600</td></tr>
           <tr><td>Fiji Airways (Direct)</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhoaEgoyMDI3LTAxLTAyagcIARIDTkFOcgcIARIDU0ZP" target="_blank">NAN → SFO</a></td><td>Business</td><td>10h 30m</td><td>Non-stop</td><td class="price">~$5,800</td><td class="family-price">~$34,800</td></tr>
         </tbody>
-      </table>
+      </table></div>
     </div>
 
     <div class="section-block">
@@ -591,37 +656,72 @@ footer {
     <div class="section-block">
       <p class="dest-overview">Imagine a lagoon so vivid it looks digitally enhanced — then step into it and realize the photo didn't do it justice. Aitutaki is a tiny Cook Islands atoll ringed by 15 palm-fringed motus and wrapped in water that shifts from aquamarine to sapphire across a single afternoon. One Foot Island's sandbar, the giant clam sanctuary, and some of the friendliest people on Earth make this the kind of place your kids will reference for the rest of their lives.</p>
       <div class="route-map">
-        <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
-          <rect width="600" height="300" fill="#E8E4DC"/>
-          <path d="M0,160 L600,160" stroke="#D4D0C8" stroke-width="0.3" stroke-dasharray="2,4"/>
-          <text x="300" y="168" font-family="Source Serif 4, Georgia, serif" font-size="8" fill="#C4BFB6" text-anchor="middle" font-style="italic">Equator</text>
-          <circle cx="95" cy="90" r="4" fill="#C27B5C"/>
-          <text x="95" y="80" font-family="Source Serif 4, Georgia, serif" font-size="11" fill="#2D2D2D" text-anchor="middle" font-weight="600">SFO</text>
-          <circle cx="440" cy="215" r="5" fill="#1E3A5F"/>
-          <text x="440" y="238" font-family="Cormorant Garamond, Georgia, serif" font-size="13" fill="#1E3A5F" text-anchor="middle" font-weight="500">Aitutaki</text>
-          <text x="440" y="252" font-family="Source Serif 4, Georgia, serif" font-size="9" fill="#6B6B6B" text-anchor="middle" font-style="italic">Cook Islands</text>
-          <line x1="99" y1="92" x2="436" y2="213" stroke="#C27B5C" stroke-width="1.5" stroke-dasharray="6,4"/>
-          <polygon points="436,213 428,206 430,214" fill="#C27B5C"/>
-          <text x="280" y="140" font-family="Source Serif 4, Georgia, serif" font-size="9" fill="#6B6B6B" text-anchor="middle" font-style="italic">~4,600 mi · via Auckland or LAX</text>
-          <text x="300" y="285" font-family="Source Serif 4, Georgia, serif" font-size="8" fill="#999" text-anchor="middle" letter-spacing="0.15em">PACIFIC OCEAN</text>
-        </svg>
+        <svg viewBox="0 0 700 350" xmlns="http://www.w3.org/2000/svg">
+  <rect width="700" height="350" fill="#E4EAF0" rx="6"/>
+  
+  <!-- Continents -->
+  <path d="M549.2,0 L565.4,0 L568.1,4.1 L568.1,12.4 L570.8,20.6 L578.8,30.9 L589.6,41.2 L605.8,47.4 L608.5,51.5 L616.5,61.8 L630.0,74.1 L646.2,86.5 L667.7,94.7 L678.5,107.1 L700,119.4 L700,127.6 L700,144.1 L700,144.1 L700,123.5 L700,111.2 L700,102.9 L700,82.4 L700,74.1 L700,61.8 L700,49.4 L700,41.2 L700,28.8 L700,16.5 L700,4.1 L700,0 L700,0 L700,0 L549.2,0 Z" fill="#E2DAD0" stroke="#D0C8BE" stroke-width="0.5"/>
+  <path d="M0.0,234.7 L10.8,228.5 L32.3,226.5 L37.7,234.7 L32.3,242.9 L59.2,236.8 L67.3,228.5 L83.5,228.5 L75.4,242.9 L83.5,251.2 L88.8,263.5 L102.3,271.8 L118.5,284.1 L126.5,298.5 L123.8,308.8 L118.5,321.2 L113.1,329.4 L107.7,339.7 L94.2,341.8 L86.2,343.8 L75.4,341.8 L53.8,337.6 L37.7,331.5 L32.3,325.3 L21.5,321.2 L16.2,317.1 L5.4,317.1 L0.0,315.0 L0.0,292.4 L0.0,275.9 L0.0,255.3 L0.0,242.9 L0.0,234.7 Z" fill="#E2DAD0" stroke="#D0C8BE" stroke-width="0.5"/>
+  <path d="M231.5,327.4 L239.6,333.5 L247.7,337.6 L258.5,343.8 L245.0,354.1 L236.9,354.1 L236.9,345.9 L245.0,341.8 L239.6,335.6 L236.9,329.4 L231.5,327.4 Z" fill="#E2DAD0" stroke="#D0C8BE" stroke-width="0.5"/>
+  <path d="M236.9,354.1 L223.5,358.2 L207.3,366.5 L199.2,374.7 L204.6,376.8 L218.1,370.6 L226.2,364.4 L234.2,358.2 L236.9,354.1 Z" fill="#E2DAD0" stroke="#D0C8BE" stroke-width="0.5"/>
+  <path d="M59.2,195.6 L70.0,197.6 L80.8,201.8 L86.2,205.9 L96.9,210.0 L107.7,212.1 L118.5,210.0 L134.6,207.9 L137.3,212.1 L134.6,216.2 L118.5,218.2 L96.9,222.4 L88.8,218.2 L83.5,216.2 L59.2,210.0 L59.2,205.9 L59.2,199.7 L59.2,195.6 Z" fill="#E2DAD0" stroke="#D0C8BE" stroke-width="0.5"/>
+  <path d="M2.7,57.6 L5.4,49.4 L13.5,47.4 L16.2,45.3 L26.9,43.2 L37.7,41.2 L53.8,35.0 L53.8,28.8 L53.8,20.6 L59.2,14.4 L80.8,8.2 L83.5,4.1 L75.4,8.2 L70.0,12.4 L56.5,20.6 L48.5,28.8 L53.8,37.1 L35.0,41.2 L26.9,45.3 L10.8,49.4 L2.7,57.6 Z" fill="#E2DAD0" stroke="#D0C8BE" stroke-width="0.5"/>
+  <path d="M2.7,189.4 L5.4,193.5 L5.4,197.6 L10.8,203.8 L5.4,205.9 L2.7,201.8 L0.0,193.5 L2.7,189.4 Z" fill="#E2DAD0" stroke="#D0C8BE" stroke-width="0.5"/>
+  
+  <!-- Equator -->
+  <line x1="0" y1="185.3" x2="700" y2="185.3" stroke="#B8C6D4" stroke-width="0.4" stroke-dasharray="3,5"/>
+  <text x="15" y="181.3" font-family="Source Serif 4, Georgia, serif" font-size="7" fill="#9AACBE" font-style="italic">Equator</text>
+  
+  <!-- Ocean labels -->
+  <text x="350.0" y="338" font-family="Source Serif 4, Georgia, serif" font-size="8" fill="#9AACBE" text-anchor="middle" letter-spacing="0.2em">PACIFIC OCEAN</text>
+  
+  <!-- Continent labels -->
+  <text x="646.2" y="61.8" font-family="Source Serif 4, Georgia, serif" font-size="8" fill="#B0A898" text-anchor="middle" letter-spacing="0.08em">AMERICAS</text>
+  <text x="53.8" y="288.2" font-family="Source Serif 4, Georgia, serif" font-size="8" fill="#B0A898" text-anchor="middle" letter-spacing="0.08em">AUSTRALIA</text>
+  <circle cx="401.2" cy="97.6" r="2" fill="#B8C6D4"/>
+  <text x="401.2" y="91.6" font-family="Source Serif 4, Georgia, serif" font-size="7" fill="#9AACBE" text-anchor="middle" font-style="italic">Hawai'i</text>
+  <circle cx="433.5" cy="257.4" r="2" fill="#B8C6D4"/>
+  <text x="433.5" y="251.39999999999998" font-family="Source Serif 4, Georgia, serif" font-size="7" fill="#9AACBE" text-anchor="middle" font-style="italic">Tahiti</text>
+  <circle cx="295.1" cy="272.6" r="2" fill="#B8C6D4"/>
+  <text x="295.1" y="266.6" font-family="Source Serif 4, Georgia, serif" font-size="7" fill="#9AACBE" text-anchor="middle" font-style="italic">Tonga</text>
+  <circle cx="206.2" cy="258.2" r="2" fill="#B8C6D4"/>
+  <text x="206.2" y="252.2" font-family="Source Serif 4, Georgia, serif" font-size="7" fill="#9AACBE" text-anchor="middle" font-style="italic">Vanuatu</text>
+  <circle cx="196.5" cy="277.1" r="2" fill="#B8C6D4"/>
+  <text x="196.5" y="271.1" font-family="Source Serif 4, Georgia, serif" font-size="7" fill="#9AACBE" text-anchor="middle" font-style="italic">New Caledonia</text>
+  <circle cx="401.2" cy="97.6" r="2.5" fill="#B8C6D4"/>
+  <text x="401.2" y="90.6" font-family="Source Serif 4, Georgia, serif" font-size="7.5" fill="#8A9CAE" text-anchor="middle" font-style="italic">Hawai&#x27;i</text>
+  
+  <!-- Route -->
+  <line x1="579.5" y1="30.4" x2="378.2" y2="263.0" stroke="#C27B5C" stroke-width="1.5" stroke-dasharray="6,4" stroke-linecap="round"/>
+  <polygon points="378.2,263.0 380.8,253.3 387.4,259.0" fill="#C27B5C"/>
+  
+  <!-- SFO -->
+  <circle cx="579.5" cy="30.4" r="4" fill="#C27B5C"/>
+  <text x="579.5" y="21.4" font-family="Source Serif 4, Georgia, serif" font-size="10" fill="#2D2D2D" text-anchor="middle" font-weight="600">SFO</text>
+  
+  <!-- Destination -->
+  <circle cx="378.2" cy="263.0" r="5.5" fill="#1E3A5F"/>
+  <circle cx="378.2" cy="263.0" r="8" fill="none" stroke="#1E3A5F" stroke-width="0.5" stroke-opacity="0.3"/>
+  <text x="378.2" y="283.0" font-family="Cormorant Garamond, Georgia, serif" font-size="13" fill="#1E3A5F" text-anchor="middle" font-weight="500">Aitutaki</text>
+  <text x="378.2" y="296.0" font-family="Source Serif 4, Georgia, serif" font-size="9" fill="#6B6B6B" text-anchor="middle" font-style="italic">Cook Islands</text>
+  
+  <!-- Distance -->
+  <text x="478.85" y="134.7" font-family="Source Serif 4, Georgia, serif" font-size="9" fill="#6B6B6B" text-anchor="middle" font-style="italic">~4,600 mi · via Auckland or LAX</text>
+</svg>
       </div>
     </div>
 
     <div class="section-block">
       <h3>Getting There &amp; Return</h3>
-      <table class="data-table">
+      <div class="table-scroll"><table class="data-table">
         <thead><tr><th>Option</th><th>Route</th><th>Class</th><th>Time</th><th>Layover</th><th>Per Person</th><th>Family ×6</th></tr></thead>
         <tbody>
           <tr><td colspan="7" style="background:var(--warm-gray);font-weight:600;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-med);">Outbound — Dec 18</td></tr>
-          <tr><td>Air NZ + Air Rarotonga</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhoaEgoyMDI2LTEyLTE4agcIARIDU0ZPcgcIARIEUkFSQQ" target="_blank">SFO → AKL → RAR → AIT</a></td><td>Economy</td><td>18h total</td><td>3h AKL + 1h RAR</td><td class="price">~$2,100</td><td class="family-price">~$12,600</td></tr>
           <tr><td>Air NZ + Air Rarotonga</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhoaEgoyMDI2LTEyLTE4agcIARIDU0ZPcgcIARIEUkFSQQ" target="_blank">SFO → AKL → RAR → AIT</a></td><td>Business</td><td>18h total</td><td>3h AKL + 1h RAR</td><td class="price">~$6,500</td><td class="family-price">~$39,000</td></tr>
-          <tr><td>Air NZ (via LAX)</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhoaEgoyMDI2LTEyLTE4agcIARIDU0ZPcgcIARIEUkFSQQ" target="_blank">SFO → LAX → RAR → AIT</a></td><td>Economy</td><td>16h total</td><td>2h LAX + 1h RAR</td><td class="price">~$1,900</td><td class="family-price">~$11,400</td></tr>
           <tr><td colspan="7" style="background:var(--warm-gray);font-weight:600;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-med);">Return — Jan 2</td></tr>
-          <tr><td>Air Rarotonga + Air NZ</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhoaEgoyMDI3LTAxLTAyagcIARIEUkFSQXIHCAESA1NGTw" target="_blank">AIT → RAR → AKL → SFO</a></td><td>Economy</td><td>18h total</td><td>1h RAR + 3h AKL</td><td class="price">~$2,100</td><td class="family-price">~$12,600</td></tr>
           <tr><td>Air Rarotonga + Air NZ</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhoaEgoyMDI3LTAxLTAyagcIARIEUkFSQXIHCAESA1NGTw" target="_blank">AIT → RAR → AKL → SFO</a></td><td>Business</td><td>18h total</td><td>1h RAR + 3h AKL</td><td class="price">~$6,500</td><td class="family-price">~$39,000</td></tr>
         </tbody>
-      </table>
+      </table></div>
     </div>
 
     <div class="section-block">
@@ -681,37 +781,70 @@ footer {
     <div class="section-block">
       <p class="dest-overview">Samoa is the South Pacific destination that hasn't been polished for tourists — and that's exactly why it's extraordinary. Sunday church hymns shake the rafters, umu feasts slow-cook in underground ovens, and fire-knife dancers send sparks swirling into the tropical night. From the surreal turquoise swimming hole at To Sua to the thundering blowholes of Savai'i, this is Polynesia at its most genuine. Your family won't just visit Samoa — you'll be adopted by it.</p>
       <div class="route-map">
-        <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
-          <rect width="600" height="300" fill="#E8E4DC"/>
-          <path d="M0,160 L600,160" stroke="#D4D0C8" stroke-width="0.3" stroke-dasharray="2,4"/>
-          <text x="300" y="168" font-family="Source Serif 4, Georgia, serif" font-size="8" fill="#C4BFB6" text-anchor="middle" font-style="italic">Equator</text>
-          <circle cx="90" cy="95" r="4" fill="#C27B5C"/>
-          <text x="90" y="85" font-family="Source Serif 4, Georgia, serif" font-size="11" fill="#2D2D2D" text-anchor="middle" font-weight="600">SFO</text>
-          <circle cx="505" cy="195" r="5" fill="#1E3A5F"/>
-          <text x="505" y="218" font-family="Cormorant Garamond, Georgia, serif" font-size="13" fill="#1E3A5F" text-anchor="middle" font-weight="500">Samoa</text>
-          <text x="505" y="232" font-family="Source Serif 4, Georgia, serif" font-size="9" fill="#6B6B6B" text-anchor="middle" font-style="italic">Apia, Upolu</text>
-          <line x1="94" y1="97" x2="501" y2="193" stroke="#C27B5C" stroke-width="1.5" stroke-dasharray="6,4"/>
-          <polygon points="501,193 493,186 495,194" fill="#C27B5C"/>
-          <text x="310" y="132" font-family="Source Serif 4, Georgia, serif" font-size="9" fill="#6B6B6B" text-anchor="middle" font-style="italic">~5,100 mi · via Nadi or Honolulu</text>
-          <text x="300" y="285" font-family="Source Serif 4, Georgia, serif" font-size="8" fill="#999" text-anchor="middle" letter-spacing="0.15em">PACIFIC OCEAN</text>
-        </svg>
+        <svg viewBox="0 0 700 350" xmlns="http://www.w3.org/2000/svg">
+  <rect width="700" height="350" fill="#E4EAF0" rx="6"/>
+  
+  <!-- Continents -->
+  <path d="M549.2,0 L565.4,0 L568.1,4.1 L568.1,12.4 L570.8,20.6 L578.8,30.9 L589.6,41.2 L605.8,47.4 L608.5,51.5 L616.5,61.8 L630.0,74.1 L646.2,86.5 L667.7,94.7 L678.5,107.1 L700,119.4 L700,127.6 L700,144.1 L700,144.1 L700,123.5 L700,111.2 L700,102.9 L700,82.4 L700,74.1 L700,61.8 L700,49.4 L700,41.2 L700,28.8 L700,16.5 L700,4.1 L700,0 L700,0 L700,0 L549.2,0 Z" fill="#E2DAD0" stroke="#D0C8BE" stroke-width="0.5"/>
+  <path d="M0.0,234.7 L10.8,228.5 L32.3,226.5 L37.7,234.7 L32.3,242.9 L59.2,236.8 L67.3,228.5 L83.5,228.5 L75.4,242.9 L83.5,251.2 L88.8,263.5 L102.3,271.8 L118.5,284.1 L126.5,298.5 L123.8,308.8 L118.5,321.2 L113.1,329.4 L107.7,339.7 L94.2,341.8 L86.2,343.8 L75.4,341.8 L53.8,337.6 L37.7,331.5 L32.3,325.3 L21.5,321.2 L16.2,317.1 L5.4,317.1 L0.0,315.0 L0.0,292.4 L0.0,275.9 L0.0,255.3 L0.0,242.9 L0.0,234.7 Z" fill="#E2DAD0" stroke="#D0C8BE" stroke-width="0.5"/>
+  <path d="M231.5,327.4 L239.6,333.5 L247.7,337.6 L258.5,343.8 L245.0,354.1 L236.9,354.1 L236.9,345.9 L245.0,341.8 L239.6,335.6 L236.9,329.4 L231.5,327.4 Z" fill="#E2DAD0" stroke="#D0C8BE" stroke-width="0.5"/>
+  <path d="M236.9,354.1 L223.5,358.2 L207.3,366.5 L199.2,374.7 L204.6,376.8 L218.1,370.6 L226.2,364.4 L234.2,358.2 L236.9,354.1 Z" fill="#E2DAD0" stroke="#D0C8BE" stroke-width="0.5"/>
+  <path d="M59.2,195.6 L70.0,197.6 L80.8,201.8 L86.2,205.9 L96.9,210.0 L107.7,212.1 L118.5,210.0 L134.6,207.9 L137.3,212.1 L134.6,216.2 L118.5,218.2 L96.9,222.4 L88.8,218.2 L83.5,216.2 L59.2,210.0 L59.2,205.9 L59.2,199.7 L59.2,195.6 Z" fill="#E2DAD0" stroke="#D0C8BE" stroke-width="0.5"/>
+  <path d="M2.7,57.6 L5.4,49.4 L13.5,47.4 L16.2,45.3 L26.9,43.2 L37.7,41.2 L53.8,35.0 L53.8,28.8 L53.8,20.6 L59.2,14.4 L80.8,8.2 L83.5,4.1 L75.4,8.2 L70.0,12.4 L56.5,20.6 L48.5,28.8 L53.8,37.1 L35.0,41.2 L26.9,45.3 L10.8,49.4 L2.7,57.6 Z" fill="#E2DAD0" stroke="#D0C8BE" stroke-width="0.5"/>
+  <path d="M2.7,189.4 L5.4,193.5 L5.4,197.6 L10.8,203.8 L5.4,205.9 L2.7,201.8 L0.0,193.5 L2.7,189.4 Z" fill="#E2DAD0" stroke="#D0C8BE" stroke-width="0.5"/>
+  
+  <!-- Equator -->
+  <line x1="0" y1="185.3" x2="700" y2="185.3" stroke="#B8C6D4" stroke-width="0.4" stroke-dasharray="3,5"/>
+  <text x="15" y="181.3" font-family="Source Serif 4, Georgia, serif" font-size="7" fill="#9AACBE" font-style="italic">Equator</text>
+  
+  <!-- Ocean labels -->
+  <text x="350.0" y="338" font-family="Source Serif 4, Georgia, serif" font-size="8" fill="#9AACBE" text-anchor="middle" letter-spacing="0.2em">PACIFIC OCEAN</text>
+  
+  <!-- Continent labels -->
+  <text x="646.2" y="61.8" font-family="Source Serif 4, Georgia, serif" font-size="8" fill="#B0A898" text-anchor="middle" letter-spacing="0.08em">AMERICAS</text>
+  <text x="53.8" y="288.2" font-family="Source Serif 4, Georgia, serif" font-size="8" fill="#B0A898" text-anchor="middle" letter-spacing="0.08em">AUSTRALIA</text>
+  <circle cx="401.2" cy="97.6" r="2" fill="#B8C6D4"/>
+  <text x="401.2" y="91.6" font-family="Source Serif 4, Georgia, serif" font-size="7" fill="#9AACBE" text-anchor="middle" font-style="italic">Hawai'i</text>
+  <circle cx="433.5" cy="257.4" r="2" fill="#B8C6D4"/>
+  <text x="433.5" y="251.39999999999998" font-family="Source Serif 4, Georgia, serif" font-size="7" fill="#9AACBE" text-anchor="middle" font-style="italic">Tahiti</text>
+  <circle cx="206.2" cy="258.2" r="2" fill="#B8C6D4"/>
+  <text x="206.2" y="252.2" font-family="Source Serif 4, Georgia, serif" font-size="7" fill="#9AACBE" text-anchor="middle" font-style="italic">Vanuatu</text>
+  <circle cx="196.5" cy="277.1" r="2" fill="#B8C6D4"/>
+  <text x="196.5" y="271.1" font-family="Source Serif 4, Georgia, serif" font-size="7" fill="#9AACBE" text-anchor="middle" font-style="italic">New Caledonia</text>
+  <circle cx="401.2" cy="97.6" r="2.5" fill="#B8C6D4"/>
+  <text x="401.2" y="90.6" font-family="Source Serif 4, Georgia, serif" font-size="7.5" fill="#8A9CAE" text-anchor="middle" font-style="italic">Hawai&#x27;i</text>
+  
+  <!-- Route -->
+  <line x1="579.5" y1="30.4" x2="313.6" y2="242.2" stroke="#C27B5C" stroke-width="1.5" stroke-dasharray="6,4" stroke-linecap="round"/>
+  <polygon points="313.6,242.2 317.9,233.2 323.4,240.0" fill="#C27B5C"/>
+  
+  <!-- SFO -->
+  <circle cx="579.5" cy="30.4" r="4" fill="#C27B5C"/>
+  <text x="579.5" y="21.4" font-family="Source Serif 4, Georgia, serif" font-size="10" fill="#2D2D2D" text-anchor="middle" font-weight="600">SFO</text>
+  
+  <!-- Destination -->
+  <circle cx="313.6" cy="242.2" r="5.5" fill="#1E3A5F"/>
+  <circle cx="313.6" cy="242.2" r="8" fill="none" stroke="#1E3A5F" stroke-width="0.5" stroke-opacity="0.3"/>
+  <text x="313.6" y="262.2" font-family="Cormorant Garamond, Georgia, serif" font-size="13" fill="#1E3A5F" text-anchor="middle" font-weight="500">Samoa</text>
+  <text x="313.6" y="275.2" font-family="Source Serif 4, Georgia, serif" font-size="9" fill="#6B6B6B" text-anchor="middle" font-style="italic">Apia · Upolu</text>
+  
+  <!-- Distance -->
+  <text x="446.55" y="124.29999999999998" font-family="Source Serif 4, Georgia, serif" font-size="9" fill="#6B6B6B" text-anchor="middle" font-style="italic">~5,100 mi · via Nadi or Honolulu</text>
+</svg>
       </div>
     </div>
 
     <div class="section-block">
       <h3>Getting There &amp; Return</h3>
-      <table class="data-table">
+      <div class="table-scroll"><table class="data-table">
         <thead><tr><th>Option</th><th>Route</th><th>Class</th><th>Time</th><th>Layover</th><th>Per Person</th><th>Family ×6</th></tr></thead>
         <tbody>
           <tr><td colspan="7" style="background:var(--warm-gray);font-weight:600;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-med);">Outbound — Dec 18</td></tr>
-          <tr><td>Fiji Airways + Samoa Airways</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhoaEgoyMDI2LTEyLTE4agcIARIDU0ZPcgcIARIDQVBX" target="_blank">SFO → NAN → APW</a></td><td>Economy</td><td>14h 30m</td><td>2h 30m in Nadi</td><td class="price">~$1,800</td><td class="family-price">~$10,800</td></tr>
           <tr><td>Fiji Airways + Samoa Airways</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhoaEgoyMDI2LTEyLTE4agcIARIDU0ZPcgcIARIDQVBX" target="_blank">SFO → NAN → APW</a></td><td>Business</td><td>14h 30m</td><td>2h 30m in Nadi</td><td class="price">~$5,400</td><td class="family-price">~$32,400</td></tr>
-          <tr><td>Hawaiian + Samoa Airways</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhoaEgoyMDI2LTEyLTE4agcIARIDU0ZPcgcIARIDSE5MGhoSCjIwMjYtMTItMTgqBwgBEgNITkxyBwgBEgNBUFc" target="_blank">SFO → HNL → APW</a></td><td>Economy</td><td>14h total</td><td>3h in Honolulu</td><td class="price">~$1,650</td><td class="family-price">~$9,900</td></tr>
           <tr><td colspan="7" style="background:var(--warm-gray);font-weight:600;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-med);">Return — Jan 2</td></tr>
-          <tr><td>Samoa Airways + Fiji Airways</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhoaEgoyMDI3LTAxLTAyagcIARIDQVBXcgcIARIDU0ZP" target="_blank">APW → NAN → SFO</a></td><td>Economy</td><td>14h 30m</td><td>2h 30m in Nadi</td><td class="price">~$1,800</td><td class="family-price">~$10,800</td></tr>
           <tr><td>Samoa Airways + Fiji Airways</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhoaEgoyMDI3LTAxLTAyagcIARIDQVBXcgcIARIDU0ZP" target="_blank">APW → NAN → SFO</a></td><td>Business</td><td>14h 30m</td><td>2h 30m in Nadi</td><td class="price">~$5,400</td><td class="family-price">~$32,400</td></tr>
         </tbody>
-      </table>
+      </table></div>
     </div>
 
     <div class="section-block">
@@ -771,37 +904,70 @@ footer {
     <div class="section-block">
       <p class="dest-overview">Rangiroa's lagoon is so vast you can't see the other side — it could swallow Tahiti whole. The second-largest atoll on Earth offers an outpost-of-the-world feeling matched only by the richness of life beneath its surface: dolphins pirouette through Tiputa Pass, baby blacktip sharks patrol ankle-deep flats, and the Blue Lagoon hides a turquoise secret within a secret. Add the planet's only coral-atoll vineyard and you have a destination that defies every expectation of what an island should be.</p>
       <div class="route-map">
-        <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
-          <rect width="600" height="300" fill="#E8E4DC"/>
-          <path d="M0,160 L600,160" stroke="#D4D0C8" stroke-width="0.3" stroke-dasharray="2,4"/>
-          <text x="300" y="168" font-family="Source Serif 4, Georgia, serif" font-size="8" fill="#C4BFB6" text-anchor="middle" font-style="italic">Equator</text>
-          <circle cx="115" cy="95" r="4" fill="#C27B5C"/>
-          <text x="115" y="85" font-family="Source Serif 4, Georgia, serif" font-size="11" fill="#2D2D2D" text-anchor="middle" font-weight="600">SFO</text>
-          <circle cx="410" cy="190" r="5" fill="#1E3A5F"/>
-          <text x="410" y="213" font-family="Cormorant Garamond, Georgia, serif" font-size="13" fill="#1E3A5F" text-anchor="middle" font-weight="500">Rangiroa</text>
-          <text x="410" y="227" font-family="Source Serif 4, Georgia, serif" font-size="9" fill="#6B6B6B" text-anchor="middle" font-style="italic">Tuamotu Archipelago</text>
-          <line x1="119" y1="97" x2="406" y2="188" stroke="#C27B5C" stroke-width="1.5" stroke-dasharray="6,4"/>
-          <polygon points="406,188 398,181 400,189" fill="#C27B5C"/>
-          <text x="280" y="130" font-family="Source Serif 4, Georgia, serif" font-size="9" fill="#6B6B6B" text-anchor="middle" font-style="italic">~4,100 mi · via Papeete</text>
-          <text x="300" y="285" font-family="Source Serif 4, Georgia, serif" font-size="8" fill="#999" text-anchor="middle" letter-spacing="0.15em">PACIFIC OCEAN</text>
-        </svg>
+        <svg viewBox="0 0 700 350" xmlns="http://www.w3.org/2000/svg">
+  <rect width="700" height="350" fill="#E4EAF0" rx="6"/>
+  
+  <!-- Continents -->
+  <path d="M549.2,0 L565.4,0 L568.1,4.1 L568.1,12.4 L570.8,20.6 L578.8,30.9 L589.6,41.2 L605.8,47.4 L608.5,51.5 L616.5,61.8 L630.0,74.1 L646.2,86.5 L667.7,94.7 L678.5,107.1 L700,119.4 L700,127.6 L700,144.1 L700,144.1 L700,123.5 L700,111.2 L700,102.9 L700,82.4 L700,74.1 L700,61.8 L700,49.4 L700,41.2 L700,28.8 L700,16.5 L700,4.1 L700,0 L700,0 L700,0 L549.2,0 Z" fill="#E2DAD0" stroke="#D0C8BE" stroke-width="0.5"/>
+  <path d="M0.0,234.7 L10.8,228.5 L32.3,226.5 L37.7,234.7 L32.3,242.9 L59.2,236.8 L67.3,228.5 L83.5,228.5 L75.4,242.9 L83.5,251.2 L88.8,263.5 L102.3,271.8 L118.5,284.1 L126.5,298.5 L123.8,308.8 L118.5,321.2 L113.1,329.4 L107.7,339.7 L94.2,341.8 L86.2,343.8 L75.4,341.8 L53.8,337.6 L37.7,331.5 L32.3,325.3 L21.5,321.2 L16.2,317.1 L5.4,317.1 L0.0,315.0 L0.0,292.4 L0.0,275.9 L0.0,255.3 L0.0,242.9 L0.0,234.7 Z" fill="#E2DAD0" stroke="#D0C8BE" stroke-width="0.5"/>
+  <path d="M231.5,327.4 L239.6,333.5 L247.7,337.6 L258.5,343.8 L245.0,354.1 L236.9,354.1 L236.9,345.9 L245.0,341.8 L239.6,335.6 L236.9,329.4 L231.5,327.4 Z" fill="#E2DAD0" stroke="#D0C8BE" stroke-width="0.5"/>
+  <path d="M236.9,354.1 L223.5,358.2 L207.3,366.5 L199.2,374.7 L204.6,376.8 L218.1,370.6 L226.2,364.4 L234.2,358.2 L236.9,354.1 Z" fill="#E2DAD0" stroke="#D0C8BE" stroke-width="0.5"/>
+  <path d="M59.2,195.6 L70.0,197.6 L80.8,201.8 L86.2,205.9 L96.9,210.0 L107.7,212.1 L118.5,210.0 L134.6,207.9 L137.3,212.1 L134.6,216.2 L118.5,218.2 L96.9,222.4 L88.8,218.2 L83.5,216.2 L59.2,210.0 L59.2,205.9 L59.2,199.7 L59.2,195.6 Z" fill="#E2DAD0" stroke="#D0C8BE" stroke-width="0.5"/>
+  <path d="M2.7,57.6 L5.4,49.4 L13.5,47.4 L16.2,45.3 L26.9,43.2 L37.7,41.2 L53.8,35.0 L53.8,28.8 L53.8,20.6 L59.2,14.4 L80.8,8.2 L83.5,4.1 L75.4,8.2 L70.0,12.4 L56.5,20.6 L48.5,28.8 L53.8,37.1 L35.0,41.2 L26.9,45.3 L10.8,49.4 L2.7,57.6 Z" fill="#E2DAD0" stroke="#D0C8BE" stroke-width="0.5"/>
+  <path d="M2.7,189.4 L5.4,193.5 L5.4,197.6 L10.8,203.8 L5.4,205.9 L2.7,201.8 L0.0,193.5 L2.7,189.4 Z" fill="#E2DAD0" stroke="#D0C8BE" stroke-width="0.5"/>
+  
+  <!-- Equator -->
+  <line x1="0" y1="185.3" x2="700" y2="185.3" stroke="#B8C6D4" stroke-width="0.4" stroke-dasharray="3,5"/>
+  <text x="15" y="181.3" font-family="Source Serif 4, Georgia, serif" font-size="7" fill="#9AACBE" font-style="italic">Equator</text>
+  
+  <!-- Ocean labels -->
+  <text x="350.0" y="338" font-family="Source Serif 4, Georgia, serif" font-size="8" fill="#9AACBE" text-anchor="middle" letter-spacing="0.2em">PACIFIC OCEAN</text>
+  
+  <!-- Continent labels -->
+  <text x="646.2" y="61.8" font-family="Source Serif 4, Georgia, serif" font-size="8" fill="#B0A898" text-anchor="middle" letter-spacing="0.08em">AMERICAS</text>
+  <text x="53.8" y="288.2" font-family="Source Serif 4, Georgia, serif" font-size="8" fill="#B0A898" text-anchor="middle" letter-spacing="0.08em">AUSTRALIA</text>
+  <circle cx="401.2" cy="97.6" r="2" fill="#B8C6D4"/>
+  <text x="401.2" y="91.6" font-family="Source Serif 4, Georgia, serif" font-size="7" fill="#9AACBE" text-anchor="middle" font-style="italic">Hawai'i</text>
+  <circle cx="295.1" cy="272.6" r="2" fill="#B8C6D4"/>
+  <text x="295.1" y="266.6" font-family="Source Serif 4, Georgia, serif" font-size="7" fill="#9AACBE" text-anchor="middle" font-style="italic">Tonga</text>
+  <circle cx="206.2" cy="258.2" r="2" fill="#B8C6D4"/>
+  <text x="206.2" y="252.2" font-family="Source Serif 4, Georgia, serif" font-size="7" fill="#9AACBE" text-anchor="middle" font-style="italic">Vanuatu</text>
+  <circle cx="196.5" cy="277.1" r="2" fill="#B8C6D4"/>
+  <text x="196.5" y="271.1" font-family="Source Serif 4, Georgia, serif" font-size="7" fill="#9AACBE" text-anchor="middle" font-style="italic">New Caledonia</text>
+  <circle cx="401.2" cy="97.6" r="2.5" fill="#B8C6D4"/>
+  <text x="401.2" y="90.6" font-family="Source Serif 4, Georgia, serif" font-size="7.5" fill="#8A9CAE" text-anchor="middle" font-style="italic">Hawai&#x27;i</text>
+  
+  <!-- Route -->
+  <line x1="579.5" y1="30.4" x2="443.4" y2="247.6" stroke="#C27B5C" stroke-width="1.5" stroke-dasharray="6,4" stroke-linecap="round"/>
+  <polygon points="443.4,247.6 444.5,237.7 451.9,242.3" fill="#C27B5C"/>
+  
+  <!-- SFO -->
+  <circle cx="579.5" cy="30.4" r="4" fill="#C27B5C"/>
+  <text x="579.5" y="21.4" font-family="Source Serif 4, Georgia, serif" font-size="10" fill="#2D2D2D" text-anchor="middle" font-weight="600">SFO</text>
+  
+  <!-- Destination -->
+  <circle cx="443.4" cy="247.6" r="5.5" fill="#1E3A5F"/>
+  <circle cx="443.4" cy="247.6" r="8" fill="none" stroke="#1E3A5F" stroke-width="0.5" stroke-opacity="0.3"/>
+  <text x="443.4" y="267.6" font-family="Cormorant Garamond, Georgia, serif" font-size="13" fill="#1E3A5F" text-anchor="middle" font-weight="500">Rangiroa</text>
+  <text x="443.4" y="280.6" font-family="Source Serif 4, Georgia, serif" font-size="9" fill="#6B6B6B" text-anchor="middle" font-style="italic">Tuamotu Archipelago</text>
+  
+  <!-- Distance -->
+  <text x="511.45" y="127.0" font-family="Source Serif 4, Georgia, serif" font-size="9" fill="#6B6B6B" text-anchor="middle" font-style="italic">~4,100 mi · via Papeete</text>
+</svg>
       </div>
     </div>
 
     <div class="section-block">
       <h3>Getting There &amp; Return</h3>
-      <table class="data-table">
+      <div class="table-scroll"><table class="data-table">
         <thead><tr><th>Option</th><th>Route</th><th>Class</th><th>Time</th><th>Layover</th><th>Per Person</th><th>Family ×6</th></tr></thead>
         <tbody>
           <tr><td colspan="7" style="background:var(--warm-gray);font-weight:600;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-med);">Outbound — Dec 18</td></tr>
-          <tr><td>Air Tahiti Nui + Air Tahiti</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhooEgoyMDI2LTEyLTE4agwIAhIIL20vMGRjbGtyDAgCEggvbS8wcGtwdBooEgoyMDI2LTEyLTE4agwIAhIIL20vMHBrcHRyDAgCEggvbS8wMWtibmg" target="_blank">SFO → PPT → RGI</a></td><td>Economy</td><td>11h 45m</td><td>1h 30m in Papeete</td><td class="price">~$1,800</td><td class="family-price">~$10,800</td></tr>
           <tr><td>Air Tahiti Nui + Air Tahiti</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhooEgoyMDI2LTEyLTE4agwIAhIIL20vMGRjbGtyDAgCEggvbS8wcGtwdBooEgoyMDI2LTEyLTE4agwIAhIIL20vMHBrcHRyDAgCEggvbS8wMWtibmg" target="_blank">SFO → PPT → RGI</a></td><td>Business</td><td>11h 45m</td><td>1h 30m in Papeete</td><td class="price">~$5,200</td><td class="family-price">~$31,200</td></tr>
-          <tr><td>French Bee + Air Tahiti</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhooEgoyMDI2LTEyLTE4agwIAhIIL20vMGRjbGtyDAgCEggvbS8wcGtwdBooEgoyMDI2LTEyLTE4agwIAhIIL20vMHBrcHRyDAgCEggvbS8wMWtibmg" target="_blank">SFO → PPT → RGI</a></td><td>Economy</td><td>12h 15m</td><td>2h 30m in Papeete</td><td class="price">~$1,400</td><td class="family-price">~$8,400</td></tr>
           <tr><td colspan="7" style="background:var(--warm-gray);font-weight:600;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-med);">Return — Jan 2</td></tr>
-          <tr><td>Air Tahiti + Air Tahiti Nui</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhooEgoyMDI3LTAxLTAyagwIAhIIL20vMDFrYm5ocgwIAhIIL20vMHBrcHQaKBIKMjAyNy0wMS0wMmoMCAISCC9tLzBwa3B0cgwIAhIIL20vMGRjbGs" target="_blank">RGI → PPT → SFO</a></td><td>Economy</td><td>11h 45m</td><td>1h 30m in Papeete</td><td class="price">~$1,800</td><td class="family-price">~$10,800</td></tr>
           <tr><td>Air Tahiti + Air Tahiti Nui</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhooEgoyMDI3LTAxLTAyagwIAhIIL20vMDFrYm5ocgwIAhIIL20vMHBrcHQaKBIKMjAyNy0wMS0wMmoMCAISCC9tLzBwa3B0cgwIAhIIL20vMGRjbGs" target="_blank">RGI → PPT → SFO</a></td><td>Business</td><td>11h 45m</td><td>1h 30m in Papeete</td><td class="price">~$5,200</td><td class="family-price">~$31,200</td></tr>
         </tbody>
-      </table>
+      </table></div>
     </div>
 
     <div class="section-block">
@@ -852,7 +1018,7 @@ footer {
 <!-- ═══════════════ COMPARISON ═══════════════ -->
 <section id="compare" class="comparison-section">
   <h2>Side-by-Side Comparison</h2>
-  <table class="data-table">
+  <div class="table-scroll"><table class="data-table">
     <thead><tr><th>Category</th><th>Fakarava</th><th>Fiji</th><th>Aitutaki</th><th>Samoa</th><th>Rangiroa</th></tr></thead>
     <tbody>
       <tr><td><strong>Vibe</strong></td><td>Remote &amp; pristine</td><td>Family-resort paradise</td><td>Lagoon perfection</td><td>Cultural immersion</td><td>Diver's frontier</td></tr>
@@ -866,7 +1032,7 @@ footer {
       <tr><td><strong>Kids Rating</strong></td><td>★★★☆</td><td>★★★★★</td><td>★★★★</td><td>★★★★</td><td>★★★☆</td></tr>
       <tr><td><strong>Family Warning</strong></td><td>Limited dining</td><td>—</td><td>Age restrictions at top resorts</td><td>Seabreeze is adults-only</td><td>Kia Ora may be closed</td></tr>
     </tbody>
-  </table>
+  </table></div>
 </section>
 
 <footer>

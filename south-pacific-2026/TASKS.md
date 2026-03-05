@@ -10,19 +10,18 @@
 - 🔲 Highlight images (0/25) — download these (see Phase 1 below)
 - 🔲 Dining images (0/25) — download these (see Phase 2 below)
 
-## IMMEDIATE TASK: Commit & Push Cowork HTML Updates
+## IMMEDIATE TASK: Commit & Push Cowork HTML Updates (Rev 2)
 
 Cowork has updated `index.html` with these changes:
-- All external links now open in new tabs (target="_blank")
-- Flight tables: business class options + return flights + Dec 18 / Jan 2 dates
-- A&K-style SVG route maps for each destination
-- Destination overview paragraphs
-- Larger card title font (1.18rem)
-- Mobile responsive fixes (no horizontal scroll)
+- Removed all economy flight rows — business class only
+- Flight tables wrapped in `<div class="table-scroll">` for mobile horizontal scroll
+- Card link font bumped from 1.18rem → 1.28rem
+- Route maps replaced: now show real Pacific geography (Americas, Australia, NZ, Japan, PNG, island groups) instead of abstract point-to-point
+- Previous rev changes: target=_blank, business class flights, return flights, Dec 18/Jan 2 dates, overview paragraphs, mobile responsive
 
 **Just run:**
 ```
-git add -A && git commit -m "Rev: route maps, overviews, business class flights, return flights, mobile fix, target=_blank" && git push
+git add -A && git commit -m "Rev2: geographic maps, business-only flights, mobile table scroll, font bump" && git push
 ```
 
 Then continue with the image download tasks below.
