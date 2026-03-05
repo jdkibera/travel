@@ -7,8 +7,27 @@
 - ✅ Hero images (5/5) — downloaded and pushed
 - ✅ Resort thumbnails (12/12) — downloaded and pushed
 - ✅ HTML updated with all refinements — pushed
-- 🔲 Highlight images (0/25) — **NEW: download these**
-- 🔲 Dining images (0/25) — **NEW: download these**
+- 🔲 Highlight images (0/25) — download these (see Phase 1 below)
+- 🔲 Dining images (0/25) — download these (see Phase 2 below)
+
+## IMMEDIATE TASK: Commit & Push Cowork HTML Updates
+
+Cowork has updated `index.html` with these changes:
+- All external links now open in new tabs (target="_blank")
+- Flight tables: business class options + return flights + Dec 18 / Jan 2 dates
+- A&K-style SVG route maps for each destination
+- Destination overview paragraphs
+- Larger card title font (1.18rem)
+- Mobile responsive fixes (no horizontal scroll)
+
+**Just run:**
+```
+git add -A && git commit -m "Rev: route maps, overviews, business class flights, return flights, mobile fix, target=_blank" && git push
+```
+
+Then continue with the image download tasks below.
+
+---
 
 ## NEW TASK: Download 50 Card Thumbnail Images
 

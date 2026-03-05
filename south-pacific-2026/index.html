@@ -154,7 +154,7 @@ img { max-width: 100%; height: auto; display: block; }
 .card-body { padding: 16px 20px; }
 .info-card h5 {
   font-family: var(--font-heading); font-weight: 500;
-  font-size: 1.05rem; color: var(--charcoal); margin-bottom: 6px;
+  font-size: 1.18rem; color: var(--charcoal); margin-bottom: 6px;
 }
 .info-card p {
   font-size: 0.85rem; color: var(--text-med); line-height: 1.6; font-weight: 300;
@@ -189,7 +189,7 @@ img { max-width: 100%; height: auto; display: block; }
 .resort-card-body { padding: 18px 20px; }
 .resort-card-body h5 {
   font-family: var(--font-heading); font-weight: 500;
-  font-size: 1.1rem; color: var(--charcoal); margin-bottom: 4px;
+  font-size: 1.18rem; color: var(--charcoal); margin-bottom: 4px;
 }
 .resort-stars { font-size: 0.82rem; margin-bottom: 6px; }
 .resort-stars .star { color: #E8A838; }
@@ -231,6 +231,25 @@ footer {
 .back-link { display: inline-block; margin-bottom: 8px; font-size: 0.82rem; }
 
 /* ══════════════════════════════════════════════════
+   ROUTE MAP (A&K-STYLE)
+   ══════════════════════════════════════════════════ */
+.route-map {
+  background: var(--warm-gray); border-radius: 10px;
+  padding: 24px; margin-top: 16px; text-align: center;
+  border: 1px solid var(--card-border);
+}
+.route-map svg { max-width: 100%; height: auto; }
+
+/* ══════════════════════════════════════════════════
+   DESTINATION OVERVIEW
+   ══════════════════════════════════════════════════ */
+.dest-overview {
+  font-size: 1.02rem; color: var(--text-dark); line-height: 1.85;
+  font-weight: 300; font-style: italic; max-width: 780px;
+  margin: 0 auto; padding: 8px 0 0;
+}
+
+/* ══════════════════════════════════════════════════
    RESPONSIVE
    ══════════════════════════════════════════════════ */
 @media (max-width: 700px) {
@@ -239,9 +258,15 @@ footer {
   .dest-hero { height: 280px; }
   .dest-hero-overlay { padding: 24px; }
   .dest-hero-overlay h2 { font-size: 2rem; }
-  .data-table { font-size: 0.78rem; }
-  .data-table th, .data-table td { padding: 8px 10px; }
+  .data-table { font-size: 0.72rem; }
+  .data-table th, .data-table td { padding: 6px 8px; }
   .tab-nav { justify-content: flex-start; }
+  .weather-bar { gap: 10px; }
+  .weather-stat { min-width: 80px; padding: 10px 12px; }
+  .comparison-section { padding: 40px 12px 60px; }
+  .comparison-section .data-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .route-map { padding: 16px; }
+  .dest-overview { font-size: 0.95rem; }
 }
 </style>
 </head>
@@ -276,12 +301,39 @@ footer {
   <div class="dest-section">
 
     <div class="section-block">
-      <h3>Getting There</h3>
+      <p class="dest-overview">A slender ribbon of coral adrift in the Tuamotus, Fakarava is French Polynesia at its most unspoiled. The lagoon glows in impossible shades of turquoise, the reef passes teem with sharks and manta rays, and the tiny village of Rotoava still runs on coconut time. For a family that wants to trade crowds for constellations, this is the place — raw, remote, and utterly unforgettable.</p>
+      <div class="route-map">
+        <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+          <rect width="600" height="300" fill="#E8E4DC"/>
+          <path d="M40,80 Q150,60 280,100 Q400,140 520,200 Q560,220 580,260" fill="none" stroke="#D4D0C8" stroke-width="0.5"/>
+          <path d="M20,120 Q100,100 200,110 Q350,130 500,220" fill="none" stroke="#D4D0C8" stroke-width="0.5"/>
+          <path d="M0,160 L600,160" stroke="#D4D0C8" stroke-width="0.3" stroke-dasharray="2,4"/>
+          <text x="300" y="168" font-family="Source Serif 4, Georgia, serif" font-size="8" fill="#C4BFB6" text-anchor="middle" font-style="italic">Equator</text>
+          <circle cx="115" cy="95" r="4" fill="#C27B5C"/>
+          <text x="115" y="85" font-family="Source Serif 4, Georgia, serif" font-size="11" fill="#2D2D2D" text-anchor="middle" font-weight="600">SFO</text>
+          <circle cx="420" cy="195" r="5" fill="#1E3A5F"/>
+          <text x="420" y="218" font-family="Cormorant Garamond, Georgia, serif" font-size="13" fill="#1E3A5F" text-anchor="middle" font-weight="500">Fakarava</text>
+          <text x="400" y="232" font-family="Source Serif 4, Georgia, serif" font-size="9" fill="#6B6B6B" text-anchor="middle" font-style="italic">French Polynesia</text>
+          <line x1="119" y1="97" x2="416" y2="193" stroke="#C27B5C" stroke-width="1.5" stroke-dasharray="6,4"/>
+          <polygon points="416,193 408,186 410,194" fill="#C27B5C"/>
+          <text x="290" y="135" font-family="Source Serif 4, Georgia, serif" font-size="9" fill="#6B6B6B" text-anchor="middle" font-style="italic">~4,200 mi</text>
+          <text x="300" y="285" font-family="Source Serif 4, Georgia, serif" font-size="8" fill="#999" text-anchor="middle" letter-spacing="0.15em">PACIFIC OCEAN</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <h3>Getting There &amp; Return</h3>
       <table class="data-table">
-        <thead><tr><th>Option</th><th>Route</th><th>Time</th><th>Layover</th><th>Aircraft</th><th>Per Person</th><th>Family ×6</th></tr></thead>
+        <thead><tr><th>Option</th><th>Route</th><th>Class</th><th>Time</th><th>Layover</th><th>Per Person</th><th>Family ×6</th></tr></thead>
         <tbody>
-          <tr><td>Air Tahiti Nui + Air Tahiti</td><td><a href="https://www.google.com/travel/flights?q=SFO+to+FAV+via+PPT+December+2026">SFO → PPT → FAV</a></td><td>12h 30m</td><td>2h in Papeete</td><td>787 / ATR 72</td><td class="price">~$1,850</td><td class="family-price">~$11,100</td></tr>
-          <tr><td>French Bee + Air Tahiti</td><td><a href="https://www.google.com/travel/flights?q=SFO+to+FAV+via+PPT+December+2026">SFO → PPT → FAV</a></td><td>12h 45m</td><td>3h in Papeete</td><td>A350 / ATR 72</td><td class="price">~$1,450</td><td class="family-price">~$8,700</td></tr>
+          <tr><td colspan="7" style="background:var(--warm-gray);font-weight:600;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-med);">Outbound — Dec 18</td></tr>
+          <tr><td>Air Tahiti Nui + Air Tahiti</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhooEgoyMDI2LTEyLTE4agwIAhIIL20vMGRjbGtyDAgCEggvbS8wcGtwdBooEgoyMDI2LTEyLTE4agwIAhIIL20vMHBrcHRyDAgCEggvbS8wZjljNA" target="_blank">SFO → PPT → FAV</a></td><td>Economy</td><td>12h 30m</td><td>2h in Papeete</td><td class="price">~$1,850</td><td class="family-price">~$11,100</td></tr>
+          <tr><td>Air Tahiti Nui + Air Tahiti</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhooEgoyMDI2LTEyLTE4agwIAhIIL20vMGRjbGtyDAgCEggvbS8wcGtwdBooEgoyMDI2LTEyLTE4agwIAhIIL20vMHBrcHRyDAgCEggvbS8wZjljNA" target="_blank">SFO → PPT → FAV</a></td><td>Business</td><td>12h 30m</td><td>2h in Papeete</td><td class="price">~$5,200</td><td class="family-price">~$31,200</td></tr>
+          <tr><td>French Bee + Air Tahiti</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhooEgoyMDI2LTEyLTE4agwIAhIIL20vMGRjbGtyDAgCEggvbS8wcGtwdBooEgoyMDI2LTEyLTE4agwIAhIIL20vMHBrcHRyDAgCEggvbS8wZjljNA" target="_blank">SFO → PPT → FAV</a></td><td>Economy</td><td>12h 45m</td><td>3h in Papeete</td><td class="price">~$1,450</td><td class="family-price">~$8,700</td></tr>
+          <tr><td colspan="7" style="background:var(--warm-gray);font-weight:600;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-med);">Return — Jan 2</td></tr>
+          <tr><td>Air Tahiti + Air Tahiti Nui</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhooEgoyMDI3LTAxLTAyagwIAhIIL20vMGY5YzRyDAgCEggvbS8wcGtwdBooEgoyMDI3LTAxLTAyagwIAhIIL20vMHBrcHRyDAgCEggvbS8wZGNsaw" target="_blank">FAV → PPT → SFO</a></td><td>Economy</td><td>12h 30m</td><td>2h in Papeete</td><td class="price">~$1,850</td><td class="family-price">~$11,100</td></tr>
+          <tr><td>Air Tahiti + Air Tahiti Nui</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhooEgoyMDI3LTAxLTAyagwIAhIIL20vMGY5YzRyDAgCEggvbS8wcGtwdBooEgoyMDI3LTAxLTAyagwIAhIIL20vMHBrcHRyDAgCEggvbS8wZGNsaw" target="_blank">FAV → PPT → SFO</a></td><td>Business</td><td>12h 30m</td><td>2h in Papeete</td><td class="price">~$5,200</td><td class="family-price">~$31,200</td></tr>
         </tbody>
       </table>
     </div>
@@ -292,31 +344,31 @@ footer {
         <div class="info-card">
           <div class="card-thumb"><img src="images/highlights/fakarava-garuae-pass.jpg" alt="Garuae Pass" onerror="this.style.display='none'"></div>
           <div class="card-body"><div class="card-tag">Snorkeling</div>
-          <h5><a href="https://www.tripadvisor.com/Attraction_Review-g311734-d2087497-Garuae_Pass-Fakarava_Tuamotu_Archipelago.html">Garuae Pass — North Pass Drift</a></h5>
+          <h5><a href="https://www.tripadvisor.com/Attraction_Review-g311734-d2087497-Garuae_Pass-Fakarava_Tuamotu_Archipelago.html" target="_blank">Garuae Pass — North Pass Drift</a></h5>
           <p>The world's widest atoll pass (1.6 km). Drift snorkel through warm crystal-clear water alongside manta rays, dolphins, and reef sharks. Safe for older kids with a guide.</p></div>
         </div>
         <div class="info-card">
           <div class="card-thumb"><img src="images/highlights/fakarava-south-pass.jpg" alt="South Pass Wall of Sharks" onerror="this.style.display='none'"></div>
           <div class="card-body"><div class="card-tag">Diving</div>
-          <h5><a href="https://www.tripadvisor.com/Attraction_Review-g311734-d7237094-Tumakohua_Pass-Fakarava_Tuamotu_Archipelago.html">Tumakohua — South Pass Wall of Sharks</a></h5>
+          <h5><a href="https://www.tripadvisor.com/Attraction_Review-g311734-d7237094-Tumakohua_Pass-Fakarava_Tuamotu_Archipelago.html" target="_blank">Tumakohua — South Pass Wall of Sharks</a></h5>
           <p>Legendary dive site where 300+ grey reef sharks patrol a narrow channel. Adults-only experience; one of the top 10 dive sites on Earth.</p></div>
         </div>
         <div class="info-card">
           <div class="card-thumb"><img src="images/highlights/fakarava-pink-sand.jpg" alt="Pink Sand Motu" onerror="this.style.display='none'"></div>
           <div class="card-body"><div class="card-tag">Kayaking</div>
-          <h5><a href="https://www.tripadvisor.com/Attraction_Review-g311734-Fakarava_Tuamotu_Archipelago.html">Pink Sand Motu Expedition</a></h5>
+          <h5><a href="https://www.tripadvisor.com/Attraction_Review-g311734-Fakarava_Tuamotu_Archipelago.html" target="_blank">Pink Sand Motu Expedition</a></h5>
           <p>Paddle across the lagoon to uninhabited motus with pink-sand beaches. Pack a picnic and snorkel gear — perfect family adventure.</p></div>
         </div>
         <div class="info-card">
           <div class="card-thumb"><img src="images/highlights/fakarava-rotoava.jpg" alt="Rotoava Village" onerror="this.style.display='none'"></div>
           <div class="card-body"><div class="card-tag">Culture</div>
-          <h5><a href="https://www.tripadvisor.com/Attraction_Review-g311734-Rotoava-Fakarava_Tuamotu_Archipelago.html">Rotoava Village Walking Tour</a></h5>
+          <h5><a href="https://www.tripadvisor.com/Attraction_Review-g311734-Rotoava-Fakarava_Tuamotu_Archipelago.html" target="_blank">Rotoava Village Walking Tour</a></h5>
           <p>Stroll through the main village to see the 19th-century coral church, meet local pearl farmers, and browse shell jewelry. A gentle intro to Tuamotu life.</p></div>
         </div>
         <div class="info-card">
           <div class="card-thumb"><img src="images/highlights/fakarava-bioluminescence.jpg" alt="Bioluminescent lagoon" onerror="this.style.display='none'"></div>
           <div class="card-body"><div class="card-tag">Nature</div>
-          <h5><a href="https://www.tripadvisor.com/Attraction_Review-g311734-Fakarava_Tuamotu_Archipelago.html">Bioluminescent Night Lagoon Tour</a></h5>
+          <h5><a href="https://www.tripadvisor.com/Attraction_Review-g311734-Fakarava_Tuamotu_Archipelago.html" target="_blank">Bioluminescent Night Lagoon Tour</a></h5>
           <p>Wade or kayak into the lagoon at night and watch the water glow electric blue. A magical experience for kids — bring waterproof cameras.</p></div>
         </div>
       </div>
@@ -327,31 +379,31 @@ footer {
       <div class="card-grid">
         <div class="info-card">
           <div class="card-thumb"><img src="images/dining/fakarava-havaiki.jpg" alt="Havaiki Lodge Restaurant" onerror="this.style.display='none'"></div>
-          <div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g311734-Fakarava_Tuamotu_Archipelago.html">Havaiki Lodge Restaurant</a></h5>
+          <div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g311734-Fakarava_Tuamotu_Archipelago.html" target="_blank">Havaiki Lodge Restaurant</a></h5>
           <p>Overwater dining with Polynesian-French fusion — fresh poisson cru, grilled mahi-mahi, and coconut crème brûlée. Family-friendly with kids' portions available.</p>
           <div class="card-price">~$45/person · ~$270 family</div></div>
         </div>
         <div class="info-card">
           <div class="card-thumb"><img src="images/dining/fakarava-tetamanu.jpg" alt="Tetamanu Village dinner" onerror="this.style.display='none'"></div>
-          <div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g311734-Fakarava_Tuamotu_Archipelago.html">Tetamanu Village Table d'Hôte</a></h5>
+          <div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g311734-Fakarava_Tuamotu_Archipelago.html" target="_blank">Tetamanu Village Table d'Hôte</a></h5>
           <p>Communal dinners at the remote south-end pension. Chef cooks the day's catch over coconut-husk fire. A once-in-a-lifetime dining experience.</p>
           <div class="card-price">~$55/person · ~$330 family</div></div>
         </div>
         <div class="info-card">
           <div class="card-thumb"><img src="images/dining/fakarava-kaimoana.jpg" alt="Snack Kaimoana" onerror="this.style.display='none'"></div>
-          <div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g311734-Fakarava_Tuamotu_Archipelago.html">Snack Kaimoana</a></h5>
+          <div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g311734-Fakarava_Tuamotu_Archipelago.html" target="_blank">Snack Kaimoana</a></h5>
           <p>The village's favorite roadside stand in Rotoava. Grilled fish plates, poisson cru wraps, and fresh coconut water. Pure local flavor, cash only.</p>
           <div class="card-price">~$15/person · ~$90 family</div></div>
         </div>
         <div class="info-card">
           <div class="card-thumb"><img src="images/dining/fakarava-veke-veke.jpg" alt="Pension Veke Veke" onerror="this.style.display='none'"></div>
-          <div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g311734-Fakarava_Tuamotu_Archipelago.html">Pension Veke Veke Kitchen</a></h5>
+          <div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g311734-Fakarava_Tuamotu_Archipelago.html" target="_blank">Pension Veke Veke Kitchen</a></h5>
           <p>Home-style pension meals — fried breadfruit, tuna tartare, and banana cake. Reservations required; they cook for guests and walk-ins alike.</p>
           <div class="card-price">~$30/person · ~$180 family</div></div>
         </div>
         <div class="info-card">
           <div class="card-thumb"><img src="images/dining/fakarava-bakery.jpg" alt="Rotoava Bakery" onerror="this.style.display='none'"></div>
-          <div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g311734-Fakarava_Tuamotu_Archipelago.html">Rotoava Bakery &amp; Café</a></h5>
+          <div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g311734-Fakarava_Tuamotu_Archipelago.html" target="_blank">Rotoava Bakery &amp; Café</a></h5>
           <p>Freshly baked baguettes, pain au chocolat, and French-Polynesian pastries. Opens at 6am — a perfect breakfast stop before a dive.</p>
           <div class="card-price">~$10/person · ~$60 family</div></div>
         </div>
@@ -364,8 +416,8 @@ footer {
         <div class="resort-card">
           <div class="resort-thumb"><img src="images/resorts/fakarava-havaiki.jpg" alt="Havaiki Lodge" onerror="this.style.display='none'"><span class="thumb-label">Havaiki Lodge</span></div>
           <div class="resort-card-body">
-            <h5><a href="https://www.havaiki.com/">Havaiki Lodge</a></h5>
-            <div class="resort-stars"><span class="star">★★★★</span>½ · <a href="https://www.tripadvisor.com/Hotel_Review-g311734-d1493007-Havaiki_Lodge-Fakarava_Tuamotu_Archipelago.html">TripAdvisor</a></div>
+            <h5><a href="https://www.havaiki.com/" target="_blank">Havaiki Lodge</a></h5>
+            <div class="resort-stars"><span class="star">★★★★</span>½ · <a href="https://www.tripadvisor.com/Hotel_Review-g311734-d1493007-Havaiki_Lodge-Fakarava_Tuamotu_Archipelago.html" target="_blank">TripAdvisor</a></div>
             <p class="resort-desc">Charming overwater bungalows on the lagoon. Snorkeling right off the deck, kayaks included. Warm Polynesian hospitality and excellent on-site dining.</p>
             <div class="resort-rooms">🛏 Family Bungalow: 1 king + 2 singles — fits 4. Book 2 bungalows for the family.</div>
             <div class="resort-price">~$320/night <span class="resort-total">· ~$640/nt family (2 bungalows) · ~$4,480 total (7 nights)</span></div>
@@ -374,8 +426,8 @@ footer {
         <div class="resort-card">
           <div class="resort-thumb"><img src="images/resorts/fakarava-tetamanu.jpg" alt="Tetamanu Village" onerror="this.style.display='none'"><span class="thumb-label">Tetamanu Village</span></div>
           <div class="resort-card-body">
-            <h5><a href="https://www.tetamanu.com/">Tetamanu Village</a></h5>
-            <div class="resort-stars"><span class="star">★★★★</span>½ · <a href="https://www.tripadvisor.com/Hotel_Review-g311734-d1174818-Tetamanu_Village-Fakarava_Tuamotu_Archipelago.html">TripAdvisor</a></div>
+            <h5><a href="https://www.tetamanu.com/" target="_blank">Tetamanu Village</a></h5>
+            <div class="resort-stars"><span class="star">★★★★</span>½ · <a href="https://www.tripadvisor.com/Hotel_Review-g311734-d1174818-Tetamanu_Village-Fakarava_Tuamotu_Archipelago.html" target="_blank">TripAdvisor</a></div>
             <p class="resort-desc">Remote eco-lodge at the South Pass — world-class diving from your doorstep. Solar-powered, 6 bungalows total. Truly off-the-grid paradise.</p>
             <div class="resort-rooms">🛏 Beach Bungalow: 1 double + 1 single. Book 3 bungalows for family.</div>
             <div class="resort-price">~$280/night <span class="resort-total">· ~$840/nt family (3 bungalows) · ~$5,880 total (7 nights)</span></div>
@@ -398,11 +450,11 @@ footer {
     <div class="section-block">
       <h3>Cultural Connections</h3>
       <div class="card-grid">
-        <div class="info-card"><div class="card-body"><h5><a href="https://www.tahiti-tourisme.com/experiences/pearl-farms/">Tahitian Black Pearl Farm Visit</a></h5><p>Tour a working pearl farm in the lagoon. Learn how Pinctada margaritifera oysters produce the famous black pearls of the Tuamotus. Kids can hold oysters and see the grafting process.</p></div></div>
-        <div class="info-card"><div class="card-body"><h5><a href="https://www.tripadvisor.com/Attraction_Review-g311734-Fakarava_Tuamotu_Archipelago.html">Historic Coral Church of Rotoava</a></h5><p>Visit the 19th-century Protestant church built entirely from coral blocks. One of the oldest standing structures in the Tuamotus and still active for Sunday services.</p></div></div>
-        <div class="info-card"><div class="card-body"><h5><a href="https://whc.unesco.org/en/biosphere-reserves/fakarava/">UNESCO Biosphere Reserve</a></h5><p>Fakarava is one of 7 atolls in the Commune of Fakarava Biosphere Reserve. Learn about marine conservation and sustainable fishing practices from local guides.</p></div></div>
-        <div class="info-card"><div class="card-body"><h5><a href="https://www.tahiti-tourisme.com/experiences/traditional-fishing/">Traditional Net Fishing</a></h5><p>Join local fishermen in the lagoon for traditional "stone fishing" — an ancient Polynesian technique where the community works together to herd fish into shallow water.</p></div></div>
-        <div class="info-card"><div class="card-body"><h5><a href="https://www.tahiti-tourisme.com/experiences/arts-crafts/">Tuamotu Weaving Workshop</a></h5><p>Learn pandanus leaf weaving from village artisans. Make your own hat or basket in a hands-on session — a beautiful souvenir and a genuine cultural exchange.</p></div></div>
+        <div class="info-card"><div class="card-body"><h5><a href="https://www.tahiti-tourisme.com/experiences/pearl-farms/" target="_blank">Tahitian Black Pearl Farm Visit</a></h5><p>Tour a working pearl farm in the lagoon. Learn how Pinctada margaritifera oysters produce the famous black pearls of the Tuamotus. Kids can hold oysters and see the grafting process.</p></div></div>
+        <div class="info-card"><div class="card-body"><h5><a href="https://www.tripadvisor.com/Attraction_Review-g311734-Fakarava_Tuamotu_Archipelago.html" target="_blank">Historic Coral Church of Rotoava</a></h5><p>Visit the 19th-century Protestant church built entirely from coral blocks. One of the oldest standing structures in the Tuamotus and still active for Sunday services.</p></div></div>
+        <div class="info-card"><div class="card-body"><h5><a href="https://whc.unesco.org/en/biosphere-reserves/fakarava/" target="_blank">UNESCO Biosphere Reserve</a></h5><p>Fakarava is one of 7 atolls in the Commune of Fakarava Biosphere Reserve. Learn about marine conservation and sustainable fishing practices from local guides.</p></div></div>
+        <div class="info-card"><div class="card-body"><h5><a href="https://www.tahiti-tourisme.com/experiences/traditional-fishing/" target="_blank">Traditional Net Fishing</a></h5><p>Join local fishermen in the lagoon for traditional "stone fishing" — an ancient Polynesian technique where the community works together to herd fish into shallow water.</p></div></div>
+        <div class="info-card"><div class="card-body"><h5><a href="https://www.tahiti-tourisme.com/experiences/arts-crafts/" target="_blank">Tuamotu Weaving Workshop</a></h5><p>Learn pandanus leaf weaving from village artisans. Make your own hat or basket in a hands-on session — a beautiful souvenir and a genuine cultural exchange.</p></div></div>
       </div>
     </div>
   </div>
@@ -417,12 +469,37 @@ footer {
   <div class="dest-section">
 
     <div class="section-block">
-      <h3>Getting There</h3>
+      <p class="dest-overview">Fiji is the South Pacific's most family-proven destination — and for good reason. The Mamanuca and Yasawa island chains deliver that barefoot-luxury sweet spot where world-class kids' clubs, genuine village culture, and reef-studded lagoons coexist without trying. A ten-hour nonstop from SFO puts you in warm water and warmer smiles. "Bula!" is the first word you'll hear, and the last thing you'll forget.</p>
+      <div class="route-map">
+        <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+          <rect width="600" height="300" fill="#E8E4DC"/>
+          <path d="M0,160 L600,160" stroke="#D4D0C8" stroke-width="0.3" stroke-dasharray="2,4"/>
+          <text x="300" y="168" font-family="Source Serif 4, Georgia, serif" font-size="8" fill="#C4BFB6" text-anchor="middle" font-style="italic">Equator</text>
+          <circle cx="100" cy="95" r="4" fill="#C27B5C"/>
+          <text x="100" y="85" font-family="Source Serif 4, Georgia, serif" font-size="11" fill="#2D2D2D" text-anchor="middle" font-weight="600">SFO</text>
+          <circle cx="490" cy="210" r="5" fill="#1E3A5F"/>
+          <text x="490" y="233" font-family="Cormorant Garamond, Georgia, serif" font-size="13" fill="#1E3A5F" text-anchor="middle" font-weight="500">Fiji</text>
+          <text x="490" y="247" font-family="Source Serif 4, Georgia, serif" font-size="9" fill="#6B6B6B" text-anchor="middle" font-style="italic">Nadi, Mamanucas</text>
+          <line x1="104" y1="97" x2="486" y2="208" stroke="#C27B5C" stroke-width="1.5" stroke-dasharray="6,4"/>
+          <polygon points="486,208 478,201 480,209" fill="#C27B5C"/>
+          <text x="310" y="140" font-family="Source Serif 4, Georgia, serif" font-size="9" fill="#6B6B6B" text-anchor="middle" font-style="italic">~5,500 mi · 10h 30m nonstop</text>
+          <text x="300" y="285" font-family="Source Serif 4, Georgia, serif" font-size="8" fill="#999" text-anchor="middle" letter-spacing="0.15em">PACIFIC OCEAN</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <h3>Getting There &amp; Return</h3>
       <table class="data-table">
-        <thead><tr><th>Option</th><th>Route</th><th>Time</th><th>Layover</th><th>Aircraft</th><th>Per Person</th><th>Family ×6</th></tr></thead>
+        <thead><tr><th>Option</th><th>Route</th><th>Class</th><th>Time</th><th>Layover</th><th>Per Person</th><th>Family ×6</th></tr></thead>
         <tbody>
-          <tr><td>Fiji Airways (Direct)</td><td><a href="https://www.google.com/travel/flights?q=SFO+to+NAN+December+2026">SFO → NAN</a></td><td>10h 30m</td><td>Non-stop</td><td>A350-900</td><td class="price">~$1,600</td><td class="family-price">~$9,600</td></tr>
-          <tr><td>Fiji Airways (via LAX)</td><td><a href="https://www.google.com/travel/flights?q=SFO+to+NAN+via+LAX+December+2026">SFO → LAX → NAN</a></td><td>14h 15m</td><td>2h 30m in LAX</td><td>A330 / A350</td><td class="price">~$1,350</td><td class="family-price">~$8,100</td></tr>
+          <tr><td colspan="7" style="background:var(--warm-gray);font-weight:600;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-med);">Outbound — Dec 18</td></tr>
+          <tr><td>Fiji Airways (Direct)</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhoaEgoyMDI2LTEyLTE4agcIARIDU0ZPcgcIARIDTkFO" target="_blank">SFO → NAN</a></td><td>Economy</td><td>10h 30m</td><td>Non-stop</td><td class="price">~$1,600</td><td class="family-price">~$9,600</td></tr>
+          <tr><td>Fiji Airways (Direct)</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhoaEgoyMDI2LTEyLTE4agcIARIDU0ZPcgcIARIDTkFO" target="_blank">SFO → NAN</a></td><td>Business</td><td>10h 30m</td><td>Non-stop</td><td class="price">~$5,800</td><td class="family-price">~$34,800</td></tr>
+          <tr><td>Fiji Airways (via LAX)</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhoaEgoyMDI2LTEyLTE4agcIARIDU0ZPcgcIARIDTEFYGhoSCjIwMjYtMTItMTgqB0ZKLTgwOToHCAESA05BTg" target="_blank">SFO → LAX → NAN</a></td><td>Economy</td><td>14h 15m</td><td>2h 30m in LAX</td><td class="price">~$1,350</td><td class="family-price">~$8,100</td></tr>
+          <tr><td colspan="7" style="background:var(--warm-gray);font-weight:600;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-med);">Return — Jan 2</td></tr>
+          <tr><td>Fiji Airways (Direct)</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhoaEgoyMDI3LTAxLTAyagcIARIDTkFOcgcIARIDU0ZP" target="_blank">NAN → SFO</a></td><td>Economy</td><td>10h 30m</td><td>Non-stop</td><td class="price">~$1,600</td><td class="family-price">~$9,600</td></tr>
+          <tr><td>Fiji Airways (Direct)</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhoaEgoyMDI3LTAxLTAyagcIARIDTkFOcgcIARIDU0ZP" target="_blank">NAN → SFO</a></td><td>Business</td><td>10h 30m</td><td>Non-stop</td><td class="price">~$5,800</td><td class="family-price">~$34,800</td></tr>
         </tbody>
       </table>
     </div>
@@ -432,23 +509,23 @@ footer {
       <div class="card-grid">
         <div class="info-card">
           <div class="card-thumb"><img src="images/highlights/fiji-cloud9.jpg" alt="Cloud 9 Floating Bar" onerror="this.style.display='none'"></div>
-          <div class="card-body"><div class="card-tag">Adventure</div><h5><a href="https://www.tripadvisor.com/Attraction_Review-g294335-d2290237-Cloud_9_Fiji-Denarau_Island.html">Cloud 9 Floating Bar</a></h5><p>A two-level floating platform bar in the middle of the ocean between Mamanuca islands. Swim, lounge, and eat wood-fired pizza. Kids love the floating trampolines.</p></div>
+          <div class="card-body"><div class="card-tag">Adventure</div><h5><a href="https://www.tripadvisor.com/Attraction_Review-g294335-d2290237-Cloud_9_Fiji-Denarau_Island.html" target="_blank">Cloud 9 Floating Bar</a></h5><p>A two-level floating platform bar in the middle of the ocean between Mamanuca islands. Swim, lounge, and eat wood-fired pizza. Kids love the floating trampolines.</p></div>
         </div>
         <div class="info-card">
           <div class="card-thumb"><img src="images/highlights/fiji-village-kava.jpg" alt="Fijian village kava ceremony" onerror="this.style.display='none'"></div>
-          <div class="card-body"><div class="card-tag">Culture</div><h5><a href="https://www.tripadvisor.com/AttractionProductReview-g294335-d11451791-Fijian_Village_Visit.html">Traditional Village Visit &amp; Kava Ceremony</a></h5><p>Visit an authentic Fijian village, participate in a sevusevu kava ceremony, and watch meke dance performances. An immersive cultural experience kids will remember forever.</p></div>
+          <div class="card-body"><div class="card-tag">Culture</div><h5><a href="https://www.tripadvisor.com/AttractionProductReview-g294335-d11451791-Fijian_Village_Visit.html" target="_blank">Traditional Village Visit &amp; Kava Ceremony</a></h5><p>Visit an authentic Fijian village, participate in a sevusevu kava ceremony, and watch meke dance performances. An immersive cultural experience kids will remember forever.</p></div>
         </div>
         <div class="info-card">
           <div class="card-thumb"><img src="images/highlights/fiji-monuriki.jpg" alt="Monuriki Island" onerror="this.style.display='none'"></div>
-          <div class="card-body"><div class="card-tag">Island Day</div><h5><a href="https://www.tripadvisor.com/Attraction_Review-g1172408-d2180832-Monuriki_Island-Mamanuca_Islands.html">Monuriki Island (Cast Away Island)</a></h5><p>Day trip to the island where "Cast Away" was filmed. Snorkel with sea turtles, hike the volcanic ridge, and beach picnic. Boat transfer ~45 min from Denarau.</p></div>
+          <div class="card-body"><div class="card-tag">Island Day</div><h5><a href="https://www.tripadvisor.com/Attraction_Review-g1172408-d2180832-Monuriki_Island-Mamanuca_Islands.html" target="_blank">Monuriki Island (Cast Away Island)</a></h5><p>Day trip to the island where "Cast Away" was filmed. Snorkel with sea turtles, hike the volcanic ridge, and beach picnic. Boat transfer ~45 min from Denarau.</p></div>
         </div>
         <div class="info-card">
           <div class="card-thumb"><img src="images/highlights/fiji-reef-snorkel.jpg" alt="Mamanuca reef snorkeling" onerror="this.style.display='none'"></div>
-          <div class="card-body"><div class="card-tag">Snorkeling</div><h5><a href="https://www.tripadvisor.com/Attraction_Review-g294335-d14089063-Coral_Reef_Snorkeling-Denarau_Island.html">Mamanuca Reef Snorkel Safari</a></h5><p>Multi-stop snorkel tour across the reef system. See clownfish, parrotfish, and reef sharks in shallow, calm water. Guides carry floats for younger kids.</p></div>
+          <div class="card-body"><div class="card-tag">Snorkeling</div><h5><a href="https://www.tripadvisor.com/Attraction_Review-g294335-d14089063-Coral_Reef_Snorkeling-Denarau_Island.html" target="_blank">Mamanuca Reef Snorkel Safari</a></h5><p>Multi-stop snorkel tour across the reef system. See clownfish, parrotfish, and reef sharks in shallow, calm water. Guides carry floats for younger kids.</p></div>
         </div>
         <div class="info-card">
           <div class="card-thumb"><img src="images/highlights/fiji-hot-springs.jpg" alt="Sabeto Hot Springs" onerror="this.style.display='none'"></div>
-          <div class="card-body"><div class="card-tag">Relaxation</div><h5><a href="https://www.tripadvisor.com/Attraction_Review-g294335-Denarau_Island.html">Sabeto Hot Springs &amp; Mud Pool</a></h5><p>Natural geothermal hot springs and volcanic mud pools near Nadi. Slather on warm mud, let it dry, then rinse in the hot springs. A huge hit with kids of all ages.</p></div>
+          <div class="card-body"><div class="card-tag">Relaxation</div><h5><a href="https://www.tripadvisor.com/Attraction_Review-g294335-Denarau_Island.html" target="_blank">Sabeto Hot Springs &amp; Mud Pool</a></h5><p>Natural geothermal hot springs and volcanic mud pools near Nadi. Slather on warm mud, let it dry, then rinse in the hot springs. A huge hit with kids of all ages.</p></div>
         </div>
       </div>
     </div>
@@ -458,23 +535,23 @@ footer {
       <div class="card-grid">
         <div class="info-card">
           <div class="card-thumb"><img src="images/dining/fiji-chefs.jpg" alt="Chefs The Restaurant" onerror="this.style.display='none'"></div>
-          <div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g294335-d4801671-Chefs_The_Restaurant-Denarau_Island.html">Chefs — The Restaurant</a></h5><p>Port Denarau's top-rated fine dining. Indo-Fijian fusion with fresh seafood, wagyu, and vegan tasting menus. Elegant waterfront setting with a dedicated kids' menu.</p><div class="card-price">~$60/person · ~$360 family</div></div>
+          <div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g294335-d4801671-Chefs_The_Restaurant-Denarau_Island.html" target="_blank">Chefs — The Restaurant</a></h5><p>Port Denarau's top-rated fine dining. Indo-Fijian fusion with fresh seafood, wagyu, and vegan tasting menus. Elegant waterfront setting with a dedicated kids' menu.</p><div class="card-price">~$60/person · ~$360 family</div></div>
         </div>
         <div class="info-card">
           <div class="card-thumb"><img src="images/dining/fiji-nadina.jpg" alt="Nadina Authentic Fijian" onerror="this.style.display='none'"></div>
-          <div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g294335-d6432717-Nadina_Authentic_Fijian_Restaurant-Nadi.html">Nadina Authentic Fijian</a></h5><p>The best lovo (earth-oven) feast in Nadi. Try kokoda (Fijian ceviche), palusami (taro leaves in coconut cream), and cassava cake. Local favorite with huge portions.</p><div class="card-price">~$20/person · ~$120 family</div></div>
+          <div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g294335-d6432717-Nadina_Authentic_Fijian_Restaurant-Nadi.html" target="_blank">Nadina Authentic Fijian</a></h5><p>The best lovo (earth-oven) feast in Nadi. Try kokoda (Fijian ceviche), palusami (taro leaves in coconut cream), and cassava cake. Local favorite with huge portions.</p><div class="card-price">~$20/person · ~$120 family</div></div>
         </div>
         <div class="info-card">
           <div class="card-thumb"><img src="images/dining/fiji-tus-place.jpg" alt="Tu's Place" onerror="this.style.display='none'"></div>
-          <div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g294335-d1174025-Tu_s_Place-Nadi.html">Tu's Place</a></h5><p>Beloved local spot for authentic Fijian-Indian curries, roti, and fresh juices. Unfussy, delicious, and dirt cheap. A Nadi institution for 20+ years.</p><div class="card-price">~$12/person · ~$72 family</div></div>
+          <div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g294335-d1174025-Tu_s_Place-Nadi.html" target="_blank">Tu's Place</a></h5><p>Beloved local spot for authentic Fijian-Indian curries, roti, and fresh juices. Unfussy, delicious, and dirt cheap. A Nadi institution for 20+ years.</p><div class="card-price">~$12/person · ~$72 family</div></div>
         </div>
         <div class="info-card">
           <div class="card-thumb"><img src="images/dining/fiji-nadi-market.jpg" alt="Nadi Town Market" onerror="this.style.display='none'"></div>
-          <div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g294335-Nadi.html">Nadi Town Market Food Stalls</a></h5><p>Wander the open-air market and graze on Indian samosas, Fijian fish curry wraps, tropical fruit smoothies, and fresh coconut. Best Saturday mornings.</p><div class="card-price">~$8/person · ~$48 family</div></div>
+          <div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g294335-Nadi.html" target="_blank">Nadi Town Market Food Stalls</a></h5><p>Wander the open-air market and graze on Indian samosas, Fijian fish curry wraps, tropical fruit smoothies, and fresh coconut. Best Saturday mornings.</p><div class="card-price">~$8/person · ~$48 family</div></div>
         </div>
         <div class="info-card">
           <div class="card-thumb"><img src="images/dining/fiji-lulu.jpg" alt="Lulu Bar" onerror="this.style.display='none'"></div>
-          <div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g294335-d2372437-Lulu_Bar_Restaurant-Denarau_Island.html">Lulu Bar &amp; Restaurant</a></h5><p>Casual beachfront dining at Port Denarau with fresh fish tacos, wood-fired pizza, and Fiji Gold beer on tap. Great sunset views and a playground nearby.</p><div class="card-price">~$25/person · ~$150 family</div></div>
+          <div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g294335-d2372437-Lulu_Bar_Restaurant-Denarau_Island.html" target="_blank">Lulu Bar &amp; Restaurant</a></h5><p>Casual beachfront dining at Port Denarau with fresh fish tacos, wood-fired pizza, and Fiji Gold beer on tap. Great sunset views and a playground nearby.</p><div class="card-price">~$25/person · ~$150 family</div></div>
         </div>
       </div>
     </div>
@@ -482,9 +559,9 @@ footer {
     <div class="section-block">
       <h3>Where to Stay</h3>
       <div class="resort-grid">
-        <div class="resort-card"><div class="resort-thumb"><img src="images/resorts/fiji-six-senses.jpg" alt="Six Senses Fiji" onerror="this.style.display='none'"><span class="thumb-label">Six Senses Fiji</span></div><div class="resort-card-body"><h5><a href="https://www.sixsenses.com/en/resorts/fiji/">Six Senses Fiji</a></h5><div class="resort-stars"><span class="star">★★★★★</span> · <a href="https://www.tripadvisor.com/Hotel_Review-g3181078-d11660279-Six_Senses_Fiji-Malolo_Island_Mamanuca_Islands.html">TripAdvisor</a></div><p class="resort-desc">Ultra-luxury eco-resort on Malolo Island. Private pool residences, world-class spa, and outstanding kids' club (Grow With Six Senses).</p><div class="resort-rooms">🛏 Two-Bedroom Residence: 1 king + 2 twins, private pool. Book 1 residence + 1 pool villa.</div><div class="resort-price">~$1,200/night <span class="resort-total">· ~$2,100/nt family · ~$14,700 total (7 nights)</span></div></div></div>
-        <div class="resort-card"><div class="resort-thumb"><img src="images/resorts/fiji-kokomo.jpg" alt="Kokomo Private Island" onerror="this.style.display='none'"><span class="thumb-label">Kokomo Private Island</span></div><div class="resort-card-body"><h5><a href="https://www.kokomoislandfiji.com/">Kokomo Private Island</a></h5><div class="resort-stars"><span class="star">★★★★★</span> · <a href="https://www.tripadvisor.com/Hotel_Review-g12989498-d11665076-Kokomo_Private_Island-Yaukuve_Levu_Island.html">TripAdvisor</a></div><p class="resort-desc">Private island in the Great Astrolabe Reef. 21 villas with dedicated nannies available. Marine biology programs for kids.</p><div class="resort-rooms">🛏 Three-Bedroom Residence: 1 king + 2 twin rooms, plunge pool, full kitchen. Fits whole family.</div><div class="resort-price">~$3,500/night <span class="resort-total">· ~$3,500/nt family · ~$24,500 total (7 nights)</span></div></div></div>
-        <div class="resort-card"><div class="resort-thumb"><img src="images/resorts/fiji-plantation.jpg" alt="Plantation Island Resort" onerror="this.style.display='none'"><span class="thumb-label">Plantation Island Resort</span></div><div class="resort-card-body"><h5><a href="https://www.plantationisland.com/">Plantation Island Resort</a></h5><div class="resort-stars"><span class="star">★★★★</span> · <a href="https://www.tripadvisor.com/Hotel_Review-g1172408-d293437-Plantation_Island_Resort-Mamanuca_Islands.html">TripAdvisor</a></div><p class="resort-desc">Mamanuca's best family-value resort. Huge lagoon pool, free kids' club (ages 3-12), water sports center, and multiple restaurants.</p><div class="resort-rooms">🛏 Family Bure: 1 king + 2 singles, A/C, patio. Book 2 bures for the family.</div><div class="resort-price">~$350/night <span class="resort-total">· ~$700/nt family (2 bures) · ~$4,900 total (7 nights)</span></div></div></div>
+        <div class="resort-card"><div class="resort-thumb"><img src="images/resorts/fiji-six-senses.jpg" alt="Six Senses Fiji" onerror="this.style.display='none'"><span class="thumb-label">Six Senses Fiji</span></div><div class="resort-card-body"><h5><a href="https://www.sixsenses.com/en/resorts/fiji/" target="_blank">Six Senses Fiji</a></h5><div class="resort-stars"><span class="star">★★★★★</span> · <a href="https://www.tripadvisor.com/Hotel_Review-g3181078-d11660279-Six_Senses_Fiji-Malolo_Island_Mamanuca_Islands.html" target="_blank">TripAdvisor</a></div><p class="resort-desc">Ultra-luxury eco-resort on Malolo Island. Private pool residences, world-class spa, and outstanding kids' club (Grow With Six Senses).</p><div class="resort-rooms">🛏 Two-Bedroom Residence: 1 king + 2 twins, private pool. Book 1 residence + 1 pool villa.</div><div class="resort-price">~$1,200/night <span class="resort-total">· ~$2,100/nt family · ~$14,700 total (7 nights)</span></div></div></div>
+        <div class="resort-card"><div class="resort-thumb"><img src="images/resorts/fiji-kokomo.jpg" alt="Kokomo Private Island" onerror="this.style.display='none'"><span class="thumb-label">Kokomo Private Island</span></div><div class="resort-card-body"><h5><a href="https://www.kokomoislandfiji.com/" target="_blank">Kokomo Private Island</a></h5><div class="resort-stars"><span class="star">★★★★★</span> · <a href="https://www.tripadvisor.com/Hotel_Review-g12989498-d11665076-Kokomo_Private_Island-Yaukuve_Levu_Island.html" target="_blank">TripAdvisor</a></div><p class="resort-desc">Private island in the Great Astrolabe Reef. 21 villas with dedicated nannies available. Marine biology programs for kids.</p><div class="resort-rooms">🛏 Three-Bedroom Residence: 1 king + 2 twin rooms, plunge pool, full kitchen. Fits whole family.</div><div class="resort-price">~$3,500/night <span class="resort-total">· ~$3,500/nt family · ~$24,500 total (7 nights)</span></div></div></div>
+        <div class="resort-card"><div class="resort-thumb"><img src="images/resorts/fiji-plantation.jpg" alt="Plantation Island Resort" onerror="this.style.display='none'"><span class="thumb-label">Plantation Island Resort</span></div><div class="resort-card-body"><h5><a href="https://www.plantationisland.com/" target="_blank">Plantation Island Resort</a></h5><div class="resort-stars"><span class="star">★★★★</span> · <a href="https://www.tripadvisor.com/Hotel_Review-g1172408-d293437-Plantation_Island_Resort-Mamanuca_Islands.html" target="_blank">TripAdvisor</a></div><p class="resort-desc">Mamanuca's best family-value resort. Huge lagoon pool, free kids' club (ages 3-12), water sports center, and multiple restaurants.</p><div class="resort-rooms">🛏 Family Bure: 1 king + 2 singles, A/C, patio. Book 2 bures for the family.</div><div class="resort-price">~$350/night <span class="resort-total">· ~$700/nt family (2 bures) · ~$4,900 total (7 nights)</span></div></div></div>
       </div>
     </div>
 
@@ -493,11 +570,11 @@ footer {
     <div class="section-block">
       <h3>Cultural Connections</h3>
       <div class="card-grid">
-        <div class="info-card"><div class="card-body"><h5><a href="https://www.tripadvisor.com/AttractionProductReview-g294335-d11451791-Fijian_Village_Visit.html">Kava Ceremony &amp; Village Stay</a></h5><p>Present yaqona (kava root) to the village chief in a traditional sevusevu ceremony. Share stories, drink kava, and learn about communal village governance.</p></div></div>
-        <div class="info-card"><div class="card-body"><h5><a href="https://www.tripadvisor.com/Attraction_Review-g294335-d10018587-Garden_of_the_Sleeping_Giant-Nadi.html">Garden of the Sleeping Giant</a></h5><p>Walk through Raymond Burr's former private orchid garden, now home to 2,000+ orchid species. Peaceful and educational for all ages.</p></div></div>
-        <div class="info-card"><div class="card-body"><h5><a href="https://www.tripadvisor.com/Attraction_Review-g294335-Nadi.html">Sri Siva Subramaniya Temple</a></h5><p>The largest Hindu temple in the Southern Hemisphere, right in Nadi. Vibrant Dravidian architecture and a window into Fiji's Indo-Fijian heritage.</p></div></div>
-        <div class="info-card"><div class="card-body"><h5><a href="https://www.tripadvisor.com/Attraction_Review-g294335-Nadi.html">Fijian Meke Dance Performance</a></h5><p>Watch traditional meke — a sacred dance combining chanting, drumming, and choreography that tells Fijian legends. Kids can join in at resort cultural nights.</p></div></div>
-        <div class="info-card"><div class="card-body"><h5><a href="https://www.tripadvisor.com/Attraction_Review-g294335-Nadi.html">Firewalking Ceremony at Beqa Island</a></h5><p>Witness the legendary vilavilairevo — Beqa islanders walk barefoot across white-hot stones. A powerful ancient tradition unique to this Fijian clan.</p></div></div>
+        <div class="info-card"><div class="card-body"><h5><a href="https://www.tripadvisor.com/AttractionProductReview-g294335-d11451791-Fijian_Village_Visit.html" target="_blank">Kava Ceremony &amp; Village Stay</a></h5><p>Present yaqona (kava root) to the village chief in a traditional sevusevu ceremony. Share stories, drink kava, and learn about communal village governance.</p></div></div>
+        <div class="info-card"><div class="card-body"><h5><a href="https://www.tripadvisor.com/Attraction_Review-g294335-d10018587-Garden_of_the_Sleeping_Giant-Nadi.html" target="_blank">Garden of the Sleeping Giant</a></h5><p>Walk through Raymond Burr's former private orchid garden, now home to 2,000+ orchid species. Peaceful and educational for all ages.</p></div></div>
+        <div class="info-card"><div class="card-body"><h5><a href="https://www.tripadvisor.com/Attraction_Review-g294335-Nadi.html" target="_blank">Sri Siva Subramaniya Temple</a></h5><p>The largest Hindu temple in the Southern Hemisphere, right in Nadi. Vibrant Dravidian architecture and a window into Fiji's Indo-Fijian heritage.</p></div></div>
+        <div class="info-card"><div class="card-body"><h5><a href="https://www.tripadvisor.com/Attraction_Review-g294335-Nadi.html" target="_blank">Fijian Meke Dance Performance</a></h5><p>Watch traditional meke — a sacred dance combining chanting, drumming, and choreography that tells Fijian legends. Kids can join in at resort cultural nights.</p></div></div>
+        <div class="info-card"><div class="card-body"><h5><a href="https://www.tripadvisor.com/Attraction_Review-g294335-Nadi.html" target="_blank">Firewalking Ceremony at Beqa Island</a></h5><p>Witness the legendary vilavilairevo — Beqa islanders walk barefoot across white-hot stones. A powerful ancient tradition unique to this Fijian clan.</p></div></div>
       </div>
     </div>
   </div>
@@ -512,12 +589,37 @@ footer {
   <div class="dest-section">
 
     <div class="section-block">
-      <h3>Getting There</h3>
+      <p class="dest-overview">Imagine a lagoon so vivid it looks digitally enhanced — then step into it and realize the photo didn't do it justice. Aitutaki is a tiny Cook Islands atoll ringed by 15 palm-fringed motus and wrapped in water that shifts from aquamarine to sapphire across a single afternoon. One Foot Island's sandbar, the giant clam sanctuary, and some of the friendliest people on Earth make this the kind of place your kids will reference for the rest of their lives.</p>
+      <div class="route-map">
+        <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+          <rect width="600" height="300" fill="#E8E4DC"/>
+          <path d="M0,160 L600,160" stroke="#D4D0C8" stroke-width="0.3" stroke-dasharray="2,4"/>
+          <text x="300" y="168" font-family="Source Serif 4, Georgia, serif" font-size="8" fill="#C4BFB6" text-anchor="middle" font-style="italic">Equator</text>
+          <circle cx="95" cy="90" r="4" fill="#C27B5C"/>
+          <text x="95" y="80" font-family="Source Serif 4, Georgia, serif" font-size="11" fill="#2D2D2D" text-anchor="middle" font-weight="600">SFO</text>
+          <circle cx="440" cy="215" r="5" fill="#1E3A5F"/>
+          <text x="440" y="238" font-family="Cormorant Garamond, Georgia, serif" font-size="13" fill="#1E3A5F" text-anchor="middle" font-weight="500">Aitutaki</text>
+          <text x="440" y="252" font-family="Source Serif 4, Georgia, serif" font-size="9" fill="#6B6B6B" text-anchor="middle" font-style="italic">Cook Islands</text>
+          <line x1="99" y1="92" x2="436" y2="213" stroke="#C27B5C" stroke-width="1.5" stroke-dasharray="6,4"/>
+          <polygon points="436,213 428,206 430,214" fill="#C27B5C"/>
+          <text x="280" y="140" font-family="Source Serif 4, Georgia, serif" font-size="9" fill="#6B6B6B" text-anchor="middle" font-style="italic">~4,600 mi · via Auckland or LAX</text>
+          <text x="300" y="285" font-family="Source Serif 4, Georgia, serif" font-size="8" fill="#999" text-anchor="middle" letter-spacing="0.15em">PACIFIC OCEAN</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <h3>Getting There &amp; Return</h3>
       <table class="data-table">
-        <thead><tr><th>Option</th><th>Route</th><th>Time</th><th>Layover</th><th>Aircraft</th><th>Per Person</th><th>Family ×6</th></tr></thead>
+        <thead><tr><th>Option</th><th>Route</th><th>Class</th><th>Time</th><th>Layover</th><th>Per Person</th><th>Family ×6</th></tr></thead>
         <tbody>
-          <tr><td>Air NZ + Air Rarotonga</td><td><a href="https://www.google.com/travel/flights?q=SFO+to+AIT+via+AKL+RAR+December+2026">SFO → AKL → RAR → AIT</a></td><td>18h total</td><td>3h AKL + 1h RAR</td><td>787 / A320 / Saab 340</td><td class="price">~$2,100</td><td class="family-price">~$12,600</td></tr>
-          <tr><td>Air NZ (via LAX)</td><td><a href="https://www.google.com/travel/flights?q=SFO+to+RAR+via+LAX+December+2026">SFO → LAX → RAR → AIT</a></td><td>16h total</td><td>2h LAX + 1h RAR</td><td>A321 / 787 / Saab 340</td><td class="price">~$1,900</td><td class="family-price">~$11,400</td></tr>
+          <tr><td colspan="7" style="background:var(--warm-gray);font-weight:600;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-med);">Outbound — Dec 18</td></tr>
+          <tr><td>Air NZ + Air Rarotonga</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhoaEgoyMDI2LTEyLTE4agcIARIDU0ZPcgcIARIEUkFSQQ" target="_blank">SFO → AKL → RAR → AIT</a></td><td>Economy</td><td>18h total</td><td>3h AKL + 1h RAR</td><td class="price">~$2,100</td><td class="family-price">~$12,600</td></tr>
+          <tr><td>Air NZ + Air Rarotonga</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhoaEgoyMDI2LTEyLTE4agcIARIDU0ZPcgcIARIEUkFSQQ" target="_blank">SFO → AKL → RAR → AIT</a></td><td>Business</td><td>18h total</td><td>3h AKL + 1h RAR</td><td class="price">~$6,500</td><td class="family-price">~$39,000</td></tr>
+          <tr><td>Air NZ (via LAX)</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhoaEgoyMDI2LTEyLTE4agcIARIDU0ZPcgcIARIEUkFSQQ" target="_blank">SFO → LAX → RAR → AIT</a></td><td>Economy</td><td>16h total</td><td>2h LAX + 1h RAR</td><td class="price">~$1,900</td><td class="family-price">~$11,400</td></tr>
+          <tr><td colspan="7" style="background:var(--warm-gray);font-weight:600;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-med);">Return — Jan 2</td></tr>
+          <tr><td>Air Rarotonga + Air NZ</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhoaEgoyMDI3LTAxLTAyagcIARIEUkFSQXIHCAESA1NGTw" target="_blank">AIT → RAR → AKL → SFO</a></td><td>Economy</td><td>18h total</td><td>1h RAR + 3h AKL</td><td class="price">~$2,100</td><td class="family-price">~$12,600</td></tr>
+          <tr><td>Air Rarotonga + Air NZ</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhoaEgoyMDI3LTAxLTAyagcIARIEUkFSQXIHCAESA1NGTw" target="_blank">AIT → RAR → AKL → SFO</a></td><td>Business</td><td>18h total</td><td>1h RAR + 3h AKL</td><td class="price">~$6,500</td><td class="family-price">~$39,000</td></tr>
         </tbody>
       </table>
     </div>
@@ -525,22 +627,22 @@ footer {
     <div class="section-block">
       <h3>Highlights</h3>
       <div class="card-grid">
-        <div class="info-card"><div class="card-thumb"><img src="images/highlights/aitutaki-one-foot.jpg" alt="One Foot Island" onerror="this.style.display='none'"></div><div class="card-body"><div class="card-tag">Lagoon Cruise</div><h5><a href="https://www.tripadvisor.com/AttractionProductReview-g1758004-d12171784-Aitutaki_Lagoon_Day_Cruise.html">One Foot Island Lagoon Cruise</a></h5><p>The quintessential Aitutaki experience. Full-day cruise across the turquoise lagoon to One Foot Island. Get your passport stamped, snorkel, and BBQ lunch on a sand bar.</p></div></div>
-        <div class="info-card"><div class="card-thumb"><img src="images/highlights/aitutaki-giant-clams.jpg" alt="Giant clam sanctuary" onerror="this.style.display='none'"></div><div class="card-body"><div class="card-tag">Snorkeling</div><h5><a href="https://www.tripadvisor.com/Attraction_Review-g1758004-Aitutaki_Southern_Cook_Islands.html">Giant Clam Sanctuary</a></h5><p>Snorkel over a protected area of giant tridacna clams — some over 100 years old, with iridescent blue and green mantles. Shallow water, perfect for kids.</p></div></div>
-        <div class="info-card"><div class="card-thumb"><img src="images/highlights/aitutaki-fishing.jpg" alt="Deep sea fishing" onerror="this.style.display='none'"></div><div class="card-body"><div class="card-tag">Fishing</div><h5><a href="https://www.tripadvisor.com/Attraction_Review-g1758004-Aitutaki_Southern_Cook_Islands.html">Deep Sea Fishing Charter</a></h5><p>Chase yellowfin tuna, mahi-mahi, and wahoo outside the reef. Half-day charters with kid-friendly captains. Your catch gets cooked at your resort that night.</p></div></div>
-        <div class="info-card"><div class="card-thumb"><img src="images/highlights/aitutaki-maunga-pu.jpg" alt="Maunga Pu summit view" onerror="this.style.display='none'"></div><div class="card-body"><div class="card-tag">Hike</div><h5><a href="https://www.tripadvisor.com/Attraction_Review-g1758004-d14003542-Maunga_Pu_Lookout-Aitutaki_Southern_Cook_Islands.html">Maunga Pu Summit Hike</a></h5><p>Short hike (30 min) to Aitutaki's highest point (124m). Panoramic 360° views of the entire lagoon and all 15 motus. Best at sunset. Manageable for ages 8+.</p></div></div>
-        <div class="info-card"><div class="card-thumb"><img src="images/highlights/aitutaki-honeymoon.jpg" alt="Honeymoon Island" onerror="this.style.display='none'"></div><div class="card-body"><div class="card-tag">Beach</div><h5><a href="https://www.tripadvisor.com/Attraction_Review-g1758004-Aitutaki_Southern_Cook_Islands.html">Honeymoon Island (Motu Akaiami)</a></h5><p>Tiny uninhabited islet with the whitest sand in the Cooks. Arrive by kayak or water taxi. Pure Robinson Crusoe vibes — bring your own shade and snorkel gear.</p></div></div>
+        <div class="info-card"><div class="card-thumb"><img src="images/highlights/aitutaki-one-foot.jpg" alt="One Foot Island" onerror="this.style.display='none'"></div><div class="card-body"><div class="card-tag">Lagoon Cruise</div><h5><a href="https://www.tripadvisor.com/AttractionProductReview-g1758004-d12171784-Aitutaki_Lagoon_Day_Cruise.html" target="_blank">One Foot Island Lagoon Cruise</a></h5><p>The quintessential Aitutaki experience. Full-day cruise across the turquoise lagoon to One Foot Island. Get your passport stamped, snorkel, and BBQ lunch on a sand bar.</p></div></div>
+        <div class="info-card"><div class="card-thumb"><img src="images/highlights/aitutaki-giant-clams.jpg" alt="Giant clam sanctuary" onerror="this.style.display='none'"></div><div class="card-body"><div class="card-tag">Snorkeling</div><h5><a href="https://www.tripadvisor.com/Attraction_Review-g1758004-Aitutaki_Southern_Cook_Islands.html" target="_blank">Giant Clam Sanctuary</a></h5><p>Snorkel over a protected area of giant tridacna clams — some over 100 years old, with iridescent blue and green mantles. Shallow water, perfect for kids.</p></div></div>
+        <div class="info-card"><div class="card-thumb"><img src="images/highlights/aitutaki-fishing.jpg" alt="Deep sea fishing" onerror="this.style.display='none'"></div><div class="card-body"><div class="card-tag">Fishing</div><h5><a href="https://www.tripadvisor.com/Attraction_Review-g1758004-Aitutaki_Southern_Cook_Islands.html" target="_blank">Deep Sea Fishing Charter</a></h5><p>Chase yellowfin tuna, mahi-mahi, and wahoo outside the reef. Half-day charters with kid-friendly captains. Your catch gets cooked at your resort that night.</p></div></div>
+        <div class="info-card"><div class="card-thumb"><img src="images/highlights/aitutaki-maunga-pu.jpg" alt="Maunga Pu summit view" onerror="this.style.display='none'"></div><div class="card-body"><div class="card-tag">Hike</div><h5><a href="https://www.tripadvisor.com/Attraction_Review-g1758004-d14003542-Maunga_Pu_Lookout-Aitutaki_Southern_Cook_Islands.html" target="_blank">Maunga Pu Summit Hike</a></h5><p>Short hike (30 min) to Aitutaki's highest point (124m). Panoramic 360° views of the entire lagoon and all 15 motus. Best at sunset. Manageable for ages 8+.</p></div></div>
+        <div class="info-card"><div class="card-thumb"><img src="images/highlights/aitutaki-honeymoon.jpg" alt="Honeymoon Island" onerror="this.style.display='none'"></div><div class="card-body"><div class="card-tag">Beach</div><h5><a href="https://www.tripadvisor.com/Attraction_Review-g1758004-Aitutaki_Southern_Cook_Islands.html" target="_blank">Honeymoon Island (Motu Akaiami)</a></h5><p>Tiny uninhabited islet with the whitest sand in the Cooks. Arrive by kayak or water taxi. Pure Robinson Crusoe vibes — bring your own shade and snorkel gear.</p></div></div>
       </div>
     </div>
 
     <div class="section-block">
       <h3>Food &amp; Dining</h3>
       <div class="card-grid">
-        <div class="info-card"><div class="card-thumb"><img src="images/dining/aitutaki-rapae-bay.jpg" alt="Rapae Bay Restaurant" onerror="this.style.display='none'"></div><div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g1758004-d12640889-Rapae_Bay_Restaurant-Aitutaki_Southern_Cook_Islands.html">Rapae Bay Restaurant</a></h5><p>Fine dining on the lagoon — the best restaurant on Aitutaki. Pan-seared parrotfish, coconut-crusted prawns, and passion fruit cheesecake.</p><div class="card-price">~$55/person · ~$330 family</div></div></div>
-        <div class="info-card"><div class="card-thumb"><img src="images/dining/aitutaki-boat-shed.jpg" alt="The Boat Shed" onerror="this.style.display='none'"></div><div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g1758004-Aitutaki_Southern_Cook_Islands.html">The Boat Shed Bar &amp; Grill</a></h5><p>Casual waterfront spot with wood-fired pizza and fresh-catch fish &amp; chips. Local Matutu lager on tap. Kids love the beanbags and sand floor.</p><div class="card-price">~$25/person · ~$150 family</div></div></div>
-        <div class="info-card"><div class="card-thumb"><img src="images/dining/aitutaki-koru.jpg" alt="Koru Café" onerror="this.style.display='none'"></div><div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g1758004-Aitutaki_Southern_Cook_Islands.html">Koru Café</a></h5><p>Charming garden café with all-day breakfast, fresh smoothies, and home-baked banana bread. The island's best coffee and a quiet vibe for morning planning.</p><div class="card-price">~$15/person · ~$90 family</div></div></div>
-        <div class="info-card"><div class="card-thumb"><img src="images/dining/aitutaki-tamanu.jpg" alt="Are Tamanu Beach" onerror="this.style.display='none'"></div><div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g1758004-Aitutaki_Southern_Cook_Islands.html">Are Tamanu Beach Restaurant</a></h5><p>Cook Islands cuisine on the beach — ika mata (raw fish in coconut cream), grilled lobster tail, and taro chips. Feet in the sand atmosphere.</p><div class="card-price">~$40/person · ~$240 family</div></div></div>
-        <div class="info-card"><div class="card-thumb"><img src="images/dining/aitutaki-island-night.jpg" alt="Island Night buffet" onerror="this.style.display='none'"></div><div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g1758004-Aitutaki_Southern_Cook_Islands.html">Island Night Buffet &amp; Dance Show</a></h5><p>Thursday/Saturday island nights feature a massive Cook Islands buffet and hip-shaking ura dance show. The 4-year-old will want to join the dancers.</p><div class="card-price">~$50/person · ~$300 family</div></div></div>
+        <div class="info-card"><div class="card-thumb"><img src="images/dining/aitutaki-rapae-bay.jpg" alt="Rapae Bay Restaurant" onerror="this.style.display='none'"></div><div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g1758004-d12640889-Rapae_Bay_Restaurant-Aitutaki_Southern_Cook_Islands.html" target="_blank">Rapae Bay Restaurant</a></h5><p>Fine dining on the lagoon — the best restaurant on Aitutaki. Pan-seared parrotfish, coconut-crusted prawns, and passion fruit cheesecake.</p><div class="card-price">~$55/person · ~$330 family</div></div></div>
+        <div class="info-card"><div class="card-thumb"><img src="images/dining/aitutaki-boat-shed.jpg" alt="The Boat Shed" onerror="this.style.display='none'"></div><div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g1758004-Aitutaki_Southern_Cook_Islands.html" target="_blank">The Boat Shed Bar &amp; Grill</a></h5><p>Casual waterfront spot with wood-fired pizza and fresh-catch fish &amp; chips. Local Matutu lager on tap. Kids love the beanbags and sand floor.</p><div class="card-price">~$25/person · ~$150 family</div></div></div>
+        <div class="info-card"><div class="card-thumb"><img src="images/dining/aitutaki-koru.jpg" alt="Koru Café" onerror="this.style.display='none'"></div><div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g1758004-Aitutaki_Southern_Cook_Islands.html" target="_blank">Koru Café</a></h5><p>Charming garden café with all-day breakfast, fresh smoothies, and home-baked banana bread. The island's best coffee and a quiet vibe for morning planning.</p><div class="card-price">~$15/person · ~$90 family</div></div></div>
+        <div class="info-card"><div class="card-thumb"><img src="images/dining/aitutaki-tamanu.jpg" alt="Are Tamanu Beach" onerror="this.style.display='none'"></div><div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g1758004-Aitutaki_Southern_Cook_Islands.html" target="_blank">Are Tamanu Beach Restaurant</a></h5><p>Cook Islands cuisine on the beach — ika mata (raw fish in coconut cream), grilled lobster tail, and taro chips. Feet in the sand atmosphere.</p><div class="card-price">~$40/person · ~$240 family</div></div></div>
+        <div class="info-card"><div class="card-thumb"><img src="images/dining/aitutaki-island-night.jpg" alt="Island Night buffet" onerror="this.style.display='none'"></div><div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g1758004-Aitutaki_Southern_Cook_Islands.html" target="_blank">Island Night Buffet &amp; Dance Show</a></h5><p>Thursday/Saturday island nights feature a massive Cook Islands buffet and hip-shaking ura dance show. The 4-year-old will want to join the dancers.</p><div class="card-price">~$50/person · ~$300 family</div></div></div>
       </div>
     </div>
 
@@ -548,8 +650,8 @@ footer {
       <h3>Where to Stay</h3>
       <div class="resort-warn">⚠ <strong>Important for families:</strong> Several top Aitutaki resorts have minimum age requirements. Pacific Resort (12+), Aitutaki Lagoon Private Island (16+), Te Vakaroa (12+, Rarotonga). Plan accordingly with a 4-year-old.</div>
       <div class="resort-grid">
-        <div class="resort-card"><div class="resort-thumb"><img src="images/resorts/aitutaki-tamanu.jpg" alt="Tamanu Beach" onerror="this.style.display='none'"><span class="thumb-label">Tamanu Beach</span></div><div class="resort-card-body"><h5><a href="https://www.tamanubeach.com/">Tamanu Beach Resort</a></h5><div class="resort-stars"><span class="star">★★★★</span> · <a href="https://www.tripadvisor.com/Hotel_Review-g1758004-d1174014-Tamanu_Beach-Aitutaki_Southern_Cook_Islands.html">TripAdvisor</a></div><p class="resort-desc">Beachfront resort welcoming all ages. Spacious villas with kitchenettes, direct lagoon access, and kayaks.</p><div class="resort-rooms">🛏 Family Villa: 1 king + 2 singles, kitchenette, patio. Book 2 villas for the family.</div><div class="resort-price">~$380/night <span class="resort-total">· ~$760/nt family (2 villas) · ~$5,320 total (7 nights)</span></div></div></div>
-        <div class="resort-card"><div class="resort-thumb"><img src="images/resorts/aitutaki-etu-moana.jpg" alt="Etu Moana" onerror="this.style.display='none'"><span class="thumb-label">Etu Moana</span></div><div class="resort-card-body"><h5><a href="https://www.etumoana.com/">Etu Moana Beach Villas</a></h5><div class="resort-stars"><span class="star">★★★★</span>½ · <a href="https://www.tripadvisor.com/Hotel_Review-g1758004-d1174015-Etu_Moana_Boutique_Beach_Villas-Aitutaki_Southern_Cook_Islands.html">TripAdvisor</a></div><p class="resort-desc">Boutique villas right on the lagoon. Full kitchen and outdoor shower. 8 villas total. All ages welcome.</p><div class="resort-rooms">🛏 Two-Bedroom Villa: 1 king + 1 twin room, full kitchen. Book 2 villas.</div><div class="resort-price">~$450/night <span class="resort-total">· ~$900/nt family (2 villas) · ~$6,300 total (7 nights)</span></div></div></div>
+        <div class="resort-card"><div class="resort-thumb"><img src="images/resorts/aitutaki-tamanu.jpg" alt="Tamanu Beach" onerror="this.style.display='none'"><span class="thumb-label">Tamanu Beach</span></div><div class="resort-card-body"><h5><a href="https://www.tamanubeach.com/" target="_blank">Tamanu Beach Resort</a></h5><div class="resort-stars"><span class="star">★★★★</span> · <a href="https://www.tripadvisor.com/Hotel_Review-g1758004-d1174014-Tamanu_Beach-Aitutaki_Southern_Cook_Islands.html" target="_blank">TripAdvisor</a></div><p class="resort-desc">Beachfront resort welcoming all ages. Spacious villas with kitchenettes, direct lagoon access, and kayaks.</p><div class="resort-rooms">🛏 Family Villa: 1 king + 2 singles, kitchenette, patio. Book 2 villas for the family.</div><div class="resort-price">~$380/night <span class="resort-total">· ~$760/nt family (2 villas) · ~$5,320 total (7 nights)</span></div></div></div>
+        <div class="resort-card"><div class="resort-thumb"><img src="images/resorts/aitutaki-etu-moana.jpg" alt="Etu Moana" onerror="this.style.display='none'"><span class="thumb-label">Etu Moana</span></div><div class="resort-card-body"><h5><a href="https://www.etumoana.com/" target="_blank">Etu Moana Beach Villas</a></h5><div class="resort-stars"><span class="star">★★★★</span>½ · <a href="https://www.tripadvisor.com/Hotel_Review-g1758004-d1174015-Etu_Moana_Boutique_Beach_Villas-Aitutaki_Southern_Cook_Islands.html" target="_blank">TripAdvisor</a></div><p class="resort-desc">Boutique villas right on the lagoon. Full kitchen and outdoor shower. 8 villas total. All ages welcome.</p><div class="resort-rooms">🛏 Two-Bedroom Villa: 1 king + 1 twin room, full kitchen. Book 2 villas.</div><div class="resort-price">~$450/night <span class="resort-total">· ~$900/nt family (2 villas) · ~$6,300 total (7 nights)</span></div></div></div>
       </div>
     </div>
 
@@ -558,11 +660,11 @@ footer {
     <div class="section-block">
       <h3>Cultural Connections</h3>
       <div class="card-grid">
-        <div class="info-card"><div class="card-body"><h5><a href="https://www.tripadvisor.com/Attraction_Review-g1758004-Aitutaki_Southern_Cook_Islands.html">Cook Islands Christian Church (CICC)</a></h5><p>Attend a Sunday service with soaring a cappella hymns in Cook Islands Māori. The coral-stone churches are stunning and the singing is world-class.</p></div></div>
-        <div class="info-card"><div class="card-body"><h5><a href="https://www.tripadvisor.com/Attraction_Review-g1758004-Aitutaki_Southern_Cook_Islands.html">Marae Ruins — Ancient Stone Temples</a></h5><p>Explore ancient Polynesian ceremonial platforms (marae) scattered across the island. Your guide explains their role in pre-Christian Cook Islands society.</p></div></div>
-        <div class="info-card"><div class="card-body"><h5><a href="https://www.tripadvisor.com/Attraction_Review-g1758004-Aitutaki_Southern_Cook_Islands.html">Tivaevae Quilting Workshop</a></h5><p>Learn the art of tivaevae — intricately hand-stitched appliqué quilts that are a symbol of Cook Islands women's craft. A unique hands-on experience.</p></div></div>
-        <div class="info-card"><div class="card-body"><h5><a href="https://www.tripadvisor.com/Attraction_Review-g1758004-Aitutaki_Southern_Cook_Islands.html">Ura Dance Performance &amp; Lesson</a></h5><p>Watch the rhythmic hip-swaying ura dance — Cook Islands' signature art form. Audience participation encouraged; kids always steal the show.</p></div></div>
-        <div class="info-card"><div class="card-body"><h5><a href="https://www.tripadvisor.com/Attraction_Review-g1758004-Aitutaki_Southern_Cook_Islands.html">Coconut Husking &amp; Weaving Demo</a></h5><p>Learn to husk a coconut with a machete, grate the meat, and extract fresh cream. Then weave coconut fronds into baskets and plates.</p></div></div>
+        <div class="info-card"><div class="card-body"><h5><a href="https://www.tripadvisor.com/Attraction_Review-g1758004-Aitutaki_Southern_Cook_Islands.html" target="_blank">Cook Islands Christian Church (CICC)</a></h5><p>Attend a Sunday service with soaring a cappella hymns in Cook Islands Māori. The coral-stone churches are stunning and the singing is world-class.</p></div></div>
+        <div class="info-card"><div class="card-body"><h5><a href="https://www.tripadvisor.com/Attraction_Review-g1758004-Aitutaki_Southern_Cook_Islands.html" target="_blank">Marae Ruins — Ancient Stone Temples</a></h5><p>Explore ancient Polynesian ceremonial platforms (marae) scattered across the island. Your guide explains their role in pre-Christian Cook Islands society.</p></div></div>
+        <div class="info-card"><div class="card-body"><h5><a href="https://www.tripadvisor.com/Attraction_Review-g1758004-Aitutaki_Southern_Cook_Islands.html" target="_blank">Tivaevae Quilting Workshop</a></h5><p>Learn the art of tivaevae — intricately hand-stitched appliqué quilts that are a symbol of Cook Islands women's craft. A unique hands-on experience.</p></div></div>
+        <div class="info-card"><div class="card-body"><h5><a href="https://www.tripadvisor.com/Attraction_Review-g1758004-Aitutaki_Southern_Cook_Islands.html" target="_blank">Ura Dance Performance &amp; Lesson</a></h5><p>Watch the rhythmic hip-swaying ura dance — Cook Islands' signature art form. Audience participation encouraged; kids always steal the show.</p></div></div>
+        <div class="info-card"><div class="card-body"><h5><a href="https://www.tripadvisor.com/Attraction_Review-g1758004-Aitutaki_Southern_Cook_Islands.html" target="_blank">Coconut Husking &amp; Weaving Demo</a></h5><p>Learn to husk a coconut with a machete, grate the meat, and extract fresh cream. Then weave coconut fronds into baskets and plates.</p></div></div>
       </div>
     </div>
   </div>
@@ -577,12 +679,37 @@ footer {
   <div class="dest-section">
 
     <div class="section-block">
-      <h3>Getting There</h3>
+      <p class="dest-overview">Samoa is the South Pacific destination that hasn't been polished for tourists — and that's exactly why it's extraordinary. Sunday church hymns shake the rafters, umu feasts slow-cook in underground ovens, and fire-knife dancers send sparks swirling into the tropical night. From the surreal turquoise swimming hole at To Sua to the thundering blowholes of Savai'i, this is Polynesia at its most genuine. Your family won't just visit Samoa — you'll be adopted by it.</p>
+      <div class="route-map">
+        <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+          <rect width="600" height="300" fill="#E8E4DC"/>
+          <path d="M0,160 L600,160" stroke="#D4D0C8" stroke-width="0.3" stroke-dasharray="2,4"/>
+          <text x="300" y="168" font-family="Source Serif 4, Georgia, serif" font-size="8" fill="#C4BFB6" text-anchor="middle" font-style="italic">Equator</text>
+          <circle cx="90" cy="95" r="4" fill="#C27B5C"/>
+          <text x="90" y="85" font-family="Source Serif 4, Georgia, serif" font-size="11" fill="#2D2D2D" text-anchor="middle" font-weight="600">SFO</text>
+          <circle cx="505" cy="195" r="5" fill="#1E3A5F"/>
+          <text x="505" y="218" font-family="Cormorant Garamond, Georgia, serif" font-size="13" fill="#1E3A5F" text-anchor="middle" font-weight="500">Samoa</text>
+          <text x="505" y="232" font-family="Source Serif 4, Georgia, serif" font-size="9" fill="#6B6B6B" text-anchor="middle" font-style="italic">Apia, Upolu</text>
+          <line x1="94" y1="97" x2="501" y2="193" stroke="#C27B5C" stroke-width="1.5" stroke-dasharray="6,4"/>
+          <polygon points="501,193 493,186 495,194" fill="#C27B5C"/>
+          <text x="310" y="132" font-family="Source Serif 4, Georgia, serif" font-size="9" fill="#6B6B6B" text-anchor="middle" font-style="italic">~5,100 mi · via Nadi or Honolulu</text>
+          <text x="300" y="285" font-family="Source Serif 4, Georgia, serif" font-size="8" fill="#999" text-anchor="middle" letter-spacing="0.15em">PACIFIC OCEAN</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <h3>Getting There &amp; Return</h3>
       <table class="data-table">
-        <thead><tr><th>Option</th><th>Route</th><th>Time</th><th>Layover</th><th>Aircraft</th><th>Per Person</th><th>Family ×6</th></tr></thead>
+        <thead><tr><th>Option</th><th>Route</th><th>Class</th><th>Time</th><th>Layover</th><th>Per Person</th><th>Family ×6</th></tr></thead>
         <tbody>
-          <tr><td>Fiji Airways + Samoa Airways</td><td><a href="https://www.google.com/travel/flights?q=SFO+to+APW+via+NAN+December+2026">SFO → NAN → APW</a></td><td>14h 30m</td><td>2h 30m in Nadi</td><td>A350 / 737</td><td class="price">~$1,800</td><td class="family-price">~$10,800</td></tr>
-          <tr><td>Hawaiian + Samoa Airways</td><td><a href="https://www.google.com/travel/flights?q=SFO+to+APW+via+HNL+December+2026">SFO → HNL → APW</a></td><td>14h total</td><td>3h in Honolulu</td><td>A321 / 737</td><td class="price">~$1,650</td><td class="family-price">~$9,900</td></tr>
+          <tr><td colspan="7" style="background:var(--warm-gray);font-weight:600;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-med);">Outbound — Dec 18</td></tr>
+          <tr><td>Fiji Airways + Samoa Airways</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhoaEgoyMDI2LTEyLTE4agcIARIDU0ZPcgcIARIDQVBX" target="_blank">SFO → NAN → APW</a></td><td>Economy</td><td>14h 30m</td><td>2h 30m in Nadi</td><td class="price">~$1,800</td><td class="family-price">~$10,800</td></tr>
+          <tr><td>Fiji Airways + Samoa Airways</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhoaEgoyMDI2LTEyLTE4agcIARIDU0ZPcgcIARIDQVBX" target="_blank">SFO → NAN → APW</a></td><td>Business</td><td>14h 30m</td><td>2h 30m in Nadi</td><td class="price">~$5,400</td><td class="family-price">~$32,400</td></tr>
+          <tr><td>Hawaiian + Samoa Airways</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhoaEgoyMDI2LTEyLTE4agcIARIDU0ZPcgcIARIDSE5MGhoSCjIwMjYtMTItMTgqBwgBEgNITkxyBwgBEgNBUFc" target="_blank">SFO → HNL → APW</a></td><td>Economy</td><td>14h total</td><td>3h in Honolulu</td><td class="price">~$1,650</td><td class="family-price">~$9,900</td></tr>
+          <tr><td colspan="7" style="background:var(--warm-gray);font-weight:600;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-med);">Return — Jan 2</td></tr>
+          <tr><td>Samoa Airways + Fiji Airways</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhoaEgoyMDI3LTAxLTAyagcIARIDQVBXcgcIARIDU0ZP" target="_blank">APW → NAN → SFO</a></td><td>Economy</td><td>14h 30m</td><td>2h 30m in Nadi</td><td class="price">~$1,800</td><td class="family-price">~$10,800</td></tr>
+          <tr><td>Samoa Airways + Fiji Airways</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhoaEgoyMDI3LTAxLTAyagcIARIDQVBXcgcIARIDU0ZP" target="_blank">APW → NAN → SFO</a></td><td>Business</td><td>14h 30m</td><td>2h 30m in Nadi</td><td class="price">~$5,400</td><td class="family-price">~$32,400</td></tr>
         </tbody>
       </table>
     </div>
@@ -590,31 +717,31 @@ footer {
     <div class="section-block">
       <h3>Highlights</h3>
       <div class="card-grid">
-        <div class="info-card"><div class="card-thumb"><img src="images/highlights/samoa-to-sua.jpg" alt="To Sua Ocean Trench" onerror="this.style.display='none'"></div><div class="card-body"><div class="card-tag">Swimming</div><h5><a href="https://www.tripadvisor.com/Attraction_Review-g294138-d2335636-To_Sua_Ocean_Trench-Upolu.html">To Sua Ocean Trench</a></h5><p>Samoa's most iconic sight — a 30-meter deep turquoise swimming hole connected to the ocean by a lava tunnel. Descend via a ladder into gin-clear water.</p></div></div>
-        <div class="info-card"><div class="card-thumb"><img src="images/highlights/samoa-lalomanu.jpg" alt="Lalomanu Beach" onerror="this.style.display='none'"></div><div class="card-body"><div class="card-tag">Beach</div><h5><a href="https://www.tripadvisor.com/Attraction_Review-g294138-d317746-Lalomanu_Beach-Upolu.html">Lalomanu Beach</a></h5><p>Samoa's most beautiful beach — blindingly white sand, swaying palms, and warm turquoise water. Beach fale (huts) for rent right on the sand.</p></div></div>
-        <div class="info-card"><div class="card-thumb"><img src="images/highlights/samoa-papapapaitai.jpg" alt="Papapapaitai Falls" onerror="this.style.display='none'"></div><div class="card-body"><div class="card-tag">Nature</div><h5><a href="https://www.tripadvisor.com/Attraction_Review-g294138-d4781627-Papapapaitai_Falls-Upolu.html">Papapapaitai Falls Lookout</a></h5><p>Samoa's highest waterfall plunges 100m into a rainforest gorge. Easy drive to the viewing platform — jaw-dropping, especially after rain.</p></div></div>
-        <div class="info-card"><div class="card-thumb"><img src="images/highlights/samoa-stevenson.jpg" alt="Robert Louis Stevenson Museum" onerror="this.style.display='none'"></div><div class="card-body"><div class="card-tag">Culture</div><h5><a href="https://www.tripadvisor.com/Attraction_Review-g294138-d1943282-Robert_Louis_Stevenson_Museum-Apia_Upolu.html">Robert Louis Stevenson Museum</a></h5><p>The "Treasure Island" author's last home, now a beautifully preserved colonial museum. Hike to his hilltop tomb for panoramic views. Great for bookish kids.</p></div></div>
-        <div class="info-card"><div class="card-thumb"><img src="images/highlights/samoa-blowholes.jpg" alt="Alofaaga Blowholes" onerror="this.style.display='none'"></div><div class="card-body"><div class="card-tag">Adventure</div><h5><a href="https://www.tripadvisor.com/Attraction_Review-g1082383-d4781509-Alofaaga_Blowholes-Savai_i.html">Alofaaga Blowholes (Savai'i)</a></h5><p>Powerful ocean blowholes that shoot seawater 20m into the air. Locals throw coconuts into the holes and watch them launch skyward. Kids will be mesmerized.</p></div></div>
+        <div class="info-card"><div class="card-thumb"><img src="images/highlights/samoa-to-sua.jpg" alt="To Sua Ocean Trench" onerror="this.style.display='none'"></div><div class="card-body"><div class="card-tag">Swimming</div><h5><a href="https://www.tripadvisor.com/Attraction_Review-g294138-d2335636-To_Sua_Ocean_Trench-Upolu.html" target="_blank">To Sua Ocean Trench</a></h5><p>Samoa's most iconic sight — a 30-meter deep turquoise swimming hole connected to the ocean by a lava tunnel. Descend via a ladder into gin-clear water.</p></div></div>
+        <div class="info-card"><div class="card-thumb"><img src="images/highlights/samoa-lalomanu.jpg" alt="Lalomanu Beach" onerror="this.style.display='none'"></div><div class="card-body"><div class="card-tag">Beach</div><h5><a href="https://www.tripadvisor.com/Attraction_Review-g294138-d317746-Lalomanu_Beach-Upolu.html" target="_blank">Lalomanu Beach</a></h5><p>Samoa's most beautiful beach — blindingly white sand, swaying palms, and warm turquoise water. Beach fale (huts) for rent right on the sand.</p></div></div>
+        <div class="info-card"><div class="card-thumb"><img src="images/highlights/samoa-papapapaitai.jpg" alt="Papapapaitai Falls" onerror="this.style.display='none'"></div><div class="card-body"><div class="card-tag">Nature</div><h5><a href="https://www.tripadvisor.com/Attraction_Review-g294138-d4781627-Papapapaitai_Falls-Upolu.html" target="_blank">Papapapaitai Falls Lookout</a></h5><p>Samoa's highest waterfall plunges 100m into a rainforest gorge. Easy drive to the viewing platform — jaw-dropping, especially after rain.</p></div></div>
+        <div class="info-card"><div class="card-thumb"><img src="images/highlights/samoa-stevenson.jpg" alt="Robert Louis Stevenson Museum" onerror="this.style.display='none'"></div><div class="card-body"><div class="card-tag">Culture</div><h5><a href="https://www.tripadvisor.com/Attraction_Review-g294138-d1943282-Robert_Louis_Stevenson_Museum-Apia_Upolu.html" target="_blank">Robert Louis Stevenson Museum</a></h5><p>The "Treasure Island" author's last home, now a beautifully preserved colonial museum. Hike to his hilltop tomb for panoramic views. Great for bookish kids.</p></div></div>
+        <div class="info-card"><div class="card-thumb"><img src="images/highlights/samoa-blowholes.jpg" alt="Alofaaga Blowholes" onerror="this.style.display='none'"></div><div class="card-body"><div class="card-tag">Adventure</div><h5><a href="https://www.tripadvisor.com/Attraction_Review-g1082383-d4781509-Alofaaga_Blowholes-Savai_i.html" target="_blank">Alofaaga Blowholes (Savai'i)</a></h5><p>Powerful ocean blowholes that shoot seawater 20m into the air. Locals throw coconuts into the holes and watch them launch skyward. Kids will be mesmerized.</p></div></div>
       </div>
     </div>
 
     <div class="section-block">
       <h3>Food &amp; Dining</h3>
       <div class="card-grid">
-        <div class="info-card"><div class="card-thumb"><img src="images/dining/samoa-paddles.jpg" alt="Paddles Restaurant" onerror="this.style.display='none'"></div><div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g294137-d2197869-Paddles_Restaurant-Apia_Upolu.html">Paddles Restaurant</a></h5><p>Apia's finest — Italian-Samoan fusion on the waterfront. Wood-fired pizza, fresh sashimi, and Samoan-spiced pasta. Gorgeous sunset views.</p><div class="card-price">~$35/person · ~$210 family</div></div></div>
-        <div class="info-card"><div class="card-thumb"><img src="images/dining/samoa-bistro-tatau.jpg" alt="Bistro Tatau" onerror="this.style.display='none'"></div><div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g294137-d12852073-Bistro_Tatau-Apia_Upolu.html">Bistro Tatau</a></h5><p>Hip café-restaurant in central Apia with craft cocktails, wagyu burgers, and oka (Samoan ceviche). The design celebrates traditional tatau culture.</p><div class="card-price">~$30/person · ~$180 family</div></div></div>
-        <div class="info-card"><div class="card-thumb"><img src="images/dining/samoa-fugalei.jpg" alt="Fugalei Market" onerror="this.style.display='none'"></div><div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g294137-Apia_Upolu.html">Fugalei Market Fiafia</a></h5><p>Apia's central market — umu-cooked pork, fresh tropical fruit, palusami, and oka sold by the bowl. Best Saturday mornings. Budget gold.</p><div class="card-price">~$8/person · ~$48 family</div></div></div>
-        <div class="info-card"><div class="card-thumb"><img src="images/dining/samoa-giordanos.jpg" alt="Giordano's Pizza" onerror="this.style.display='none'"></div><div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g294137-Apia_Upolu.html">Giordano's Pizza</a></h5><p>Wood-fired pizza from an Italian expat. Perfectly charred crusts, local toppings (taro, corned beef, octopus). Kids can't get enough.</p><div class="card-price">~$18/person · ~$108 family</div></div></div>
-        <div class="info-card"><div class="card-thumb"><img src="images/dining/samoa-sails.jpg" alt="Sails Restaurant" onerror="this.style.display='none'"></div><div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g294137-Apia_Upolu.html">Sails Restaurant &amp; Bar</a></h5><p>Upscale harborfront dining with fresh lobster, Samoan lamb, and a serious wine list. Best special-occasion restaurant in Apia.</p><div class="card-price">~$55/person · ~$330 family</div></div></div>
+        <div class="info-card"><div class="card-thumb"><img src="images/dining/samoa-paddles.jpg" alt="Paddles Restaurant" onerror="this.style.display='none'"></div><div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g294137-d2197869-Paddles_Restaurant-Apia_Upolu.html" target="_blank">Paddles Restaurant</a></h5><p>Apia's finest — Italian-Samoan fusion on the waterfront. Wood-fired pizza, fresh sashimi, and Samoan-spiced pasta. Gorgeous sunset views.</p><div class="card-price">~$35/person · ~$210 family</div></div></div>
+        <div class="info-card"><div class="card-thumb"><img src="images/dining/samoa-bistro-tatau.jpg" alt="Bistro Tatau" onerror="this.style.display='none'"></div><div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g294137-d12852073-Bistro_Tatau-Apia_Upolu.html" target="_blank">Bistro Tatau</a></h5><p>Hip café-restaurant in central Apia with craft cocktails, wagyu burgers, and oka (Samoan ceviche). The design celebrates traditional tatau culture.</p><div class="card-price">~$30/person · ~$180 family</div></div></div>
+        <div class="info-card"><div class="card-thumb"><img src="images/dining/samoa-fugalei.jpg" alt="Fugalei Market" onerror="this.style.display='none'"></div><div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g294137-Apia_Upolu.html" target="_blank">Fugalei Market Fiafia</a></h5><p>Apia's central market — umu-cooked pork, fresh tropical fruit, palusami, and oka sold by the bowl. Best Saturday mornings. Budget gold.</p><div class="card-price">~$8/person · ~$48 family</div></div></div>
+        <div class="info-card"><div class="card-thumb"><img src="images/dining/samoa-giordanos.jpg" alt="Giordano's Pizza" onerror="this.style.display='none'"></div><div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g294137-Apia_Upolu.html" target="_blank">Giordano's Pizza</a></h5><p>Wood-fired pizza from an Italian expat. Perfectly charred crusts, local toppings (taro, corned beef, octopus). Kids can't get enough.</p><div class="card-price">~$18/person · ~$108 family</div></div></div>
+        <div class="info-card"><div class="card-thumb"><img src="images/dining/samoa-sails.jpg" alt="Sails Restaurant" onerror="this.style.display='none'"></div><div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g294137-Apia_Upolu.html" target="_blank">Sails Restaurant &amp; Bar</a></h5><p>Upscale harborfront dining with fresh lobster, Samoan lamb, and a serious wine list. Best special-occasion restaurant in Apia.</p><div class="card-price">~$55/person · ~$330 family</div></div></div>
       </div>
     </div>
 
     <div class="section-block">
       <h3>Where to Stay</h3>
       <div class="resort-grid">
-        <div class="resort-card"><div class="resort-thumb"><img src="images/resorts/samoa-taumeasina.jpg" alt="Taumeasina Island" onerror="this.style.display='none'"><span class="thumb-label">Taumeasina Island</span></div><div class="resort-card-body"><h5><a href="https://www.taumeasinaislandresort.com/">Taumeasina Island Resort</a></h5><div class="resort-stars"><span class="star">★★★★</span>½ · <a href="https://www.tripadvisor.com/Hotel_Review-g294137-d6864413-Taumeasina_Island_Resort-Apia_Upolu.html">TripAdvisor</a></div><p class="resort-desc">Connected to Apia by causeway. Private island feel with city convenience. Infinity pool, cultural center, and excellent kids' activities.</p><div class="resort-rooms">🛏 Family Suite: 1 king + 2 sofa beds, balcony. Book 2 suites for comfort.</div><div class="resort-price">~$280/night <span class="resort-total">· ~$560/nt family (2 suites) · ~$3,920 total (7 nights)</span></div></div></div>
-        <div class="resort-card"><div class="resort-thumb"><img src="images/resorts/samoa-coconuts.jpg" alt="Coconuts Beach Club" onerror="this.style.display='none'"><span class="thumb-label">Coconuts Beach Club</span></div><div class="resort-card-body"><h5><a href="https://www.coconutsbeachclub.com/">Coconuts Beach Club Resort</a></h5><div class="resort-stars"><span class="star">★★★★</span> · <a href="https://www.tripadvisor.com/Hotel_Review-g294137-d596655-Coconuts_Beach_Club_Resort_Spa-Apia_Upolu.html">TripAdvisor</a></div><p class="resort-desc">Boutique beachfront resort on the south coast. Overwater fale, lush gardens, and house reef. Great for authentic beach vibes.</p><div class="resort-rooms">🛏 Treehouse Fale: 1 king + loft with 2 singles. Book 2 treehouse fales.</div><div class="resort-price">~$250/night <span class="resort-total">· ~$500/nt family (2 fales) · ~$3,500 total (7 nights)</span></div></div></div>
-        <div class="resort-card"><div class="resort-thumb"><img src="images/resorts/samoa-sinalei.jpg" alt="Sinalei Reef Resort" onerror="this.style.display='none'"><span class="thumb-label">Sinalei Reef Resort</span></div><div class="resort-card-body"><h5><a href="https://www.sinalei.com/">Sinalei Reef Resort &amp; Spa</a></h5><div class="resort-stars"><span class="star">★★★★</span>½ · <a href="https://www.tripadvisor.com/Hotel_Review-g294137-d1174018-Sinalei_Reef_Resort_Spa-Apia_Upolu.html">TripAdvisor</a></div><p class="resort-desc">Eco-luxury on the south coast with overwater villas, marine sanctuary, and Samoa's best spa. All ages welcome.</p><div class="resort-rooms">🛏 Garden Villa: 1 king + daybed. Book 2 villas + 1 overwater for a treat.</div><div class="resort-price">~$320/night <span class="resort-total">· ~$750/nt family (2 garden + 1 overwater) · ~$5,250 total (7 nights)</span></div></div></div>
+        <div class="resort-card"><div class="resort-thumb"><img src="images/resorts/samoa-taumeasina.jpg" alt="Taumeasina Island" onerror="this.style.display='none'"><span class="thumb-label">Taumeasina Island</span></div><div class="resort-card-body"><h5><a href="https://www.taumeasinaislandresort.com/" target="_blank">Taumeasina Island Resort</a></h5><div class="resort-stars"><span class="star">★★★★</span>½ · <a href="https://www.tripadvisor.com/Hotel_Review-g294137-d6864413-Taumeasina_Island_Resort-Apia_Upolu.html" target="_blank">TripAdvisor</a></div><p class="resort-desc">Connected to Apia by causeway. Private island feel with city convenience. Infinity pool, cultural center, and excellent kids' activities.</p><div class="resort-rooms">🛏 Family Suite: 1 king + 2 sofa beds, balcony. Book 2 suites for comfort.</div><div class="resort-price">~$280/night <span class="resort-total">· ~$560/nt family (2 suites) · ~$3,920 total (7 nights)</span></div></div></div>
+        <div class="resort-card"><div class="resort-thumb"><img src="images/resorts/samoa-coconuts.jpg" alt="Coconuts Beach Club" onerror="this.style.display='none'"><span class="thumb-label">Coconuts Beach Club</span></div><div class="resort-card-body"><h5><a href="https://www.coconutsbeachclub.com/" target="_blank">Coconuts Beach Club Resort</a></h5><div class="resort-stars"><span class="star">★★★★</span> · <a href="https://www.tripadvisor.com/Hotel_Review-g294137-d596655-Coconuts_Beach_Club_Resort_Spa-Apia_Upolu.html" target="_blank">TripAdvisor</a></div><p class="resort-desc">Boutique beachfront resort on the south coast. Overwater fale, lush gardens, and house reef. Great for authentic beach vibes.</p><div class="resort-rooms">🛏 Treehouse Fale: 1 king + loft with 2 singles. Book 2 treehouse fales.</div><div class="resort-price">~$250/night <span class="resort-total">· ~$500/nt family (2 fales) · ~$3,500 total (7 nights)</span></div></div></div>
+        <div class="resort-card"><div class="resort-thumb"><img src="images/resorts/samoa-sinalei.jpg" alt="Sinalei Reef Resort" onerror="this.style.display='none'"><span class="thumb-label">Sinalei Reef Resort</span></div><div class="resort-card-body"><h5><a href="https://www.sinalei.com/" target="_blank">Sinalei Reef Resort &amp; Spa</a></h5><div class="resort-stars"><span class="star">★★★★</span>½ · <a href="https://www.tripadvisor.com/Hotel_Review-g294137-d1174018-Sinalei_Reef_Resort_Spa-Apia_Upolu.html" target="_blank">TripAdvisor</a></div><p class="resort-desc">Eco-luxury on the south coast with overwater villas, marine sanctuary, and Samoa's best spa. All ages welcome.</p><div class="resort-rooms">🛏 Garden Villa: 1 king + daybed. Book 2 villas + 1 overwater for a treat.</div><div class="resort-price">~$320/night <span class="resort-total">· ~$750/nt family (2 garden + 1 overwater) · ~$5,250 total (7 nights)</span></div></div></div>
       </div>
     </div>
 
@@ -623,11 +750,11 @@ footer {
     <div class="section-block">
       <h3>Cultural Connections</h3>
       <div class="card-grid">
-        <div class="info-card"><div class="card-body"><h5><a href="https://www.tripadvisor.com/Attraction_Review-g294137-Apia_Upolu.html">Fia Fia Night — Song, Dance &amp; Fire Knife</a></h5><p>Samoa's legendary cultural evening. Siva dances, multi-part harmony singing, then the fire knife (siva afi) dancer whips flaming blades. Held at most resorts weekly.</p></div></div>
-        <div class="info-card"><div class="card-body"><h5><a href="https://www.tripadvisor.com/Attraction_Review-g294137-Apia_Upolu.html">Samoan Tatau (Tattoo) Culture</a></h5><p>Learn about pe'a (men's full-body tattoo) and malu (women's) — sacred marks of identity. Visit a tufuga ta tatau (master artist) studio in Apia.</p></div></div>
-        <div class="info-card"><div class="card-body"><h5><a href="https://www.tripadvisor.com/Attraction_Review-g294137-Apia_Upolu.html">Sunday Toona'i — Family Feast</a></h5><p>Experience the Samoan Sunday ritual: white-clad church service (incredible singing), then toona'i — the massive umu feast with taro, palusami, and roast pork.</p></div></div>
-        <div class="info-card"><div class="card-body"><h5><a href="https://www.tripadvisor.com/Attraction_Review-g294137-d6865115-Samoa_Cultural_Village-Apia_Upolu.html">Samoa Cultural Village (Free)</a></h5><p>Open-air museum in Apia run by elders. Free demos of siapo (bark cloth) making, 'ava ceremony, coconut weaving, and traditional cooking. Runs every weekday.</p></div></div>
-        <div class="info-card"><div class="card-body"><h5><a href="https://www.tripadvisor.com/Attraction_Review-g294137-d1943282-Robert_Louis_Stevenson_Museum-Apia_Upolu.html">Vailima — Robert Louis Stevenson's Estate</a></h5><p>The "Tusitala" lived his final years in this colonial mansion. Now a museum with original furnishings. Hike to his hilltop tomb inscribed with "Requiem."</p></div></div>
+        <div class="info-card"><div class="card-body"><h5><a href="https://www.tripadvisor.com/Attraction_Review-g294137-Apia_Upolu.html" target="_blank">Fia Fia Night — Song, Dance &amp; Fire Knife</a></h5><p>Samoa's legendary cultural evening. Siva dances, multi-part harmony singing, then the fire knife (siva afi) dancer whips flaming blades. Held at most resorts weekly.</p></div></div>
+        <div class="info-card"><div class="card-body"><h5><a href="https://www.tripadvisor.com/Attraction_Review-g294137-Apia_Upolu.html" target="_blank">Samoan Tatau (Tattoo) Culture</a></h5><p>Learn about pe'a (men's full-body tattoo) and malu (women's) — sacred marks of identity. Visit a tufuga ta tatau (master artist) studio in Apia.</p></div></div>
+        <div class="info-card"><div class="card-body"><h5><a href="https://www.tripadvisor.com/Attraction_Review-g294137-Apia_Upolu.html" target="_blank">Sunday Toona'i — Family Feast</a></h5><p>Experience the Samoan Sunday ritual: white-clad church service (incredible singing), then toona'i — the massive umu feast with taro, palusami, and roast pork.</p></div></div>
+        <div class="info-card"><div class="card-body"><h5><a href="https://www.tripadvisor.com/Attraction_Review-g294137-d6865115-Samoa_Cultural_Village-Apia_Upolu.html" target="_blank">Samoa Cultural Village (Free)</a></h5><p>Open-air museum in Apia run by elders. Free demos of siapo (bark cloth) making, 'ava ceremony, coconut weaving, and traditional cooking. Runs every weekday.</p></div></div>
+        <div class="info-card"><div class="card-body"><h5><a href="https://www.tripadvisor.com/Attraction_Review-g294137-d1943282-Robert_Louis_Stevenson_Museum-Apia_Upolu.html" target="_blank">Vailima — Robert Louis Stevenson's Estate</a></h5><p>The "Tusitala" lived his final years in this colonial mansion. Now a museum with original furnishings. Hike to his hilltop tomb inscribed with "Requiem."</p></div></div>
       </div>
     </div>
   </div>
@@ -642,12 +769,37 @@ footer {
   <div class="dest-section">
 
     <div class="section-block">
-      <h3>Getting There</h3>
+      <p class="dest-overview">Rangiroa's lagoon is so vast you can't see the other side — it could swallow Tahiti whole. The second-largest atoll on Earth offers an outpost-of-the-world feeling matched only by the richness of life beneath its surface: dolphins pirouette through Tiputa Pass, baby blacktip sharks patrol ankle-deep flats, and the Blue Lagoon hides a turquoise secret within a secret. Add the planet's only coral-atoll vineyard and you have a destination that defies every expectation of what an island should be.</p>
+      <div class="route-map">
+        <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+          <rect width="600" height="300" fill="#E8E4DC"/>
+          <path d="M0,160 L600,160" stroke="#D4D0C8" stroke-width="0.3" stroke-dasharray="2,4"/>
+          <text x="300" y="168" font-family="Source Serif 4, Georgia, serif" font-size="8" fill="#C4BFB6" text-anchor="middle" font-style="italic">Equator</text>
+          <circle cx="115" cy="95" r="4" fill="#C27B5C"/>
+          <text x="115" y="85" font-family="Source Serif 4, Georgia, serif" font-size="11" fill="#2D2D2D" text-anchor="middle" font-weight="600">SFO</text>
+          <circle cx="410" cy="190" r="5" fill="#1E3A5F"/>
+          <text x="410" y="213" font-family="Cormorant Garamond, Georgia, serif" font-size="13" fill="#1E3A5F" text-anchor="middle" font-weight="500">Rangiroa</text>
+          <text x="410" y="227" font-family="Source Serif 4, Georgia, serif" font-size="9" fill="#6B6B6B" text-anchor="middle" font-style="italic">Tuamotu Archipelago</text>
+          <line x1="119" y1="97" x2="406" y2="188" stroke="#C27B5C" stroke-width="1.5" stroke-dasharray="6,4"/>
+          <polygon points="406,188 398,181 400,189" fill="#C27B5C"/>
+          <text x="280" y="130" font-family="Source Serif 4, Georgia, serif" font-size="9" fill="#6B6B6B" text-anchor="middle" font-style="italic">~4,100 mi · via Papeete</text>
+          <text x="300" y="285" font-family="Source Serif 4, Georgia, serif" font-size="8" fill="#999" text-anchor="middle" letter-spacing="0.15em">PACIFIC OCEAN</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <h3>Getting There &amp; Return</h3>
       <table class="data-table">
-        <thead><tr><th>Option</th><th>Route</th><th>Time</th><th>Layover</th><th>Aircraft</th><th>Per Person</th><th>Family ×6</th></tr></thead>
+        <thead><tr><th>Option</th><th>Route</th><th>Class</th><th>Time</th><th>Layover</th><th>Per Person</th><th>Family ×6</th></tr></thead>
         <tbody>
-          <tr><td>Air Tahiti Nui + Air Tahiti</td><td><a href="https://www.google.com/travel/flights?q=SFO+to+RGI+via+PPT+December+2026">SFO → PPT → RGI</a></td><td>11h 45m</td><td>1h 30m in Papeete</td><td>787 / ATR 72</td><td class="price">~$1,800</td><td class="family-price">~$10,800</td></tr>
-          <tr><td>French Bee + Air Tahiti</td><td><a href="https://www.google.com/travel/flights?q=SFO+to+RGI+via+PPT+December+2026">SFO → PPT → RGI</a></td><td>12h 15m</td><td>2h 30m in Papeete</td><td>A350 / ATR 72</td><td class="price">~$1,400</td><td class="family-price">~$8,400</td></tr>
+          <tr><td colspan="7" style="background:var(--warm-gray);font-weight:600;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-med);">Outbound — Dec 18</td></tr>
+          <tr><td>Air Tahiti Nui + Air Tahiti</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhooEgoyMDI2LTEyLTE4agwIAhIIL20vMGRjbGtyDAgCEggvbS8wcGtwdBooEgoyMDI2LTEyLTE4agwIAhIIL20vMHBrcHRyDAgCEggvbS8wMWtibmg" target="_blank">SFO → PPT → RGI</a></td><td>Economy</td><td>11h 45m</td><td>1h 30m in Papeete</td><td class="price">~$1,800</td><td class="family-price">~$10,800</td></tr>
+          <tr><td>Air Tahiti Nui + Air Tahiti</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhooEgoyMDI2LTEyLTE4agwIAhIIL20vMGRjbGtyDAgCEggvbS8wcGtwdBooEgoyMDI2LTEyLTE4agwIAhIIL20vMHBrcHRyDAgCEggvbS8wMWtibmg" target="_blank">SFO → PPT → RGI</a></td><td>Business</td><td>11h 45m</td><td>1h 30m in Papeete</td><td class="price">~$5,200</td><td class="family-price">~$31,200</td></tr>
+          <tr><td>French Bee + Air Tahiti</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhooEgoyMDI2LTEyLTE4agwIAhIIL20vMGRjbGtyDAgCEggvbS8wcGtwdBooEgoyMDI2LTEyLTE4agwIAhIIL20vMHBrcHRyDAgCEggvbS8wMWtibmg" target="_blank">SFO → PPT → RGI</a></td><td>Economy</td><td>12h 15m</td><td>2h 30m in Papeete</td><td class="price">~$1,400</td><td class="family-price">~$8,400</td></tr>
+          <tr><td colspan="7" style="background:var(--warm-gray);font-weight:600;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-med);">Return — Jan 2</td></tr>
+          <tr><td>Air Tahiti + Air Tahiti Nui</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhooEgoyMDI3LTAxLTAyagwIAhIIL20vMDFrYm5ocgwIAhIIL20vMHBrcHQaKBIKMjAyNy0wMS0wMmoMCAISCC9tLzBwa3B0cgwIAhIIL20vMGRjbGs" target="_blank">RGI → PPT → SFO</a></td><td>Economy</td><td>11h 45m</td><td>1h 30m in Papeete</td><td class="price">~$1,800</td><td class="family-price">~$10,800</td></tr>
+          <tr><td>Air Tahiti + Air Tahiti Nui</td><td><a href="https://www.google.com/travel/flights/search?tfs=CBwQAhooEgoyMDI3LTAxLTAyagwIAhIIL20vMDFrYm5ocgwIAhIIL20vMHBrcHQaKBIKMjAyNy0wMS0wMmoMCAISCC9tLzBwa3B0cgwIAhIIL20vMGRjbGs" target="_blank">RGI → PPT → SFO</a></td><td>Business</td><td>11h 45m</td><td>1h 30m in Papeete</td><td class="price">~$5,200</td><td class="family-price">~$31,200</td></tr>
         </tbody>
       </table>
     </div>
@@ -655,30 +807,30 @@ footer {
     <div class="section-block">
       <h3>Highlights</h3>
       <div class="card-grid">
-        <div class="info-card"><div class="card-thumb"><img src="images/highlights/rangiroa-tiputa.jpg" alt="Tiputa Pass dolphins" onerror="this.style.display='none'"></div><div class="card-body"><div class="card-tag">Snorkeling</div><h5><a href="https://www.tripadvisor.com/Attraction_Review-g311730-d2087496-Tiputa_Pass-Rangiroa_Tuamotu_Archipelago.html">Tiputa Pass Dolphin Drift</a></h5><p>Drift snorkel through Tiputa Pass alongside pods of spinner dolphins, manta rays, and harmless reef sharks. The current does the work. Safe with a guide for ages 8+.</p></div></div>
-        <div class="info-card"><div class="card-thumb"><img src="images/highlights/rangiroa-wine.jpg" alt="Vin de Tahiti vineyard" onerror="this.style.display='none'"></div><div class="card-body"><div class="card-tag">Wine</div><h5><a href="https://www.tripadvisor.com/Attraction_Review-g311730-d3449236-Vin_de_Tahiti-Rangiroa_Tuamotu_Archipelago.html">Vin de Tahiti — Coral Wine Estate</a></h5><p>The world's only coral-atoll vineyard. Tour vines growing in crushed coral soil, taste Blanc de Corail. Adults love it; kids enjoy the oddity.</p></div></div>
-        <div class="info-card"><div class="card-thumb"><img src="images/highlights/rangiroa-blue-lagoon.jpg" alt="Blue Lagoon" onerror="this.style.display='none'"></div><div class="card-body"><div class="card-tag">Lagoon</div><h5><a href="https://www.tripadvisor.com/Attraction_Review-g311730-Rangiroa_Tuamotu_Archipelago.html">Blue Lagoon Excursion</a></h5><p>Day trip to a lagoon-within-a-lagoon — secluded natural pool with shallow, impossibly blue water and baby blacktip sharks at your feet. BBQ lunch on a motu.</p></div></div>
-        <div class="info-card"><div class="card-thumb"><img src="images/highlights/rangiroa-avatoru.jpg" alt="Avatoru Pass dive" onerror="this.style.display='none'"></div><div class="card-body"><div class="card-tag">Diving</div><h5><a href="https://www.tripadvisor.com/Attraction_Review-g311730-d2087495-Avatoru_Pass-Rangiroa_Tuamotu_Archipelago.html">Avatoru Pass Wall Dive</a></h5><p>Dramatic underwater wall teeming with grey reef sharks, napoleonfish, and eagle rays. One of the top 5 dives in French Polynesia. Adults-only (certified divers).</p></div></div>
-        <div class="info-card"><div class="card-thumb"><img src="images/highlights/rangiroa-ile-recifs.jpg" alt="Île aux Récifs" onerror="this.style.display='none'"></div><div class="card-body"><div class="card-tag">Nature</div><h5><a href="https://www.tripadvisor.com/Attraction_Review-g311730-Rangiroa_Tuamotu_Archipelago.html">Île aux Récifs — Fossilized Coral Island</a></h5><p>Surreal island of jagged, fossilized coral pinnacles rising from the lagoon like an alien landscape. Photograph the otherworldly formations and spot nesting seabirds.</p></div></div>
+        <div class="info-card"><div class="card-thumb"><img src="images/highlights/rangiroa-tiputa.jpg" alt="Tiputa Pass dolphins" onerror="this.style.display='none'"></div><div class="card-body"><div class="card-tag">Snorkeling</div><h5><a href="https://www.tripadvisor.com/Attraction_Review-g311730-d2087496-Tiputa_Pass-Rangiroa_Tuamotu_Archipelago.html" target="_blank">Tiputa Pass Dolphin Drift</a></h5><p>Drift snorkel through Tiputa Pass alongside pods of spinner dolphins, manta rays, and harmless reef sharks. The current does the work. Safe with a guide for ages 8+.</p></div></div>
+        <div class="info-card"><div class="card-thumb"><img src="images/highlights/rangiroa-wine.jpg" alt="Vin de Tahiti vineyard" onerror="this.style.display='none'"></div><div class="card-body"><div class="card-tag">Wine</div><h5><a href="https://www.tripadvisor.com/Attraction_Review-g311730-d3449236-Vin_de_Tahiti-Rangiroa_Tuamotu_Archipelago.html" target="_blank">Vin de Tahiti — Coral Wine Estate</a></h5><p>The world's only coral-atoll vineyard. Tour vines growing in crushed coral soil, taste Blanc de Corail. Adults love it; kids enjoy the oddity.</p></div></div>
+        <div class="info-card"><div class="card-thumb"><img src="images/highlights/rangiroa-blue-lagoon.jpg" alt="Blue Lagoon" onerror="this.style.display='none'"></div><div class="card-body"><div class="card-tag">Lagoon</div><h5><a href="https://www.tripadvisor.com/Attraction_Review-g311730-Rangiroa_Tuamotu_Archipelago.html" target="_blank">Blue Lagoon Excursion</a></h5><p>Day trip to a lagoon-within-a-lagoon — secluded natural pool with shallow, impossibly blue water and baby blacktip sharks at your feet. BBQ lunch on a motu.</p></div></div>
+        <div class="info-card"><div class="card-thumb"><img src="images/highlights/rangiroa-avatoru.jpg" alt="Avatoru Pass dive" onerror="this.style.display='none'"></div><div class="card-body"><div class="card-tag">Diving</div><h5><a href="https://www.tripadvisor.com/Attraction_Review-g311730-d2087495-Avatoru_Pass-Rangiroa_Tuamotu_Archipelago.html" target="_blank">Avatoru Pass Wall Dive</a></h5><p>Dramatic underwater wall teeming with grey reef sharks, napoleonfish, and eagle rays. One of the top 5 dives in French Polynesia. Adults-only (certified divers).</p></div></div>
+        <div class="info-card"><div class="card-thumb"><img src="images/highlights/rangiroa-ile-recifs.jpg" alt="Île aux Récifs" onerror="this.style.display='none'"></div><div class="card-body"><div class="card-tag">Nature</div><h5><a href="https://www.tripadvisor.com/Attraction_Review-g311730-Rangiroa_Tuamotu_Archipelago.html" target="_blank">Île aux Récifs — Fossilized Coral Island</a></h5><p>Surreal island of jagged, fossilized coral pinnacles rising from the lagoon like an alien landscape. Photograph the otherworldly formations and spot nesting seabirds.</p></div></div>
       </div>
     </div>
 
     <div class="section-block">
       <h3>Food &amp; Dining</h3>
       <div class="card-grid">
-        <div class="info-card"><div class="card-thumb"><img src="images/dining/rangiroa-kai-kai.jpg" alt="Le Kai Kai restaurant" onerror="this.style.display='none'"></div><div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g311730-Rangiroa_Tuamotu_Archipelago.html">Le Kai Kai</a></h5><p>Rangiroa's standout restaurant — French-Polynesian fine dining in a thatched pavilion. Lobster thermidor, poisson cru, and crème brûlée. Reservation required.</p><div class="card-price">~$55/person · ~$330 family</div></div></div>
-        <div class="info-card"><div class="card-thumb"><img src="images/dining/rangiroa-chez-lili.jpg" alt="Chez Lili" onerror="this.style.display='none'"></div><div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g311730-Rangiroa_Tuamotu_Archipelago.html">Chez Lili</a></h5><p>Family-run pension restaurant where Lili cooks the day's fresh catch with Tuamotu flair. Simple, delicious, deeply local.</p><div class="card-price">~$30/person · ~$180 family</div></div></div>
-        <div class="info-card"><div class="card-thumb"><img src="images/dining/rangiroa-chez-auguste.jpg" alt="Chez Auguste" onerror="this.style.display='none'"></div><div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g311730-Rangiroa_Tuamotu_Archipelago.html">Snack Chez Auguste</a></h5><p>Roadside stall in Avatoru village. Grilled fish plates, poisson cru takeaway, and cold Hinano beer. The locals' lunch spot — cheap and no-frills.</p><div class="card-price">~$12/person · ~$72 family</div></div></div>
-        <div class="info-card"><div class="card-thumb"><img src="images/dining/rangiroa-vaimario.jpg" alt="Vaimario Restaurant" onerror="this.style.display='none'"></div><div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g311730-Rangiroa_Tuamotu_Archipelago.html">Vaimario Restaurant</a></h5><p>Overwater seating with Chinese-Polynesian fusion — ma'a tinito (pork stew) and sashimi platters. Family-friendly with generous portions.</p><div class="card-price">~$35/person · ~$210 family</div></div></div>
-        <div class="info-card"><div class="card-thumb"><img src="images/dining/rangiroa-bounty.jpg" alt="Pension Bounty dinner" onerror="this.style.display='none'"></div><div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g311730-Rangiroa_Tuamotu_Archipelago.html">Pension Bounty Lagoon Dinner</a></h5><p>Communal table d'hôte dinner at a friendly pension. The host catches fish that morning and cooks it over coconut husks. Share stories with fellow travelers.</p><div class="card-price">~$40/person · ~$240 family</div></div></div>
+        <div class="info-card"><div class="card-thumb"><img src="images/dining/rangiroa-kai-kai.jpg" alt="Le Kai Kai restaurant" onerror="this.style.display='none'"></div><div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g311730-Rangiroa_Tuamotu_Archipelago.html" target="_blank">Le Kai Kai</a></h5><p>Rangiroa's standout restaurant — French-Polynesian fine dining in a thatched pavilion. Lobster thermidor, poisson cru, and crème brûlée. Reservation required.</p><div class="card-price">~$55/person · ~$330 family</div></div></div>
+        <div class="info-card"><div class="card-thumb"><img src="images/dining/rangiroa-chez-lili.jpg" alt="Chez Lili" onerror="this.style.display='none'"></div><div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g311730-Rangiroa_Tuamotu_Archipelago.html" target="_blank">Chez Lili</a></h5><p>Family-run pension restaurant where Lili cooks the day's fresh catch with Tuamotu flair. Simple, delicious, deeply local.</p><div class="card-price">~$30/person · ~$180 family</div></div></div>
+        <div class="info-card"><div class="card-thumb"><img src="images/dining/rangiroa-chez-auguste.jpg" alt="Chez Auguste" onerror="this.style.display='none'"></div><div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g311730-Rangiroa_Tuamotu_Archipelago.html" target="_blank">Snack Chez Auguste</a></h5><p>Roadside stall in Avatoru village. Grilled fish plates, poisson cru takeaway, and cold Hinano beer. The locals' lunch spot — cheap and no-frills.</p><div class="card-price">~$12/person · ~$72 family</div></div></div>
+        <div class="info-card"><div class="card-thumb"><img src="images/dining/rangiroa-vaimario.jpg" alt="Vaimario Restaurant" onerror="this.style.display='none'"></div><div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g311730-Rangiroa_Tuamotu_Archipelago.html" target="_blank">Vaimario Restaurant</a></h5><p>Overwater seating with Chinese-Polynesian fusion — ma'a tinito (pork stew) and sashimi platters. Family-friendly with generous portions.</p><div class="card-price">~$35/person · ~$210 family</div></div></div>
+        <div class="info-card"><div class="card-thumb"><img src="images/dining/rangiroa-bounty.jpg" alt="Pension Bounty dinner" onerror="this.style.display='none'"></div><div class="card-body"><h5><a href="https://www.tripadvisor.com/Restaurant_Review-g311730-Rangiroa_Tuamotu_Archipelago.html" target="_blank">Pension Bounty Lagoon Dinner</a></h5><p>Communal table d'hôte dinner at a friendly pension. The host catches fish that morning and cooks it over coconut husks. Share stories with fellow travelers.</p><div class="card-price">~$40/person · ~$240 family</div></div></div>
       </div>
     </div>
 
     <div class="section-block">
       <h3>Where to Stay</h3>
       <div class="resort-grid">
-        <div class="resort-card"><div class="resort-thumb"><img src="images/resorts/rangiroa-kia-ora.jpg" alt="Kia Ora Resort" onerror="this.style.display='none'"><span class="thumb-label">Kia Ora Resort</span></div><div class="resort-card-body"><h5><a href="https://www.hotelkiaora.com/">Kia Ora Resort &amp; Spa</a></h5><div class="resort-stars"><span class="star">★★★★</span>½ · <a href="https://www.tripadvisor.com/Hotel_Review-g311730-d302567-Hotel_Kia_Ora_Resort_Spa-Rangiroa_Tuamotu_Archipelago.html">TripAdvisor</a></div><div class="resort-warn">⚠ <strong>Reportedly closing November 2026 for renovation.</strong> Confirm availability before booking.</div><p class="resort-desc">Rangiroa's premier resort — overwater bungalows, lagoon-view pool, dive center, and fine dining. The gold standard for Tuamotu luxury.</p><div class="resort-rooms">🛏 Beach Bungalow: 1 king + daybed. Book 3 bungalows for the family.</div><div class="resort-price">~$450/night <span class="resort-total">· ~$1,350/nt family (3 bungalows) · ~$9,450 total (7 nights)</span></div></div></div>
-        <div class="resort-card"><div class="resort-thumb"><img src="images/resorts/rangiroa-maitai.jpg" alt="Maitai Rangiroa" onerror="this.style.display='none'"><span class="thumb-label">Maitai Rangiroa</span></div><div class="resort-card-body"><h5><a href="https://www.maitai.com/en/rangiroa/">Maitai Rangiroa</a></h5><div class="resort-stars"><span class="star">★★★★</span> · <a href="https://www.tripadvisor.com/Hotel_Review-g311730-d574041-Maitai_Rangiroa-Rangiroa_Tuamotu_Archipelago.html">TripAdvisor</a></div><p class="resort-desc">Solid mid-range on the lagoon between Tiputa and Avatoru. Pool, restaurant, dive shop next door. The safe bet if Kia Ora is closed.</p><div class="resort-rooms">🛏 Lagoon Bungalow: 1 king + 1 single. Book 2-3 bungalows for the family.</div><div class="resort-price">~$220/night <span class="resort-total">· ~$550/nt family · ~$3,850 total (7 nights)</span></div></div></div>
+        <div class="resort-card"><div class="resort-thumb"><img src="images/resorts/rangiroa-kia-ora.jpg" alt="Kia Ora Resort" onerror="this.style.display='none'"><span class="thumb-label">Kia Ora Resort</span></div><div class="resort-card-body"><h5><a href="https://www.hotelkiaora.com/" target="_blank">Kia Ora Resort &amp; Spa</a></h5><div class="resort-stars"><span class="star">★★★★</span>½ · <a href="https://www.tripadvisor.com/Hotel_Review-g311730-d302567-Hotel_Kia_Ora_Resort_Spa-Rangiroa_Tuamotu_Archipelago.html" target="_blank">TripAdvisor</a></div><div class="resort-warn">⚠ <strong>Reportedly closing November 2026 for renovation.</strong> Confirm availability before booking.</div><p class="resort-desc">Rangiroa's premier resort — overwater bungalows, lagoon-view pool, dive center, and fine dining. The gold standard for Tuamotu luxury.</p><div class="resort-rooms">🛏 Beach Bungalow: 1 king + daybed. Book 3 bungalows for the family.</div><div class="resort-price">~$450/night <span class="resort-total">· ~$1,350/nt family (3 bungalows) · ~$9,450 total (7 nights)</span></div></div></div>
+        <div class="resort-card"><div class="resort-thumb"><img src="images/resorts/rangiroa-maitai.jpg" alt="Maitai Rangiroa" onerror="this.style.display='none'"><span class="thumb-label">Maitai Rangiroa</span></div><div class="resort-card-body"><h5><a href="https://www.maitai.com/en/rangiroa/" target="_blank">Maitai Rangiroa</a></h5><div class="resort-stars"><span class="star">★★★★</span> · <a href="https://www.tripadvisor.com/Hotel_Review-g311730-d574041-Maitai_Rangiroa-Rangiroa_Tuamotu_Archipelago.html" target="_blank">TripAdvisor</a></div><p class="resort-desc">Solid mid-range on the lagoon between Tiputa and Avatoru. Pool, restaurant, dive shop next door. The safe bet if Kia Ora is closed.</p><div class="resort-rooms">🛏 Lagoon Bungalow: 1 king + 1 single. Book 2-3 bungalows for the family.</div><div class="resort-price">~$220/night <span class="resort-total">· ~$550/nt family · ~$3,850 total (7 nights)</span></div></div></div>
       </div>
     </div>
 
@@ -687,11 +839,11 @@ footer {
     <div class="section-block">
       <h3>Cultural Connections</h3>
       <div class="card-grid">
-        <div class="info-card"><div class="card-body"><h5><a href="https://www.tahiti-tourisme.com/experiences/pearl-farms/">Black Pearl Farm Tour</a></h5><p>Visit a lagoon-side pearl farm and watch the delicate grafting process. Rangiroa produces some of the world's finest black pearls. Kids can hold live oysters.</p></div></div>
-        <div class="info-card"><div class="card-body"><h5><a href="https://www.tripadvisor.com/Attraction_Review-g311730-Rangiroa_Tuamotu_Archipelago.html">Gauguin's Pearl — Art Gallery</a></h5><p>Small gallery celebrating Polynesian art and Gauguin's legacy in the Tuamotus. Local artists display paintings, carvings, and tapa cloth works.</p></div></div>
-        <div class="info-card"><div class="card-body"><h5><a href="https://www.tripadvisor.com/Attraction_Review-g311730-Rangiroa_Tuamotu_Archipelago.html">Traditional Polynesian Navigation</a></h5><p>Learn how ancient Polynesians navigated using stars, currents, and bird patterns. Rangiroa's remote location makes the night sky spectacular for stargazing.</p></div></div>
-        <div class="info-card"><div class="card-body"><h5><a href="https://www.tripadvisor.com/Attraction_Review-g311730-Rangiroa_Tuamotu_Archipelago.html">Avatoru Village Walking Tour</a></h5><p>Stroll through Rangiroa's main village — visit the century-old coral church, the tiny school, and copra-drying racks. See how a remote atoll community lives.</p></div></div>
-        <div class="info-card"><div class="card-body"><h5><a href="https://www.tripadvisor.com/Attraction_Review-g311730-Rangiroa_Tuamotu_Archipelago.html">Coconut Crab Night Walk</a></h5><p>After dark, spot massive coconut crabs (kaveu) — the world's largest land arthropods. A thrilling wildlife encounter for adventurous families.</p></div></div>
+        <div class="info-card"><div class="card-body"><h5><a href="https://www.tahiti-tourisme.com/experiences/pearl-farms/" target="_blank">Black Pearl Farm Tour</a></h5><p>Visit a lagoon-side pearl farm and watch the delicate grafting process. Rangiroa produces some of the world's finest black pearls. Kids can hold live oysters.</p></div></div>
+        <div class="info-card"><div class="card-body"><h5><a href="https://www.tripadvisor.com/Attraction_Review-g311730-Rangiroa_Tuamotu_Archipelago.html" target="_blank">Gauguin's Pearl — Art Gallery</a></h5><p>Small gallery celebrating Polynesian art and Gauguin's legacy in the Tuamotus. Local artists display paintings, carvings, and tapa cloth works.</p></div></div>
+        <div class="info-card"><div class="card-body"><h5><a href="https://www.tripadvisor.com/Attraction_Review-g311730-Rangiroa_Tuamotu_Archipelago.html" target="_blank">Traditional Polynesian Navigation</a></h5><p>Learn how ancient Polynesians navigated using stars, currents, and bird patterns. Rangiroa's remote location makes the night sky spectacular for stargazing.</p></div></div>
+        <div class="info-card"><div class="card-body"><h5><a href="https://www.tripadvisor.com/Attraction_Review-g311730-Rangiroa_Tuamotu_Archipelago.html" target="_blank">Avatoru Village Walking Tour</a></h5><p>Stroll through Rangiroa's main village — visit the century-old coral church, the tiny school, and copra-drying racks. See how a remote atoll community lives.</p></div></div>
+        <div class="info-card"><div class="card-body"><h5><a href="https://www.tripadvisor.com/Attraction_Review-g311730-Rangiroa_Tuamotu_Archipelago.html" target="_blank">Coconut Crab Night Walk</a></h5><p>After dark, spot massive coconut crabs (kaveu) — the world's largest land arthropods. A thrilling wildlife encounter for adventurous families.</p></div></div>
       </div>
     </div>
   </div>
