@@ -52,22 +52,29 @@ img { max-width: 100%; height: auto; display: block; }
 /* ══════════════════════════════════════════════════
    STICKY NAV
    ══════════════════════════════════════════════════ */
+.nav-sentinel { height: 0; margin: 0; padding: 0; }
 .tab-nav {
   position: sticky; top: 0; z-index: 100;
-  background: var(--white);
-  border-bottom: 1px solid var(--line-soft);
+  background: transparent;
+  border-bottom: 1px solid transparent;
   display: flex; justify-content: center; gap: 0;
   overflow-x: auto; -webkit-overflow-scrolling: touch;
+  transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
 }
 .tab-nav a {
   display: block; padding: 14px 22px;
   font-family: var(--font-body); font-size: 0.78rem;
   letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--text-med); border-bottom: 2px solid transparent;
-  white-space: nowrap; transition: color 0.2s, border-color 0.2s;
+  color: rgba(255,255,255,0.85); border-bottom: 2px solid transparent;
+  white-space: nowrap; transition: color 0.3s, border-color 0.2s;
 }
-.tab-nav a:hover { color: var(--charcoal); text-decoration: none; }
-.tab-nav a.active { color: var(--copper); border-bottom-color: var(--copper); }
+.tab-nav a:hover { color: var(--white); text-decoration: none; }
+.tab-nav a.active { color: var(--white); border-bottom-color: var(--copper); }
+/* Scrolled — solid white bar */
+.tab-nav.nav-scrolled { background: var(--white); border-bottom-color: var(--line-soft); box-shadow: 0 1px 6px rgba(0,0,0,0.06); }
+.tab-nav.nav-scrolled a { color: var(--text-med); }
+.tab-nav.nav-scrolled a:hover { color: var(--charcoal); }
+.tab-nav.nav-scrolled a.active { color: var(--copper); border-bottom-color: var(--copper); }
 
 /* ══════════════════════════════════════════════════
    HERO
@@ -281,6 +288,7 @@ footer {
   <p class="hero-details">SFO → Fakarava · Fiji · Aitutaki · Samoa · Rangiroa &nbsp;|&nbsp; 2 Adults, 4 Kids (12, 10, 8, 4)</p>
 </header>
 
+<div class="nav-sentinel" id="navSentinel"></div>
 <nav class="tab-nav" id="tabNav">
   <a href="#fakarava">Fakarava</a>
   <a href="#fiji">Fiji</a>
@@ -1046,6 +1054,11 @@ footer {
   sections=Array.from(links).map(a=>document.querySelector(a.getAttribute('href')));
   function update(){let idx=0;const y=window.scrollY+80;sections.forEach((s,i)=>{if(s&&s.offsetTop<=y)idx=i});links.forEach((a,i)=>a.classList.toggle('active',i===idx))}
   window.addEventListener('scroll',update,{passive:true});update();
+  /* Transparent → solid nav on scroll */
+  const sentinel=document.getElementById('navSentinel');
+  if(sentinel&&'IntersectionObserver' in window){
+    new IntersectionObserver(([e])=>{nav.classList.toggle('nav-scrolled',!e.isIntersecting)},{threshold:0}).observe(sentinel);
+  }
 })();
 </script>
 </body>
