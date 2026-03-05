@@ -110,8 +110,10 @@ img { max-width: 100%; height: auto; display: block; }
    MASTER HERO
    ══════════════════════════════════════════════════ */
 .master-hero {
-  text-align: center; padding: 100px 24px 60px;
+  text-align: center; padding: 100px 24px 108px;
   background: linear-gradient(135deg, #1E3A5F 0%, #2D5F8A 40%, #C27B5C 100%);
+  margin-bottom: -48px;
+  position: relative; z-index: 1;
 }
 .hero-eyebrow {
   font-family: var(--font-body); font-size: 0.72rem;
@@ -251,7 +253,7 @@ footer {
    DESTINATION OVERVIEW
    ══════════════════════════════════════════════════ */
 .dest-overview {
-  font-size: 1.02rem; color: var(--text-dark); line-height: 1.85;
+  font-size: 1.18rem; color: var(--text-dark); line-height: 1.85;
   font-weight: 300; font-style: italic; max-width: 780px;
   margin: 0 auto; padding: 8px 0 0;
 }
@@ -274,7 +276,7 @@ footer {
   .weather-stat { min-width: 80px; padding: 10px 12px; }
   .comparison-section { padding: 40px 12px 60px; }
   .route-map { padding: 16px; }
-  .dest-overview { font-size: 0.95rem; }
+  .dest-overview { font-size: 1.08rem; }
 }
 </style>
 </head>
@@ -346,8 +348,8 @@ footer {
   <text x="401.2" y="90.6" font-family="Source Serif 4, Georgia, serif" font-size="7.5" fill="#8A9CAE" text-anchor="middle" font-style="italic">Hawai&#x27;i</text>
   
   <!-- Route -->
-  <line x1="579.5" y1="30.4" x2="454.1" y2="251.4" stroke="#C27B5C" stroke-width="1.5" stroke-dasharray="6,4" stroke-linecap="round"/>
-  <polygon points="454.1,251.4 454.8,241.4 462.3,245.7" fill="#C27B5C"/>
+  <path d="M579.5,30.4 Q468.2,113.3 454.1,251.4" fill="none" stroke="#C27B5C" stroke-width="1.5" stroke-dasharray="6,4" stroke-linecap="round"/>
+  <polygon points="454.1,251.4 450.7,242.0 459.3,242.9" fill="#C27B5C"/>
   
   <!-- SFO -->
   <circle cx="579.5" cy="30.4" r="4" fill="#C27B5C"/>
@@ -545,8 +547,8 @@ footer {
   <text x="401.2" y="90.6" font-family="Source Serif 4, Georgia, serif" font-size="7.5" fill="#8A9CAE" text-anchor="middle" font-style="italic">Hawai&#x27;i</text>
   
   <!-- Route -->
-  <line x1="579.5" y1="30.4" x2="258.2" y2="258.5" stroke="#C27B5C" stroke-width="1.5" stroke-dasharray="6,4" stroke-linecap="round"/>
-  <polygon points="258.2,258.5 263.0,249.7 268.1,256.8" fill="#C27B5C"/>
+  <path d="M579.5,30.4 Q368.7,73.8 258.2,258.5" fill="none" stroke="#C27B5C" stroke-width="1.5" stroke-dasharray="6,4" stroke-linecap="round"/>
+  <polygon points="258.2,258.5 259.1,248.5 266.6,253.0" fill="#C27B5C"/>
   
   <!-- SFO -->
   <circle cx="579.5" cy="30.4" r="4" fill="#C27B5C"/>
@@ -700,8 +702,8 @@ footer {
   <text x="401.2" y="90.6" font-family="Source Serif 4, Georgia, serif" font-size="7.5" fill="#8A9CAE" text-anchor="middle" font-style="italic">Hawai&#x27;i</text>
   
   <!-- Route -->
-  <line x1="579.5" y1="30.4" x2="378.2" y2="263.0" stroke="#C27B5C" stroke-width="1.5" stroke-dasharray="6,4" stroke-linecap="round"/>
-  <polygon points="378.2,263.0 380.8,253.3 387.4,259.0" fill="#C27B5C"/>
+  <path d="M579.5,30.4 Q427.7,102.4 378.2,263.0" fill="none" stroke="#C27B5C" stroke-width="1.5" stroke-dasharray="6,4" stroke-linecap="round"/>
+  <polygon points="378.2,263.0 376.7,253.1 385.0,255.7" fill="#C27B5C"/>
   
   <!-- SFO -->
   <circle cx="579.5" cy="30.4" r="4" fill="#C27B5C"/>
@@ -823,8 +825,8 @@ footer {
   <text x="401.2" y="90.6" font-family="Source Serif 4, Georgia, serif" font-size="7.5" fill="#8A9CAE" text-anchor="middle" font-style="italic">Hawai&#x27;i</text>
   
   <!-- Route -->
-  <line x1="579.5" y1="30.4" x2="313.6" y2="242.2" stroke="#C27B5C" stroke-width="1.5" stroke-dasharray="6,4" stroke-linecap="round"/>
-  <polygon points="313.6,242.2 317.9,233.2 323.4,240.0" fill="#C27B5C"/>
+  <path d="M579.5,30.4 Q400.0,77.8 313.6,242.2" fill="none" stroke="#C27B5C" stroke-width="1.5" stroke-dasharray="6,4" stroke-linecap="round"/>
+  <polygon points="313.6,242.2 313.9,232.2 321.6,236.3" fill="#C27B5C"/>
   
   <!-- SFO -->
   <circle cx="579.5" cy="30.4" r="4" fill="#C27B5C"/>
@@ -946,8 +948,8 @@ footer {
   <text x="401.2" y="90.6" font-family="Source Serif 4, Georgia, serif" font-size="7.5" fill="#8A9CAE" text-anchor="middle" font-style="italic">Hawai&#x27;i</text>
   
   <!-- Route -->
-  <line x1="579.5" y1="30.4" x2="443.4" y2="247.6" stroke="#C27B5C" stroke-width="1.5" stroke-dasharray="6,4" stroke-linecap="round"/>
-  <polygon points="443.4,247.6 444.5,237.7 451.9,242.3" fill="#C27B5C"/>
+  <path d="M579.5,30.4 Q463.7,109.1 443.4,247.6" fill="none" stroke="#C27B5C" stroke-width="1.5" stroke-dasharray="6,4" stroke-linecap="round"/>
+  <polygon points="443.4,247.6 440.4,238.1 449.0,239.3" fill="#C27B5C"/>
   
   <!-- SFO -->
   <circle cx="579.5" cy="30.4" r="4" fill="#C27B5C"/>
